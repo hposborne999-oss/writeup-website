@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
+/* -----------------------------------------------------------
+ * WriteUp design system — Direction B (editorial / professional)
+ * Brand philosophy: quietly excellent.
+ * Surfaces & tokens carried forward from the WriteUp app.
+ * ----------------------------------------------------------- */
+
+@theme {
+  /* Brand palette */
+  --color-petrol: #0a2226;
+  --color-teal: #2c7a7b;
+  --color-emerald-active: #34d399;
+
+  /* Editorial / paper surfaces (Direction B) */
+  --color-paper: #fafaf7;
+  --color-rule: #e8e6df;
+  --color-ink: #1a1a1a;
+
+  /* Slate scale (carried from app) */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-700: #334155;
+  --color-slate-900: #0f172a;
+
+  /* Typography stack */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), "Instrument Serif", ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Motion */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Container width — editorial register sits narrower than typical SaaS */
+  --container-content: 1080px;
+  --container-narrow: 760px;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  line-height: 1.55;
+}
+
+/* Tabular figures for prices and counts */
+.num,
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Eyebrow — small mono caps used at section heads */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-slate-500);
+}
+
+/* Smooth scrolling for in-page anchors, but respect reduced-motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Focus rings — teal, accessible, restrained */
+:where(a, button, summary, [role="button"]):focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Native disclosure marker reset for <details> elements */
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::marker {
+  content: "";
+}
+
+/* Disclosure expansion animation */
+@keyframes disclosure-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Selection — quiet teal tint, no neon */
+::selection {
+  background: rgba(44, 122, 123, 0.18);
+  color: var(--color-ink);
 }
