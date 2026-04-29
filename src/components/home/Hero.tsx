@@ -9,8 +9,10 @@ export function Hero() {
           <span aria-hidden className="w-6 h-px bg-slate-400" />
           <span>RICS Tech Partner</span>
         </div>
-        <h1 className="font-serif font-normal text-[44px] sm:text-[60px] lg:text-[76px] leading-[1.02] tracking-[-0.025em] text-ink mb-7 max-w-[18ch]">
-          Catch what careful eyes <em className="italic text-teal">miss</em>
+        <h1 className="font-serif font-normal text-[44px] sm:text-[60px] lg:text-[76px] leading-[1.02] tracking-[-0.025em] text-ink mb-7 max-w-[24ch]">
+          Every report <em className="italic text-teal">checked</em>.
+          <br />
+          Every detail <em className="italic text-teal">caught</em>.
         </h1>
         <p className="text-[17px] lg:text-[19.5px] leading-[1.55] text-slate-700 max-w-[62ch] mb-10">
           WriteUp is a RICS Tech Partner AI audit tool for RICS reports.
