@@ -12,8 +12,7 @@ export function Hero() {
         <p className="text-[17px] lg:text-[19.5px] leading-[1.55] text-slate-700 max-w-[62ch] mb-10">
           WriteUp is a RICS Tech Partner AI audit tool for RICS reports.
           Built by a practising MRICS Chartered Surveyor, it reviews finished
-          reports for the kinds of errors a careful manual QA still misses —
-          quietly, in 1–2 minutes, and entirely on the surveyor&apos;s terms.
+          reports for the kinds of errors a careful manual QA still misses.
         </p>
         <div className="flex flex-wrap gap-[14px] items-center">
           <Button
