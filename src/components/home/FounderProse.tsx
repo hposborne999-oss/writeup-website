@@ -9,7 +9,7 @@ export function FounderProse() {
       <Container variant="narrow">
         <span className="eyebrow block mb-6">From the founder</span>
         <div className="text-[18px] lg:text-[21px] leading-[1.6] text-ink">
-          <p className="font-serif text-[26px] lg:text-[32px] leading-[1.3] font-normal tracking-[-0.01em] m-0 mb-[30px]">
+          <p className="text-[22px] lg:text-[26px] font-medium leading-[1.4] tracking-[-0.01em] m-0 mb-[30px] text-ink">
             I&apos;m a practising MRICS valuation surveyor. I write reports most weeks, and like every surveyor, I want to be sure that nothing has slipped through before they leave my desk.
           </p>
           <p className="m-0 mb-[22px]">
