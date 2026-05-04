@@ -131,7 +131,9 @@ const buckets: Bucket[] = [
 ];
 
 export function CatchesList() {
-  const [openId, setOpenId] = useState<string | null>(null);
+  // Open the first bucket by default — invites the reader to discover
+  // the inner structure rather than confronting three closed rows.
+  const [openId, setOpenId] = useState<string | null>(buckets[0].id);
 
   return (
     <section
@@ -162,7 +164,15 @@ export function CatchesList() {
                 key={b.id}
                 className={`transition-colors duration-300 [transition-timing-function:var(--ease-out-quart)] ${
                   isLast ? "" : "border-b border-rule"
-                } ${isOpen ? "bg-paper" : "bg-white"}`}
+                }`}
+                style={{
+                  // Open state: warmer tinted cream (#f4f0e8) — visibly
+                  // different from the page background (--color-paper
+                  // #fafaf7) so the open card reads as "active". The
+                  // Error Found block stays white below, regaining the
+                  // same contrast pairing that the collapsed card had.
+                  background: isOpen ? "#f4f0e8" : "#ffffff",
+                }}
               >
                 <button
                   type="button"
@@ -175,13 +185,24 @@ export function CatchesList() {
                   <div className="font-mono text-xs text-slate-400 font-medium tracking-[0.04em] col-start-1 row-start-1 md:row-start-1 md:col-start-1 md:pt-1">
                     {b.numCol}
                   </div>
-                  <h3
-                    className={`text-lg font-semibold tracking-[-0.005em] m-0 transition-colors duration-150 col-span-full row-start-2 md:col-span-1 md:col-start-2 md:row-start-1 font-sans ${
-                      isOpen ? "text-teal" : "text-ink group-hover:text-teal"
-                    }`}
-                  >
-                    {b.title}
-                  </h3>
+                  <div className="col-span-full row-start-2 md:col-span-1 md:col-start-2 md:row-start-1">
+                    <h3
+                      className={`text-lg font-semibold tracking-[-0.005em] m-0 transition-colors duration-150 font-sans ${
+                        isOpen ? "text-teal" : "text-ink group-hover:text-teal"
+                      }`}
+                    >
+                      {b.title}
+                    </h3>
+                    {/* Hairline accent — subtle dropdown affordance, takes the
+                        teal tint when open to mirror the title state */}
+                    <div
+                      aria-hidden
+                      className="mt-2 h-px w-10 transition-colors duration-200"
+                      style={{
+                        background: isOpen ? "#2c7a7b" : "#e8e6df",
+                      }}
+                    />
+                  </div>
                   <p className="text-[15px] leading-[1.6] text-slate-700 m-0 col-span-full row-start-3 md:col-span-1 md:col-start-3 md:row-start-1">
                     {b.summary}
                   </p>
