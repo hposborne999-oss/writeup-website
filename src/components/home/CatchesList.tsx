@@ -164,12 +164,7 @@ export function CatchesList() {
                   isLast ? "" : "border-b border-rule"
                 }`}
                 style={{
-                  // Open state: warmer tinted cream (#f4f0e8) — visibly
-                  // different from the page background (--color-paper
-                  // #fafaf7) so the open card reads as "active". The
-                  // Error Found block stays white below, regaining the
-                  // same contrast pairing that the collapsed card had.
-                  background: isOpen ? "#f4f0e8" : "#ffffff",
+                  background: isOpen ? "#0a2226" : "#ffffff",
                 }}
               >
                 <button
@@ -180,37 +175,48 @@ export function CatchesList() {
                   onClick={() => setOpenId(isOpen ? null : b.id)}
                   className="group w-full text-left px-6 md:px-10 py-7 grid items-start cursor-pointer gap-y-1.5 gap-x-3 grid-cols-[1fr_28px] md:gap-x-8 md:grid-cols-[60px_1fr_2fr_36px]"
                 >
-                  <div className="font-mono text-xs text-slate-400 font-medium tracking-[0.04em] col-start-1 row-start-1 md:row-start-1 md:col-start-1 md:pt-1">
-                    {b.numCol}
+                  <div
+                    className="font-mono text-xs font-medium tracking-[0.04em] col-start-1 row-start-1 md:row-start-1 md:col-start-1 md:pt-1 transition-colors duration-200"
+                    style={{ color: isOpen ? "rgba(255,255,255,0.5)" : undefined }}
+                  >
+                    <span className={isOpen ? "" : "text-slate-400"}>{b.numCol}</span>
                   </div>
                   <div className="col-span-full row-start-2 md:col-span-1 md:col-start-2 md:row-start-1">
                     <h3
                       className={`text-lg font-semibold tracking-[-0.005em] m-0 transition-colors duration-150 font-sans ${
-                        isOpen ? "text-teal" : "text-ink group-hover:text-teal"
+                        isOpen ? "text-white" : "text-ink group-hover:text-teal"
                       }`}
                     >
                       {b.title}
                     </h3>
-                    {/* Hairline accent — subtle dropdown affordance, takes the
-                        teal tint when open to mirror the title state */}
                     <div
                       aria-hidden
                       className="mt-2 h-px w-10 transition-colors duration-200"
                       style={{
-                        background: isOpen ? "#2c7a7b" : "#e8e6df",
+                        background: isOpen ? "#34d399" : "#e8e6df",
                       }}
                     />
                   </div>
-                  <p className="text-[15px] leading-[1.6] text-slate-700 m-0 col-span-full row-start-3 md:col-span-1 md:col-start-3 md:row-start-1">
+                  <p
+                    className={`text-[15px] leading-[1.6] m-0 col-span-full row-start-3 md:col-span-1 md:col-start-3 md:row-start-1 transition-colors duration-200 ${
+                      isOpen ? "" : "text-slate-700"
+                    }`}
+                    style={isOpen ? { color: "rgba(255,255,255,0.78)" } : undefined}
+                  >
                     {b.summary}
                   </p>
                   <div
                     aria-hidden
                     className={`w-7 h-7 rounded-full border flex items-center justify-center text-base font-light leading-none self-start transition-all duration-300 [transition-timing-function:var(--ease-out-quart)] col-start-2 row-start-1 md:col-start-4 md:row-start-1 ${
                       isOpen
-                        ? "bg-ink text-white border-ink rotate-45"
+                        ? "rotate-45"
                         : "bg-white text-slate-500 border-rule group-hover:border-ink group-hover:text-ink"
                     }`}
+                    style={
+                      isOpen
+                        ? { background: "#34d399", color: "#0a2226", borderColor: "#34d399" }
+                        : undefined
+                    }
                   >
                     +
                   </div>
@@ -223,9 +229,9 @@ export function CatchesList() {
                     isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                   }`}
                 >
-                  <div className="overflow-hidden">
+                  <div className="overflow-hidden" style={{ background: "#fbfaf5" }}>
                     <div
-                      className={`px-6 md:px-10 pb-9 transition-opacity duration-300 [transition-timing-function:var(--ease-out-quart)] ${
+                      className={`px-6 md:px-10 pt-8 pb-9 transition-opacity duration-300 [transition-timing-function:var(--ease-out-quart)] ${
                         isOpen ? "opacity-100 delay-150" : "opacity-0"
                       }`}
                     >

@@ -62,7 +62,9 @@ export function Pricing() {
       <Container>
         <div className="mb-12">
           <h2 className="font-serif text-[36px] lg:text-[44px] font-normal leading-[1.1] tracking-[-0.02em] mb-[18px] max-w-[24ch]">
-            Priced to earn its place in your process.
+            Priced to earn its place
+            <br />
+            in your process.
           </h2>
         </div>
         <div className="bg-white border border-rule rounded-md overflow-hidden">
