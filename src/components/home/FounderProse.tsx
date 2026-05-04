@@ -9,14 +9,17 @@ export function FounderProse() {
       <Container variant="narrow">
         <span className="eyebrow block mb-6">From the founder</span>
         <div className="text-[18px] lg:text-[21px] leading-[1.6] text-ink">
-          <p className="text-[22px] lg:text-[26px] font-medium leading-[1.4] tracking-[-0.01em] m-0 mb-[30px] text-ink">
-            I&apos;m a practising MRICS valuation surveyor. I write reports most weeks, and like every surveyor, I want to be sure that nothing has slipped through before they leave my desk.
-          </p>
           <p className="m-0 mb-[22px]">
-            Anyone who writes RICS reports knows the feeling of the final read. Ensuring consistency throughout the report, catching inconsistencies between schedule and body, comparables that don&apos;t quite line up, a Red Book inclusion not worded the way an addressee lender expects — the kind of thing a careful manual QA still misses on the second read. I wanted a second pair of eyes that didn&apos;t get tired.
+            &ldquo;As a practising MRICS valuation surveyor, I know how long
+            it can take to get reports ready to leave your desk. I started
+            using AI in my own practice to speed up my QA process by flagging
+            any errors and inconsistencies.
           </p>
           <p className="m-0">
-            WriteUp is a practical layer of support that keeps the valuer in control. Every error is reviewed and accepted by the surveyor. The aim is a to de-risk the surveyors work, speed up the auditing process and to help produce reports that stand up under scrutiny.
+            I realised it would be useful for others, so I built WriteUp to
+            create a second pair of eyes. A practical layer of support that
+            keeps the surveyor in control, de-risking their reports, and
+            giving back time to spend on more valuable work.&rdquo;
           </p>
         </div>
         <div className="flex items-center gap-3.5 mt-8 pt-6 border-t border-rule">
@@ -28,7 +31,7 @@ export function FounderProse() {
               Harry Osborne
             </strong>
             <span className="text-slate-500">
-              MRICS · Founder, WriteUp Limited
+              MRICS · Founder, WriteUp
             </span>
           </div>
         </div>

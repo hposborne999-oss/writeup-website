@@ -142,14 +142,12 @@ export function CatchesList() {
     >
       <Container>
         <div className="mb-12">
-          <span className="eyebrow block mb-[18px]">Section 01</span>
-          <h2 className="font-serif text-[36px] lg:text-[44px] font-normal leading-[1.1] tracking-[-0.02em] mb-[18px] max-w-[20ch]">
-            What WriteUp looks for.
+          <h2 className="font-serif text-[36px] lg:text-[44px] font-normal leading-[1.1] tracking-[-0.02em] mb-[18px] max-w-[24ch]">
+            Catching what careful manual QA might miss.
           </h2>
           <p className="m-0 text-slate-700 text-[16px] lg:text-[17.5px] leading-[1.6] max-w-[62ch]">
-            Dimensions, comparables, Red Book logic, maths, lender-specific
-            guidance all checked for consistency. Accept, reject, or amend —
-            the report stays yours throughout.
+            Spotting errors, flagging risks, and surfacing inconsistencies
+            before they slip through. All in just a couple of minutes.
           </p>
         </div>
 
@@ -275,6 +273,10 @@ export function CatchesList() {
             );
           })}
         </div>
+
+        <p className="mt-6 text-slate-500 text-[14.5px] lg:text-[15px] italic leading-[1.6] max-w-[62ch]">
+          Accept, reject, or amend — the report stays yours throughout.
+        </p>
       </Container>
     </section>
   );

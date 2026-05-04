@@ -4,7 +4,6 @@ import { Hero } from "@/components/home/Hero";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { VideoCard } from "@/components/home/VideoCard";
 import { CatchesList } from "@/components/home/CatchesList";
-import { Steps } from "@/components/home/Steps";
 import { FounderProse } from "@/components/home/FounderProse";
 import { Pricing } from "@/components/home/Pricing";
 import { CtaBand } from "@/components/home/CtaBand";
@@ -18,7 +17,6 @@ export default function Home() {
         <TrustStrip />
         <VideoCard />
         <CatchesList />
-        <Steps />
         <FounderProse />
         <Pricing />
         <CtaBand />

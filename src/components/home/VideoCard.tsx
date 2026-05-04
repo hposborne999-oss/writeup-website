@@ -16,7 +16,7 @@ export function VideoCard() {
         </div>
         <div className="flex justify-between items-baseline mt-[18px] text-[13px] text-slate-500 gap-4 flex-wrap">
           <div>An audit on a redacted draft. Mock data shown.</div>
-          <div className="font-mono text-slate-700">FIG. 01 · WRITEUP IN USE</div>
+          <div className="font-mono text-slate-700">FIG. 01 · How it works.</div>
         </div>
       </Container>
     </section>
