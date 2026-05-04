@@ -20,7 +20,7 @@ const catches: Catch[] = [
     summary:
       "Statements in the report commentary that conflict with the capital value, yield, or rental evidence cited.",
     example:
-      "Body text describes the property as in good repair throughout, while the rationale suggests a £50,000 retention.",
+      "Body text describes the property as “in good repair throughout”, while the rationale states a £50,000 retention.",
     why: "Internal contradictions within the report are hard to spot. The audit reads and conceptualises the entire report and is able to spot these errors.",
   },
   {
@@ -87,11 +87,10 @@ export function CatchesList() {
         <div className="mb-12">
           <span className="eyebrow block mb-[18px]">Section 01 · Examples</span>
           <h2 className="font-serif text-[36px] lg:text-[44px] font-normal leading-[1.1] tracking-[-0.02em] mb-[18px] max-w-[20ch]">
-            A few examples of what WriteUp looks for.
+            What WriteUp looks for.
           </h2>
           <p className="m-0 text-slate-700 text-[16px] lg:text-[17.5px] leading-[1.6] max-w-[62ch]">
-            Examples of what WriteUp looks for on every audit. Below are some
-            examples of errors caught by the AI audit process.
+            Below are some examples of errors caught by the AI audit.
           </p>
         </div>
 

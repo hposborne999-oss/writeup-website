@@ -13,10 +13,10 @@ export function FounderProse() {
             I&apos;m a practising MRICS valuation surveyor. I write reports most weeks, and like every surveyor, I want to be sure that nothing has slipped through before they leave my desk.
           </p>
           <p className="m-0 mb-[22px]">
-            Anyone who writes RICS reports knows the feeling of the final read. Small inconsistencies between schedule and body, comparables that don&apos;t quite line up, a Red Book inclusion not worded the way an addressee lender expects — the kind of thing a careful manual QA still misses on the second read. I wanted a second pair of eyes that didn&apos;t get tired. So I built one.
+            Anyone who writes RICS reports knows the feeling of the final read. Ensuring consistency throughout the report, catching inconsistencies between schedule and body, comparables that don&apos;t quite line up, a Red Book inclusion not worded the way an addressee lender expects — the kind of thing a careful manual QA still misses on the second read. I wanted a second pair of eyes that didn&apos;t get tired.
           </p>
           <p className="m-0">
-            WriteUp is a practical layer of support that keeps the valuer in control. Every flag is reviewed and accepted by the surveyor. Reports are processed in private and never used to train models. The aim is a quieter desk, fewer returns, and reports that stand up under scrutiny.
+            WriteUp is a practical layer of support that keeps the valuer in control. Every error is reviewed and accepted by the surveyor. The aim is a to de-risk the surveyors work, speed up the auditing process and to help produce reports that stand up under scrutiny.
           </p>
         </div>
         <div className="flex items-center gap-3.5 mt-8 pt-6 border-t border-rule">

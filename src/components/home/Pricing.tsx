@@ -59,7 +59,7 @@ export function Pricing() {
             Three tiers.
           </h2>
           <p className="m-0 text-slate-700 text-[16px] lg:text-[17.5px] leading-[1.6] max-w-[60ch]">
-            30-day money-back guarantee. Currently invite-only — request a demo to be granted access.
+            30-day money-back guarantee. Currently invite-only — request a demo to see WriteUp in action.
           </p>
         </div>
         <div className="bg-white border border-rule rounded-md overflow-hidden">

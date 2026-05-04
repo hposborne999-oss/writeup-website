@@ -9,7 +9,7 @@ const steps = [
   {
     num: "STEP 02",
     title: "Audit runs in 1–2 minutes",
-    desc: "Dimensions, comparables, Red Book, logic, maths, lender-specific guidance — each surfaced with the source text.",
+    desc: "Dimensions, comparables, Red Book, logic, maths, lender-specific guidance all checked for consistency.",
   },
   {
     num: "STEP 03",
