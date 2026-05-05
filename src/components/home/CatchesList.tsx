@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Container } from "../Container";
 
 type Example = {
@@ -134,6 +134,23 @@ export function CatchesList() {
   // Open the first bucket by default — invites the reader to discover
   // the inner structure rather than confronting three closed rows.
   const [openId, setOpenId] = useState<string | null>(buckets[0].id);
+  const triggerRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+
+  const handleToggle = (id: string) => {
+    const wasOpen = openId === id;
+    setOpenId(wasOpen ? null : id);
+    if (wasOpen) return;
+    // Anchor the clicked header near the top of the viewport so its panel
+    // opens downward into the reader's eye-line, regardless of which row
+    // was previously open.
+    requestAnimationFrame(() => {
+      const trigger = triggerRefs.current[id];
+      if (!trigger) return;
+      const navOffset = 80; // 64px sticky nav + a little breathing room
+      const top = trigger.getBoundingClientRect().top + window.scrollY - navOffset;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  };
 
   return (
     <section
@@ -164,16 +181,22 @@ export function CatchesList() {
                   isLast ? "" : "border-b border-rule"
                 }`}
                 style={{
-                  background: isOpen ? "#0a2226" : "#ffffff",
+                  background: isOpen ? "#fbfaf5" : "#ffffff",
                 }}
               >
                 <button
+                  ref={(el) => {
+                    triggerRefs.current[b.id] = el;
+                  }}
                   type="button"
                   id={triggerId}
                   aria-expanded={isOpen}
                   aria-controls={panelId}
-                  onClick={() => setOpenId(isOpen ? null : b.id)}
-                  className="group w-full text-left px-6 md:px-10 py-7 grid items-start cursor-pointer gap-y-1.5 gap-x-3 grid-cols-[1fr_28px] md:gap-x-8 md:grid-cols-[60px_1fr_2fr_36px]"
+                  onClick={() => handleToggle(b.id)}
+                  className="group w-full text-left px-6 md:px-10 py-7 grid items-start cursor-pointer gap-y-1.5 gap-x-3 grid-cols-[1fr_28px] md:gap-x-8 md:grid-cols-[60px_1fr_2fr_36px] transition-colors duration-300 [transition-timing-function:var(--ease-out-quart)]"
+                  style={{
+                    background: isOpen ? "#0a2226" : "transparent",
+                  }}
                 >
                   <div
                     className="font-mono text-xs font-medium tracking-[0.04em] col-start-1 row-start-1 md:row-start-1 md:col-start-1 md:pt-1 transition-colors duration-200"
@@ -207,18 +230,34 @@ export function CatchesList() {
                   </p>
                   <div
                     aria-hidden
-                    className={`w-7 h-7 rounded-full border flex items-center justify-center text-base font-light leading-none self-start transition-all duration-300 [transition-timing-function:var(--ease-out-quart)] col-start-2 row-start-1 md:col-start-4 md:row-start-1 ${
+                    className={`w-7 h-7 rounded-full border flex items-center justify-center self-start transition-all duration-300 [transition-timing-function:var(--ease-out-quart)] col-start-2 row-start-1 md:col-start-4 md:row-start-1 ${
                       isOpen
                         ? "rotate-45"
-                        : "bg-white text-slate-500 border-rule group-hover:border-ink group-hover:text-ink"
+                        : "bg-white border-rule group-hover:border-ink"
                     }`}
                     style={
                       isOpen
-                        ? { background: "#34d399", color: "#0a2226", borderColor: "#34d399" }
+                        ? { background: "#34d399", borderColor: "#34d399" }
                         : undefined
                     }
                   >
-                    +
+                    {/* Perfectly symmetric SVG plus — rotated 45° in the open
+                        state to read as a close (×). Avoids the off-centre
+                        baseline of the "+" glyph in most fonts. */}
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      stroke={isOpen ? "#0a2226" : "currentColor"}
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      className={isOpen ? "" : "text-slate-500 group-hover:text-ink"}
+                      aria-hidden
+                    >
+                      <line x1="5" y1="0.75" x2="5" y2="9.25" />
+                      <line x1="0.75" y1="5" x2="9.25" y2="5" />
+                    </svg>
                   </div>
                 </button>
                 <div
