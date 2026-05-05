@@ -10,7 +10,7 @@ export function CtaBand() {
         </h2>
         <p className="m-0 mx-auto mb-9 text-slate-700 text-[16px] lg:text-[18px] max-w-[54ch]">
           Book a demo with the founder, run your reports through it live, and
-          decide for yourself.
+          see what it catches.
         </p>
         <Button
           href="mailto:Harry@usewriteup.co.uk?subject=WriteUp%20demo%20request"

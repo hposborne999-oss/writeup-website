@@ -21,7 +21,7 @@ const productLinks: FooterLink[] = [
 const companyLinks: FooterLink[] = [
   { href: "/#from-the-founder", label: "About" },
   {
-    href: "mailto:Harry@usewriteup.co.uk?subject=WriteUp%20enquiry",
+    href: "mailto:hello@usewriteup.co.uk?subject=WriteUp%20enquiry",
     label: "Contact",
     external: true,
   },
@@ -92,10 +92,10 @@ export function Footer() {
             WriteUp Limited · Company No. 17089556 · Registered in England &amp; Wales
           </div>
           <a
-            href="mailto:Harry@usewriteup.co.uk"
+            href="mailto:hello@usewriteup.co.uk"
             className="hover:text-ink transition-colors duration-150"
           >
-            Harry@usewriteup.co.uk
+            hello@usewriteup.co.uk
           </a>
         </div>
       </Container>

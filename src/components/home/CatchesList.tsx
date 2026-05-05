@@ -344,7 +344,9 @@ export function CatchesList() {
         </div>
 
         <p className="mt-12 lg:mt-14 font-serif text-[36px] lg:text-[44px] font-normal leading-[1.1] tracking-[-0.02em] text-ink max-w-[24ch]">
-          Accept, reject, or amend — the report stays yours throughout.
+          Accept, reject, or amend —
+          <br />
+          the report stays yours throughout.
         </p>
       </Container>
     </section>
