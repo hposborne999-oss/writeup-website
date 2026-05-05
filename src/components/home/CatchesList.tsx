@@ -138,17 +138,38 @@ export function CatchesList() {
 
   const handleToggle = (id: string) => {
     const wasOpen = openId === id;
+    const prevOpenId = openId;
     setOpenId(wasOpen ? null : id);
     if (wasOpen) return;
-    // Anchor the clicked header near the top of the viewport so its panel
-    // opens downward into the reader's eye-line, regardless of which row
-    // was previously open.
-    requestAnimationFrame(() => {
-      const trigger = triggerRefs.current[id];
-      if (!trigger) return;
-      const navOffset = 80; // 64px sticky nav + a little breathing room
-      const top = trigger.getBoundingClientRect().top + window.scrollY - navOffset;
-      window.scrollTo({ top, behavior: "smooth" });
+
+    const trigger = triggerRefs.current[id];
+    if (!trigger) return;
+
+    // Trigger position in document coords (stable across animations).
+    const triggerAbsTop = trigger.getBoundingClientRect().top + window.scrollY;
+
+    // If a different row was previously open AND its header sits above the
+    // clicked one, that row's panel will collapse and pull the clicked
+    // header upward by the panel's full height. Subtract that here so the
+    // post-collapse position is what we scroll to — otherwise the smooth
+    // scroll lands too far down and the new content appears off-screen.
+    let collapseAdjustment = 0;
+    if (prevOpenId && prevOpenId !== id) {
+      const prevPanel = document.getElementById(`bucket-panel-${prevOpenId}`);
+      const prevTrigger = triggerRefs.current[prevOpenId];
+      if (prevPanel && prevTrigger) {
+        const prevTriggerAbsTop =
+          prevTrigger.getBoundingClientRect().top + window.scrollY;
+        if (prevTriggerAbsTop < triggerAbsTop) {
+          collapseAdjustment = prevPanel.offsetHeight;
+        }
+      }
+    }
+
+    const navOffset = 80; // 64px sticky nav + a little breathing room
+    window.scrollTo({
+      top: triggerAbsTop - collapseAdjustment - navOffset,
+      behavior: "smooth",
     });
   };
 
