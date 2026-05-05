@@ -7,7 +7,6 @@ type Example = {
   id: string;
   numCol: string;
   title: string;
-  summary: string;
   error: string;
   detail: string;
 };
@@ -32,8 +31,6 @@ const buckets: Bucket[] = [
         id: "incon-1",
         numCol: "01.1",
         title: "Capital value mismatch",
-        summary:
-          "Headline valuation figures that contradict each other across the report.",
         error:
           "Front cover and executive summary both quote a Market Value of £1,750,000. The valuation rationale on page 14 concludes at £1,570,000 — a difference of £180,000 not explained anywhere in the report.",
         detail:
@@ -43,8 +40,6 @@ const buckets: Bucket[] = [
         id: "incon-2",
         numCol: "01.2",
         title: "Incorrect area schedule",
-        summary:
-          "Units shown on the floorplan but absent from the area schedule.",
         error:
           "Area schedule lists Flats 1, 3, 4 and 5. Flat 2 is described in the body text and shown on the floorplan but has been omitted from the schedule. Total floor area understates by 86 sq m and capital value by an estimated £450,000.",
         detail:
@@ -54,8 +49,6 @@ const buckets: Bucket[] = [
         id: "incon-3",
         numCol: "01.3",
         title: "Yield inconsistencies",
-        summary:
-          "The yield chosen doesn't follow from the rent, value, and costs cited.",
         error:
           "The rationale states a net initial yield of 6.25%. The rent (£185,000) and capital value (£2,800,000) cited, allowing for purchaser's costs of 6.8%, imply a net initial yield of 6.18%. Either the yield, the rent, the value, or the purchaser's costs is misstated.",
         detail:
@@ -74,8 +67,6 @@ const buckets: Bucket[] = [
         id: "rsn-1",
         numCol: "02.1",
         title: "Inconsistent comparable analysis",
-        summary:
-          "The comparable analysis doesn't support the reported value.",
         error:
           "Three comparables are tabled with rates ranging from £485 to £540 per sq ft. The subject is valued at £465 per sq ft, below the bottom of the range, but the rationale describes the subject as “consistent with the upper quartile of recent transactions in the area”.",
         detail:
@@ -85,8 +76,6 @@ const buckets: Bucket[] = [
         id: "rsn-2",
         numCol: "02.2",
         title: "Tenant covenant contradiction",
-        summary:
-          "Covenant assessments in the body that don't match the tenant data elsewhere in the report.",
         error:
           "Investment summary describes the tenant as “a strong covenant with audited accounts and a long trading history at the property”. Schedule of leases on page 9 records the tenant entering administration in February 2026.",
         detail:
@@ -96,8 +85,6 @@ const buckets: Bucket[] = [
         id: "rsn-3",
         numCol: "02.3",
         title: "Unexpired term inconsistency",
-        summary:
-          "Where the lease length and the valuation rationale don't square.",
         error:
           "Body text refers to the property as “long leasehold” and concludes it is “good security for long-term lending”. Lease abstract on page 6 shows 64 years unexpired — below the 80-year threshold of most major mortgage lenders. The rationale does not address how the unexpired term affects mortgageability or value.",
         detail:
@@ -116,8 +103,6 @@ const buckets: Bucket[] = [
         id: "req-1",
         numCol: "03.1",
         title: "Lender-specific clause missing",
-        summary:
-          "Standing instructions from the addressee lender that the report doesn't address.",
         error:
           "The addressee lender's standing valuation instructions require explicit confirmation that the property would let within 90 days of vacant possession at the rental figure quoted. The report quotes a market rent but does not address marketing period.",
         detail:
@@ -127,8 +112,6 @@ const buckets: Bucket[] = [
         id: "req-2",
         numCol: "03.2",
         title: "Client-specific requirements",
-        summary:
-          "Particular criteria specified by the client that the report doesn't fully meet.",
         error:
           "This client's standing instructions require comparable evidence to comprise at least 4 sale and 4 rental transactions completed within the last 6 months. The report includes 3 sale transactions, two of which are dated 9 and 11 months prior to the valuation date. The rationale does not address why the criteria has not been met.",
         detail:
@@ -138,8 +121,6 @@ const buckets: Bucket[] = [
         id: "req-3",
         numCol: "03.3",
         title: "Cladding/EWS1 disclosure missing",
-        summary:
-          "Mandatory cladding and external wall system commentary that lender mandates require but the report omits.",
         error:
           "The subject is described as a residential apartment block of 8 storeys, constructed 2008. The report does not address external wall systems or reference an EWS1 form. Most major lenders require explicit comment on EWS1 status for residential buildings above 11 metres.",
         detail:
@@ -200,7 +181,7 @@ export function CatchesList() {
                   isLast ? "" : "border-b border-rule"
                 }`}
                 style={{
-                  background: isOpen ? "#fafaf7" : "#ffffff",
+                  background: isOpen ? "#eff3f2" : "#ffffff",
                 }}
               >
                 <button
@@ -287,7 +268,7 @@ export function CatchesList() {
                     isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                   }`}
                 >
-                  <div className="overflow-hidden" style={{ background: "#fafaf7" }}>
+                  <div className="overflow-hidden" style={{ background: "#eff3f2" }}>
                     <div
                       className={`px-6 md:px-10 pt-8 pb-9 transition-opacity duration-300 [transition-timing-function:var(--ease-out-quart)] ${
                         isOpen ? "opacity-100 delay-150" : "opacity-0"
@@ -302,7 +283,7 @@ export function CatchesList() {
                               : "mt-8 pt-8 border-t border-rule"
                           }
                         >
-                          <div className="flex items-baseline gap-3 mb-2">
+                          <div className="flex items-baseline gap-3 mb-4">
                             <span className="font-mono text-[11px] text-slate-400 font-medium tracking-[0.04em]">
                               {ex.numCol}
                             </span>
@@ -310,9 +291,6 @@ export function CatchesList() {
                               {ex.title}
                             </h4>
                           </div>
-                          <p className="text-slate-700 text-[14.5px] leading-[1.55] m-0 mb-5 max-w-[62ch]">
-                            {ex.summary}
-                          </p>
                           <div className="grid gap-8 md:grid-cols-2 md:gap-10">
                             <div>
                               <h5 className="font-mono text-[10.5px] font-semibold tracking-[0.14em] uppercase text-slate-500 m-0 mb-3">
@@ -320,7 +298,7 @@ export function CatchesList() {
                               </h5>
                               <div
                                 className="border-l-2 py-3.5 px-[18px] text-ink text-[14px] italic leading-[1.65]"
-                                style={{ background: "#ffffff", borderLeftColor: "#0a2226" }}
+                                style={{ background: "#fafcfb", borderLeftColor: "#0a2226" }}
                               >
                                 {ex.error}
                               </div>
