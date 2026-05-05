@@ -7,6 +7,7 @@ type Example = {
   id: string;
   numCol: string;
   title: string;
+  summary: string;
   error: string;
   detail: string;
 };
@@ -23,108 +24,126 @@ const buckets: Bucket[] = [
   {
     id: "incon",
     numCol: "01",
-    title: "Inconsistencies",
+    title: "Spotting errors & inconsistencies",
     summary:
-      "Figures, dimensions, and calculations that don't reconcile across the report.",
+      "Flags mismatched figures, dimensions, and calculations across the report.",
     examples: [
       {
         id: "incon-1",
         numCol: "01.1",
         title: "Capital value mismatch",
+        summary:
+          "Headline valuation figures that contradict each other across the report.",
         error:
           "Front cover and executive summary both quote a Market Value of £1,750,000. The valuation rationale on page 14 concludes at £1,570,000 — a difference of £180,000 not explained anywhere in the report.",
         detail:
-          "The audit reads every value mention in the report — cover, summary, schedule, rationale, conclusion — and flags any figure that doesn't reconcile to the others.",
+          "Scans every mention of value — cover, summary, schedule, rationale, conclusion — and flags figures that don't reconcile.",
       },
       {
         id: "incon-2",
         numCol: "01.2",
         title: "Incorrect area schedule",
+        summary:
+          "Units shown on the floorplan but absent from the area schedule.",
         error:
           "Area schedule lists Flats 1, 3, 4 and 5. Flat 2 is described in the body text and shown on the floorplan but has been omitted from the schedule. Total floor area understates by 86 sq m and capital value by an estimated £450,000.",
         detail:
-          "For many valuation reports, the area schedule is relied upon to arrive at the opinion of value. A unit missed at this stage flows through to the valuation commentary and can produce an incorrect figure. The audit reads the report and the area schedule, and flags any unit that's described but not measured.",
+          "Cross-checks the floorplan, body text, and area schedule. Flags any unit described but not measured.",
       },
       {
         id: "incon-3",
         numCol: "01.3",
         title: "Yield inconsistencies",
+        summary:
+          "The yield chosen doesn't follow from the rent, value, and costs cited.",
         error:
           "The rationale states a net initial yield of 6.25%. The rent (£185,000) and capital value (£2,800,000) cited, allowing for purchaser's costs of 6.8%, imply a net initial yield of 6.18%. Either the yield, the rent, the value, or the purchaser's costs is misstated.",
         detail:
-          "The audit re-tests every quoted yield against the rent, value, and standard purchaser's cost conventions. Any combination that doesn't reconcile is flagged.",
+          "Re-tests every quoted yield against the rent, value, and standard purchaser's costs. Flags combinations that don't add up.",
       },
     ],
   },
   {
     id: "rsn",
     numCol: "02",
-    title: "Reasoning & judgement",
+    title: "Supporting reasoning & judgement",
     summary:
-      "Where the valuation justification doesn't support the reported value.",
+      "Queries any valuation justification that doesn't fully support the reported value.",
     examples: [
       {
         id: "rsn-1",
         numCol: "02.1",
         title: "Inconsistent comparable analysis",
+        summary:
+          "The comparable analysis doesn't support the reported value.",
         error:
           "Three comparables are tabled with rates ranging from £485 to £540 per sq ft. The subject is valued at £465 per sq ft, below the bottom of the range, but the rationale describes the subject as “consistent with the upper quartile of recent transactions in the area”.",
         detail:
-          "The audit reads the comparable analysis and forms a view on how each comparable relates to the subject property. Conclusions that don't follow from the evidence presented are flagged.",
+          "Reads the comparables, forms a view on how each relates to the subject, and flags conclusions that don't follow from the evidence.",
       },
       {
         id: "rsn-2",
         numCol: "02.2",
         title: "Tenant covenant contradiction",
+        summary:
+          "Covenant assessments in the body that don't match the tenant data elsewhere in the report.",
         error:
           "Investment summary describes the tenant as “a strong covenant with audited accounts and a long trading history at the property”. Schedule of leases on page 9 records the tenant entering administration in February 2026.",
         detail:
-          "Historic tenant information can carry over from previous reports. The audit reads the report as one document and flags rationale text that contradicts the tenant data elsewhere.",
+          "Reads the report as one document. Flags covenant statements that contradict the lease schedule or tenant data elsewhere.",
       },
       {
         id: "rsn-3",
         numCol: "02.3",
         title: "Unexpired term inconsistency",
+        summary:
+          "Where the lease length and the valuation rationale don't square.",
         error:
           "Body text refers to the property as “long leasehold” and concludes it is “good security for long-term lending”. Lease abstract on page 6 shows 64 years unexpired — below the 80-year threshold of most major mortgage lenders. The rationale does not address how the unexpired term affects mortgageability or value.",
         detail:
-          "The audit reads the lease abstract alongside the body's market commentary and flags conclusions that don't account for the term remaining.",
+          "Reads the lease abstract alongside the market commentary. Flags conclusions that ignore the unexpired term.",
       },
     ],
   },
   {
     id: "req",
     numCol: "03",
-    title: "Report-specific requirements",
+    title: "Surfacing report-specific requirements",
     summary:
-      "Compliance that varies by client and report type.",
+      "Reviews against the requirements that vary by client and report type.",
     examples: [
       {
         id: "req-1",
         numCol: "03.1",
         title: "Lender-specific clause missing",
+        summary:
+          "Standing instructions from the addressee lender that the report doesn't address.",
         error:
           "The addressee lender's standing valuation instructions require explicit confirmation that the property would let within 90 days of vacant possession at the rental figure quoted. The report quotes a market rent but does not address marketing period.",
         detail:
-          "It's a challenge reporting in line with many varying lender requirements. Lender guidance notes can be uploaded to the audit, which then checks each report against those specific requirements alongside the standard checks.",
+          "Upload lender guidance notes once. Each report is then checked against those specific requirements alongside the standard checks.",
       },
       {
         id: "req-2",
         numCol: "03.2",
         title: "Client-specific requirements",
+        summary:
+          "Particular criteria specified by the client that the report doesn't fully meet.",
         error:
           "This client's standing instructions require comparable evidence to comprise at least 4 sale and 4 rental transactions completed within the last 6 months. The report includes 3 sale transactions, two of which are dated 9 and 11 months prior to the valuation date. The rationale does not address why the criteria has not been met.",
         detail:
-          "Many clients have particular criteria for what they want included within the valuation report. Custom client requirements can be uploaded; once selected, the audit checks each report against those specific requirements alongside the standard checks.",
+          "Upload custom client criteria once. Select the client and the audit checks the report against those requirements alongside the standard checks.",
       },
       {
         id: "req-3",
         numCol: "03.3",
         title: "Cladding/EWS1 disclosure missing",
+        summary:
+          "Mandatory cladding and external wall system commentary that lender mandates require but the report omits.",
         error:
           "The subject is described as a residential apartment block of 8 storeys, constructed 2008. The report does not address external wall systems or reference an EWS1 form. Most major lenders require explicit comment on EWS1 status for residential buildings above 11 metres.",
         detail:
-          "In this situation the audit recognises the building is 8 storeys and flags that an EWS1 form needs to be addressed in the report. Lender requirements vary by building height — the audit knows the relevant thresholds for the addressee and surfaces any required disclosure that's missing before the report is submitted.",
+          "Recognises building height and applies the addressee lender's thresholds. Flags any required disclosure — such as EWS1 — that's missing.",
       },
     ],
   },
@@ -163,8 +182,9 @@ export function CatchesList() {
             Catching what a manual review might miss.
           </h2>
           <p className="m-0 text-slate-700 text-[16px] lg:text-[17.5px] leading-[1.6] max-w-[62ch]">
-            Spotting errors, flagging risks, and surfacing inconsistencies
-            before they slip through. All in just a couple of minutes.
+            Dimensions, comparables, Red Book logic, maths, lender-specific
+            guidance — all checked for consistency. Accept, reject, or amend
+            — the report stays yours throughout.
           </p>
         </div>
 
@@ -283,7 +303,7 @@ export function CatchesList() {
                               : "mt-8 pt-8 border-t border-rule"
                           }
                         >
-                          <div className="flex items-baseline gap-3 mb-4">
+                          <div className="flex items-baseline gap-3 mb-2">
                             <span className="font-mono text-[11px] text-slate-400 font-medium tracking-[0.04em]">
                               {ex.numCol}
                             </span>
@@ -291,6 +311,9 @@ export function CatchesList() {
                               {ex.title}
                             </h4>
                           </div>
+                          <p className="text-slate-700 text-[14.5px] leading-[1.55] m-0 mb-5 max-w-[62ch]">
+                            {ex.summary}
+                          </p>
                           <div className="grid gap-8 md:grid-cols-2 md:gap-10">
                             <div>
                               <h5 className="font-mono text-[10.5px] font-semibold tracking-[0.14em] uppercase text-slate-500 m-0 mb-3">
