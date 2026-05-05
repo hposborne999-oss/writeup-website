@@ -143,7 +143,7 @@ export function CatchesList() {
       <Container>
         <div className="mb-12">
           <h2 className="font-serif text-[36px] lg:text-[44px] font-normal leading-[1.1] tracking-[-0.02em] mb-[18px] max-w-[24ch]">
-            Catching what careful manual QA might miss.
+            Catching what a manual review might miss.
           </h2>
           <p className="m-0 text-slate-700 text-[16px] lg:text-[17.5px] leading-[1.6] max-w-[62ch]">
             Spotting errors, flagging risks, and surfacing inconsistencies
