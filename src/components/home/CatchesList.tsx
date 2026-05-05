@@ -181,7 +181,7 @@ export function CatchesList() {
                   isLast ? "" : "border-b border-rule"
                 }`}
                 style={{
-                  background: "#ffffff",
+                  background: isOpen ? "#fafaf7" : "#ffffff",
                 }}
               >
                 <button
@@ -268,7 +268,7 @@ export function CatchesList() {
                     isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                   }`}
                 >
-                  <div className="overflow-hidden" style={{ background: "#ffffff" }}>
+                  <div className="overflow-hidden" style={{ background: "#fafaf7" }}>
                     <div
                       className={`px-6 md:px-10 pt-8 pb-9 transition-opacity duration-300 [transition-timing-function:var(--ease-out-quart)] ${
                         isOpen ? "opacity-100 delay-150" : "opacity-0"
