@@ -182,9 +182,8 @@ export function CatchesList() {
             Catching what a manual review might miss.
           </h2>
           <p className="m-0 text-slate-700 text-[16px] lg:text-[17.5px] leading-[1.6] max-w-[62ch]">
-            Dimensions, comparables, Red Book logic, maths, lender-specific
-            guidance — all checked for consistency. Accept, reject, or amend
-            — the report stays yours throughout.
+            Spotting errors, flagging risks, and surfacing inconsistencies
+            before they slip through. All in just a couple of minutes.
           </p>
         </div>
 
