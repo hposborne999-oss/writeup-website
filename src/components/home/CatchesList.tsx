@@ -181,7 +181,7 @@ export function CatchesList() {
                   isLast ? "" : "border-b border-rule"
                 }`}
                 style={{
-                  background: isOpen ? "#fbfaf5" : "#ffffff",
+                  background: isOpen ? "#eff3f2" : "#ffffff",
                 }}
               >
                 <button
@@ -268,7 +268,7 @@ export function CatchesList() {
                     isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                   }`}
                 >
-                  <div className="overflow-hidden" style={{ background: "#fbfaf5" }}>
+                  <div className="overflow-hidden" style={{ background: "#eff3f2" }}>
                     <div
                       className={`px-6 md:px-10 pt-8 pb-9 transition-opacity duration-300 [transition-timing-function:var(--ease-out-quart)] ${
                         isOpen ? "opacity-100 delay-150" : "opacity-0"
@@ -296,7 +296,10 @@ export function CatchesList() {
                               <h5 className="font-mono text-[10.5px] font-semibold tracking-[0.14em] uppercase text-slate-500 m-0 mb-3">
                                 Error found
                               </h5>
-                              <div className="bg-white border-l-2 border-teal py-3.5 px-[18px] text-ink text-[14px] italic leading-[1.65]">
+                              <div
+                                className="border-l-2 py-3.5 px-[18px] text-ink text-[14px] italic leading-[1.65]"
+                                style={{ background: "#fafcfb", borderLeftColor: "#0a2226" }}
+                              >
                                 {ex.error}
                               </div>
                             </div>
