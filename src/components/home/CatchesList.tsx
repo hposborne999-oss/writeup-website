@@ -181,7 +181,7 @@ export function CatchesList() {
                   isLast ? "" : "border-b border-rule"
                 }`}
                 style={{
-                  background: isOpen ? "#eff3f2" : "#ffffff",
+                  background: "#ffffff",
                 }}
               >
                 <button
@@ -268,7 +268,7 @@ export function CatchesList() {
                     isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                   }`}
                 >
-                  <div className="overflow-hidden" style={{ background: "#eff3f2" }}>
+                  <div className="overflow-hidden" style={{ background: "#ffffff" }}>
                     <div
                       className={`px-6 md:px-10 pt-8 pb-9 transition-opacity duration-300 [transition-timing-function:var(--ease-out-quart)] ${
                         isOpen ? "opacity-100 delay-150" : "opacity-0"
@@ -298,7 +298,7 @@ export function CatchesList() {
                               </h5>
                               <div
                                 className="border-l-2 py-3.5 px-[18px] text-ink text-[14px] italic leading-[1.65]"
-                                style={{ background: "#fafcfb", borderLeftColor: "#0a2226" }}
+                                style={{ background: "#ffffff", borderLeftColor: "#0a2226" }}
                               >
                                 {ex.error}
                               </div>
