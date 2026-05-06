@@ -12,7 +12,7 @@ export function Hero() {
           to proofread.
         </h1>
         <p className="text-[17px] lg:text-[19.5px] leading-[1.55] text-slate-700 max-w-[62ch] mb-10">
-          WriteUp is an AI auditing tool built for valuation surveyors.
+          WriteUp is an AI report auditing tool built for valuation surveyors.
           Faster review, fewer oversights, and reports that stand up under
           scrutiny.
         </p>
