@@ -130,6 +130,33 @@ const buckets: Bucket[] = [
   },
 ];
 
+// Accordion + scroll share one duration and one easing curve so they read
+// as a single, confident motion. ease-out-quart polynomial — visually
+// matches the --ease-out-quart cubic-bezier token used throughout the site.
+const ACCORDION_DURATION_MS = 700;
+const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
+
+const smoothScrollTo = (targetY: number, duration: number) => {
+  if (typeof window === "undefined") return;
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    window.scrollTo(0, targetY);
+    return;
+  }
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+  if (Math.abs(distance) < 2) return;
+  const startTime = performance.now();
+  const step = (now: number) => {
+    const t = Math.min((now - startTime) / duration, 1);
+    window.scrollTo(0, startY + distance * easeOutQuart(t));
+    if (t < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+};
+
 export function CatchesList() {
   // Open the first bucket by default — invites the reader to discover
   // the inner structure rather than confronting three closed rows.
@@ -167,10 +194,10 @@ export function CatchesList() {
     }
 
     const navOffset = 80; // 64px sticky nav + a little breathing room
-    window.scrollTo({
-      top: triggerAbsTop - collapseAdjustment - navOffset,
-      behavior: "smooth",
-    });
+    smoothScrollTo(
+      triggerAbsTop - collapseAdjustment - navOffset,
+      ACCORDION_DURATION_MS,
+    );
   };
 
   return (
@@ -285,14 +312,14 @@ export function CatchesList() {
                   id={panelId}
                   role="region"
                   aria-labelledby={triggerId}
-                  className={`grid transition-[grid-template-rows] duration-500 [transition-timing-function:var(--ease-emphasis)] ${
+                  className={`grid transition-[grid-template-rows] duration-700 [transition-timing-function:var(--ease-out-quart)] ${
                     isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                   }`}
                 >
                   <div className="overflow-hidden" style={{ background: "#eff3f2" }}>
                     <div
-                      className={`px-6 md:px-10 pt-8 pb-9 transition-opacity duration-300 [transition-timing-function:var(--ease-out-quart)] ${
-                        isOpen ? "opacity-100 delay-150" : "opacity-0"
+                      className={`px-6 md:px-10 pt-8 pb-9 transition-opacity duration-[400ms] [transition-timing-function:var(--ease-out-quart)] ${
+                        isOpen ? "opacity-100 delay-300" : "opacity-0"
                       }`}
                     >
                       {b.examples.map((ex, exIdx) => (
