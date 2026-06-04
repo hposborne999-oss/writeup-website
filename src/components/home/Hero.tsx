@@ -13,7 +13,9 @@ export function Hero() {
         </h1>
         <p className="text-[17px] lg:text-[19.5px] leading-[1.55] text-slate-700 max-w-[62ch] mb-10">
           Built by a practising MRICS surveyor. Faster review, fewer
-          oversights, and reports that stand up under scrutiny.
+          oversights,
+          <br />
+          and reports that stand up under scrutiny.
         </p>
         <div className="flex flex-wrap gap-[14px] items-center">
           <Button
