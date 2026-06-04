@@ -131,10 +131,12 @@ const buckets: Bucket[] = [
 ];
 
 // Accordion + scroll share one duration and one easing curve so they read
-// as a single, confident motion. ease-out-quart polynomial — visually
-// matches the --ease-out-quart cubic-bezier token used throughout the site.
+// as a single, confident motion. Symmetric ease-in-out (cosine) distributes
+// motion across the full duration, so the panel doesn't visually "finish"
+// before the scroll catches up. CSS side uses cubic-bezier(0.45, 0, 0.55, 1)
+// which closely tracks this curve.
 const ACCORDION_DURATION_MS = 700;
-const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
+const easeInOut = (t: number) => 0.5 * (1 - Math.cos(Math.PI * t));
 
 const smoothScrollTo = (targetY: number, duration: number) => {
   if (typeof window === "undefined") return;
@@ -151,10 +153,13 @@ const smoothScrollTo = (targetY: number, duration: number) => {
   const startTime = performance.now();
   const step = (now: number) => {
     const t = Math.min((now - startTime) / duration, 1);
-    window.scrollTo(0, startY + distance * easeOutQuart(t));
+    window.scrollTo(0, startY + distance * easeInOut(t));
     if (t < 1) requestAnimationFrame(step);
   };
-  requestAnimationFrame(step);
+  // Defer one frame so the rAF scroll begins in the same paint as the CSS
+  // transition triggered by React's commit — otherwise the scroll can lead
+  // or lag the panel by a frame and the motion reads as disjointed.
+  requestAnimationFrame(() => requestAnimationFrame(step));
 };
 
 export function CatchesList() {
@@ -312,7 +317,7 @@ export function CatchesList() {
                   id={panelId}
                   role="region"
                   aria-labelledby={triggerId}
-                  className={`grid transition-[grid-template-rows] duration-700 [transition-timing-function:var(--ease-out-quart)] ${
+                  className={`grid transition-[grid-template-rows] duration-700 [transition-timing-function:cubic-bezier(0.45,0,0.55,1)] ${
                     isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                   }`}
                 >

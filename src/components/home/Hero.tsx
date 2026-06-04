@@ -7,7 +7,9 @@ export function Hero() {
       <Container>
         <h1 className="font-serif font-normal text-[44px] sm:text-[60px] lg:text-[76px] leading-[1.02] tracking-[-0.025em] text-ink mb-7 max-w-[22ch]">
           RICS Tech Partner AI{" "}
-          <em className="italic text-teal">review</em> for valuation reports.
+          <em className="italic text-teal">review</em>
+          <br />
+          for valuation reports.
         </h1>
         <p className="text-[17px] lg:text-[19.5px] leading-[1.55] text-slate-700 max-w-[62ch] mb-10">
           Built by a practising MRICS surveyor. Faster review, fewer
