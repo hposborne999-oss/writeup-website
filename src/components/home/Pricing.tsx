@@ -41,7 +41,7 @@ const tiers: Tier[] = [
   },
   {
     tier: "Enterprise",
-    audience: "For panel managers and lender QA programmes.",
+    audience: "For panel managers and large valuation firms.",
     features:
       "Unlimited seats, custom volume, dedicated onboarding.",
     amount: "Custom",
