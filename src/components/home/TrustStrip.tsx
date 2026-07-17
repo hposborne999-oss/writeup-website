@@ -22,12 +22,12 @@ export function TrustStrip() {
   return (
     <section className="bg-paper py-14 lg:py-16 border-b border-rule">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0">
           {items.map((item, i) => (
             <div
               key={item.num}
-              className={`flex flex-col gap-2 md:pr-8 ${
-                i < items.length - 1 ? "md:border-r border-rule" : ""
+              className={`flex flex-col items-center text-center gap-2 md:px-7 ${
+                i > 0 ? "md:border-l border-rule" : ""
               }`}
             >
               <div className="font-mono text-[10px] font-medium tracking-[0.16em] uppercase text-slate-500">
@@ -36,7 +36,7 @@ export function TrustStrip() {
               <h3 className="text-[16px] lg:text-[17px] font-semibold text-ink leading-[1.3] tracking-[-0.005em] m-0">
                 {item.title}
               </h3>
-              <p className="text-[14px] lg:text-[14.5px] leading-[1.55] text-slate-700 m-0">
+              <p className="text-[14px] lg:text-[14.5px] leading-[1.55] text-slate-700 m-0 max-w-[30ch]">
                 {item.body}
               </p>
             </div>

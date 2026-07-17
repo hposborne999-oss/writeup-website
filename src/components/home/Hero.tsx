@@ -7,9 +7,14 @@ export function Hero() {
       <div className="hero-audit-grid">
         {/* Left — copy (aligned to the site container's left edge) */}
         <div className="hero-audit-copy">
-          <h1 className="font-serif font-normal text-[44px] sm:text-[54px] lg:text-[62px] leading-[1.03] tracking-[-0.025em] text-ink mb-7 max-w-[18ch]">
+          <h1 className="font-serif font-normal text-[44px] sm:text-[54px] lg:text-[62px] leading-[1.03] tracking-[-0.025em] text-ink mb-7 max-w-[24ch]">
             Faster <em className="italic text-teal">review</em>, fewer
-            oversights, and reports that stand up under scrutiny.
+            <br />
+            oversights, and
+            <br />
+            reports that stand up
+            <br />
+            under scrutiny.
           </h1>
           <p className="text-[17px] lg:text-[19px] leading-[1.55] text-slate-700 max-w-[46ch] mb-10">
             A RICS Tech Partner AI review for valuation reports, built by a

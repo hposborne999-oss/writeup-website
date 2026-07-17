@@ -137,7 +137,7 @@ summary::marker {
  * ----------------------------------------------------------- */
 
 /* Hero two-column layout (copy left, band bleeds off the right edge) */
-.hero-audit-grid { display: grid; grid-template-columns: 1fr; align-items: center; gap: 2.5rem; width: 100%; }
+.hero-audit-grid { display: grid; grid-template-columns: 1fr; align-items: center; gap: 3.5rem; width: 100%; }
 .hero-audit-copy { padding: 0 2rem; }
 .hero-audit-stage { padding: 0 2rem; }
 @media (min-width: 1024px) {
@@ -151,8 +151,8 @@ summary::marker {
   position: relative;
   overflow: hidden;
   border-radius: 18px 0 0 18px;
-  width: 760px;
-  padding: 54px 0 0 60px;
+  width: 690px;
+  padding: 54px 0 0 54px;
   background: linear-gradient(158deg, #123f3b 0%, #0b2a2b 50%, #06191c 100%);
 }
 .audit-band::before {

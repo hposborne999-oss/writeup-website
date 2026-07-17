@@ -8,7 +8,7 @@ export function FounderProse() {
       className="py-20 lg:py-[104px] bg-white border-b border-rule scroll-mt-20"
     >
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[1fr_300px] lg:gap-16 lg:items-center">
+        <div className="grid gap-12 lg:grid-cols-[1fr_300px] lg:gap-16 lg:items-start">
           {/* Prose */}
           <div className="max-w-[640px]">
             <span className="eyebrow block mb-6">From the founder</span>
@@ -26,21 +26,19 @@ export function FounderProse() {
                 giving back time to spend on more valuable work.&rdquo;
               </p>
             </div>
-            <div className="flex items-center gap-3.5 mt-8 pt-6 border-t border-rule">
-              <div className="w-11 h-11 rounded-full bg-petrol text-white flex items-center justify-center text-sm font-semibold">
-                HO
-              </div>
-              <div className="text-[13.5px] text-slate-700">
-                <strong className="block text-ink text-[14.5px] font-semibold">
-                  Harry Osborne
-                </strong>
-                <span className="text-slate-500">MRICS · Founder, WriteUp</span>
-              </div>
+            <div className="mt-8 pt-6 border-t border-rule">
+              <strong className="text-ink text-[15px] font-bold">
+                Harry Osborne{" "}
+                <span className="font-medium text-slate-500">MRICS</span>
+              </strong>
+              <span className="block text-slate-500 text-[13.5px] mt-0.5">
+                WriteUp Founder
+              </span>
             </div>
           </div>
 
-          {/* Founder photo */}
-          <div className="max-w-[280px] lg:max-w-none">
+          {/* Founder photo — nudged down to sit level with the quote */}
+          <div className="max-w-[280px] lg:max-w-none lg:mt-10">
             <Image
               src="/harry-osborne.jpg"
               alt="Harry Osborne, MRICS — founder of WriteUp"
