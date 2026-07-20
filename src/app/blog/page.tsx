@@ -6,7 +6,7 @@ import { Container } from "@/components/Container";
 import { posts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "The WriteUp Journal — notes on getting valuation reports right",
+  title: "The WriteUp Blog",
   description:
     "Practical writing on review, the Red Book, and the craft of valuation — from a practising MRICS surveyor.",
 };
@@ -22,9 +22,8 @@ export default function BlogIndex() {
           <Container>
             {/* Page header */}
             <div className="pt-16 lg:pt-[72px] pb-10">
-              <span className="eyebrow block mb-[18px]">The WriteUp Journal</span>
               <h1 className="font-serif font-normal text-[40px] sm:text-[48px] lg:text-[56px] leading-[1.05] tracking-[-0.02em] text-ink mb-4 max-w-[20ch]">
-                Notes on getting valuation reports right.
+                The WriteUp Blog
               </h1>
               <p className="text-[17px] lg:text-[18px] leading-[1.55] text-slate-700 max-w-[56ch]">
                 Practical writing on review, the Red Book, and the craft of

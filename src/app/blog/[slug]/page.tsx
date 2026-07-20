@@ -21,7 +21,7 @@ export async function generateMetadata({
   const post = posts.find((p) => p.slug === slug);
   if (!post) return { title: "Not found — WriteUp" };
   return {
-    title: `${post.title} — The WriteUp Journal`,
+    title: `${post.title} — The WriteUp Blog`,
     description: post.excerpt,
   };
 }
@@ -45,7 +45,7 @@ export default async function Article({
               href="/blog"
               className="inline-flex items-center gap-1.5 text-[13px] font-medium text-slate-500 hover:text-ink transition-colors duration-150 mb-12"
             >
-              <span className="text-teal">←</span> The Journal
+              <span className="text-teal">←</span> The Blog
             </Link>
 
             <div className="flex flex-wrap items-center gap-x-3.5 gap-y-1 mb-6 font-mono text-[11px] tracking-[0.1em] uppercase text-slate-500">
@@ -75,7 +75,7 @@ export default async function Article({
                 href="/blog"
                 className="inline-flex items-center gap-1.5 text-[14px] font-medium text-ink hover:text-teal transition-colors duration-150"
               >
-                <span className="text-teal">←</span> Back to the Journal
+                <span className="text-teal">←</span> Back to the Blog
               </Link>
             </div>
           </Container>
