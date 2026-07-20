@@ -7,6 +7,7 @@ const navLinks = [
   { href: "/#what-it-catches", label: "Audit" },
   { href: "/#from-the-founder", label: "About" },
   { href: "/#pricing", label: "Pricing" },
+  { href: "/blog", label: "Blog" },
 ];
 
 const SIGN_IN_URL = "https://writeup-app.vercel.app/#ai";
