@@ -10,8 +10,9 @@ export const metadata: Metadata = {
     "Practical writing on review, the Red Book, and the craft of valuation — from a practising MRICS surveyor.",
 };
 
+// Softened / desaturated deep green — calmer than the hero band's teal-green.
 const FEATURE_BG =
-  "linear-gradient(158deg,#123f3b 0%,#0b2a2b 55%,#08201f 100%)";
+  "linear-gradient(158deg,#1b3330 0%,#122423 55%,#0d1e1d 100%)";
 
 export default function BlogIndex() {
   const [featured, ...rest] = posts;
@@ -19,7 +20,7 @@ export default function BlogIndex() {
   return (
     <>
       <Nav />
-      <main className="flex-1 bg-[#f0eee7]">
+      <main className="flex-1 bg-paper">
         <div className="max-w-[1120px] mx-auto px-8">
           {/* Header */}
           <header className="pt-16 lg:pt-[76px] pb-11">
@@ -61,7 +62,7 @@ export default function BlogIndex() {
               <Link
                 key={p.slug}
                 href={`/blog/${p.slug}`}
-                className="group flex flex-col bg-white rounded-[22px] p-8 lg:p-9 min-h-[228px] shadow-[0_1px_2px_rgba(10,34,38,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-38px_rgba(10,34,38,0.3)]"
+                className="group flex flex-col bg-white rounded-[22px] p-8 lg:p-9 min-h-[228px] border border-rule shadow-[0_4px_20px_-14px_rgba(10,34,38,0.16)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-38px_rgba(10,34,38,0.3)]"
               >
                 <div className="text-[12.5px] text-slate-500 mb-4">
                   {p.category} · {p.readTime}

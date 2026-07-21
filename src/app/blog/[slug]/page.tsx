@@ -37,7 +37,7 @@ export default async function Article({
   return (
     <>
       <Nav />
-      <main className="flex-1 bg-[#f0eee7]">
+      <main className="flex-1 bg-paper">
         <div className="max-w-[820px] mx-auto px-8 py-12 lg:py-16">
           <Link
             href="/blog"
@@ -47,7 +47,7 @@ export default async function Article({
           </Link>
 
           {/* Reading surface */}
-          <article className="bg-white rounded-[28px] p-8 sm:p-12 lg:p-14 mt-5">
+          <article className="bg-white rounded-[28px] border border-rule p-8 sm:p-12 lg:p-14 mt-5">
             <div className="text-[13px] text-slate-500 mb-6">
               {post.category} · {post.date} · {post.readTime}
             </div>
