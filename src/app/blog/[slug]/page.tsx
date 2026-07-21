@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { Container } from "@/components/Container";
 import { posts } from "@/lib/posts";
 
 type Params = { slug: string };
@@ -38,23 +37,22 @@ export default async function Article({
   return (
     <>
       <Nav />
-      <main className="flex-1">
-        <article className="py-14 lg:py-20">
-          <Container variant="narrow">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-1.5 text-[13px] font-medium text-slate-500 hover:text-ink transition-colors duration-150 mb-12"
-            >
-              <span className="text-teal">←</span> The Blog
-            </Link>
+      <main className="flex-1 bg-[#f0eee7]">
+        <div className="max-w-[820px] mx-auto px-8 py-12 lg:py-16">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-1.5 text-[13.5px] font-medium text-slate-500 hover:text-ink transition-colors duration-150"
+          >
+            <span className="text-teal">←</span> The Blog
+          </Link>
 
-            <div className="flex flex-wrap items-center gap-x-3.5 gap-y-1 mb-6 font-mono text-[11px] tracking-[0.1em] uppercase text-slate-500">
-              <span className="text-teal">{post.category}</span>
-              <span>{post.date}</span>
-              <span>{post.readTime}</span>
+          {/* Reading surface */}
+          <article className="bg-white rounded-[28px] p-8 sm:p-12 lg:p-14 mt-5">
+            <div className="text-[13px] text-slate-500 mb-6">
+              {post.category} · {post.date} · {post.readTime}
             </div>
 
-            <h1 className="font-serif font-normal text-[36px] lg:text-[52px] leading-[1.06] tracking-[-0.02em] text-ink mb-6">
+            <h1 className="font-serif font-normal text-[34px] sm:text-[42px] lg:text-[50px] leading-[1.06] tracking-[-0.02em] text-ink mb-6">
               {post.title}
             </h1>
 
@@ -69,17 +67,17 @@ export default async function Article({
                 </p>
               ))}
             </div>
+          </article>
 
-            <div className="mt-16 pt-8 border-t border-rule">
-              <Link
-                href="/blog"
-                className="inline-flex items-center gap-1.5 text-[14px] font-medium text-ink hover:text-teal transition-colors duration-150"
-              >
-                <span className="text-teal">←</span> Back to the Blog
-              </Link>
-            </div>
-          </Container>
-        </article>
+          <div className="mt-8">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1.5 text-[14px] font-medium text-ink hover:text-teal transition-colors duration-150"
+            >
+              <span className="text-teal">←</span> Back to the Blog
+            </Link>
+          </div>
+        </div>
       </main>
       <Footer />
     </>
