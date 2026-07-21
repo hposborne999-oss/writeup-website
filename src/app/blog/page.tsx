@@ -28,11 +28,18 @@ export default function BlogIndex() {
               The WriteUp Blog
             </h1>
             <p className="text-[17px] lg:text-[18px] leading-[1.6] text-slate-700 max-w-[52ch]">
-              Practical writing on review, the Red Book, and the craft of
-              valuation — from a practising surveyor.
+              A few of our thoughts on the industry, formed as blog posts.
             </p>
           </header>
 
+          {posts.length === 0 ? (
+            <div className="pb-28 lg:pb-40">
+              <p className="text-[16px] text-slate-500">
+                The first posts are on their way — check back soon.
+              </p>
+            </div>
+          ) : (
+            <>
           {/* Featured — soft petrol card */}
           <Link
             href={`/blog/${featured.slug}`}
@@ -82,6 +89,8 @@ export default function BlogIndex() {
               </Link>
             ))}
           </div>
+            </>
+          )}
         </div>
       </main>
       <Footer />
