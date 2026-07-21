@@ -10,7 +10,7 @@ const navLinks = [
   { href: "/blog", label: "Blog" },
 ];
 
-const SIGN_IN_URL = "https://writeup-app.vercel.app/#ai";
+const SIGN_IN_URL = "https://writeup-app.vercel.app/#audit";
 const DEMO_MAILTO =
   "mailto:Harry@usewriteup.co.uk?subject=WriteUp%20demo%20request";
 

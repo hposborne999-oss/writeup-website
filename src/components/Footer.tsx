@@ -12,7 +12,7 @@ const productLinks: FooterLink[] = [
   { href: "/#what-it-catches", label: "Audit" },
   { href: "/#pricing", label: "Pricing" },
   {
-    href: "https://writeup-app.vercel.app/#ai",
+    href: "https://writeup-app.vercel.app/#audit",
     label: "Sign in",
     external: true,
   },
