@@ -16,7 +16,7 @@ const tiers: Tier[] = [
     tier: "Solo",
     audience: "For individual registered valuers.",
     features:
-      "One user, includes 50 report audits per month, full access to the AI Audit features.",
+      "One user, includes 25 report audits per month, full access to the AI Audit features.",
     amount: "£99",
     amountSuffix: " / mo",
     cta: {
@@ -29,8 +29,8 @@ const tiers: Tier[] = [
     tier: "Team",
     audience: "For valuation teams and lender-side QA.",
     features:
-      "4 users, includes 200 report audits per month, full access to the AI Audit features.",
-    amount: "£299",
+      "4 users, includes 100 report audits per month, full access to the AI Audit features.",
+    amount: "£349",
     amountSuffix: " / mo",
     cta: {
       label: "Request a demo",
