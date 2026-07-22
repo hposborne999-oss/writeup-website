@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { getPosts } from "@/lib/feed";
+import { getPosts } from "@/lib/posts";
 
 // Refresh from Notion at most once an hour — new posts appear without a redeploy.
 export const revalidate = 3600;
