@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { getPosts } from "@/lib/notion";
+import { getPosts } from "@/lib/feed";
 
 // Refresh from Notion at most once an hour — new posts appear without a redeploy.
 export const revalidate = 3600;
@@ -69,7 +69,7 @@ export default async function BlogIndex() {
               <div className="grid md:grid-cols-2 gap-6 pb-24">
                 {rest.map((p) => (
                   <Link
-                    key={p.id}
+                    key={p.slug}
                     href={`/blog/${p.slug}`}
                     className="group flex flex-col bg-white rounded-[22px] p-8 lg:p-9 min-h-[228px] border border-rule shadow-[0_4px_20px_-14px_rgba(10,34,38,0.16)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-38px_rgba(10,34,38,0.3)]"
                   >
