@@ -11,8 +11,6 @@ const navLinks = [
 ];
 
 const SIGN_IN_URL = "https://writeup-app.vercel.app/#audit";
-const DEMO_MAILTO =
-  "mailto:Harry@usewriteup.co.uk?subject=WriteUp%20demo%20request";
 
 export function Nav() {
   return (
@@ -49,7 +47,7 @@ export function Nav() {
           >
             Sign in
           </a>
-          <Button href={DEMO_MAILTO}>Request a demo</Button>
+          <Button href="/demo">Book a demo</Button>
         </div>
       </Container>
     </nav>

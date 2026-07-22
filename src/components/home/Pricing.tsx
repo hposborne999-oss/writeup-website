@@ -20,8 +20,8 @@ const tiers: Tier[] = [
     amount: "£99",
     amountSuffix: " / mo",
     cta: {
-      label: "Request a demo",
-      href: "mailto:Harry@usewriteup.co.uk?subject=WriteUp%20Solo%20demo%20request",
+      label: "Book a demo",
+      href: "/demo",
       variant: "secondary",
     },
   },
@@ -33,8 +33,8 @@ const tiers: Tier[] = [
     amount: "£349",
     amountSuffix: " / mo",
     cta: {
-      label: "Request a demo",
-      href: "mailto:Harry@usewriteup.co.uk?subject=WriteUp%20Team%20demo%20request",
+      label: "Book a demo",
+      href: "/demo",
       variant: "primary",
     },
     featured: true,

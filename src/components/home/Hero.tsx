@@ -21,11 +21,8 @@ export function Hero() {
             practising MRICS surveyor.
           </p>
           <div className="flex flex-wrap gap-[14px] items-center">
-            <Button
-              href="mailto:Harry@usewriteup.co.uk?subject=WriteUp%20demo%20request"
-              size="lg"
-            >
-              Request a demo
+            <Button href="/demo" size="lg">
+              Book a demo with the founder
             </Button>
             <Button href="#from-the-founder" variant="secondary" size="lg">
               About WriteUp

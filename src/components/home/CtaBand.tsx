@@ -12,11 +12,8 @@ export function CtaBand() {
           Book a demo with the founder, run your reports through it live, and
           see what it catches.
         </p>
-        <Button
-          href="mailto:Harry@usewriteup.co.uk?subject=WriteUp%20demo%20request"
-          size="lg"
-        >
-          Book a demo
+        <Button href="/demo" size="lg">
+          Book a demo with the founder
         </Button>
       </Container>
     </section>
