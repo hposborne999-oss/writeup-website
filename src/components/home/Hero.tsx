@@ -22,7 +22,7 @@ export function Hero() {
           </p>
           <div className="flex flex-wrap gap-[14px] items-center">
             <Button href="/demo" size="lg">
-              Book a demo with the founder
+              Book a demo
             </Button>
             <Button href="#from-the-founder" variant="secondary" size="lg">
               About WriteUp

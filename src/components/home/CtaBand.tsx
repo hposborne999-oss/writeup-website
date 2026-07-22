@@ -13,7 +13,7 @@ export function CtaBand() {
           see what it catches.
         </p>
         <Button href="/demo" size="lg">
-          Book a demo with the founder
+          Book a demo
         </Button>
       </Container>
     </section>
