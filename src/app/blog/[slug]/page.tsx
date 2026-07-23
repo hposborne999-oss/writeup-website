@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { getPost, getPosts } from "@/lib/posts";
+import { getPost, getPosts } from "@/lib/feed";
 
 export const revalidate = 3600;
 
