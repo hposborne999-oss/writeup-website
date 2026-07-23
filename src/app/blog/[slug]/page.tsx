@@ -38,7 +38,7 @@ export default async function Article({
     <>
       <Nav />
       <main className="flex-1 bg-paper">
-        <div className="max-w-[820px] mx-auto px-8 py-12 lg:py-16">
+        <div className="max-w-[960px] mx-auto px-8 py-12 lg:py-16">
           <Link
             href="/blog"
             className="inline-flex items-center gap-1.5 text-[13.5px] font-medium text-slate-500 hover:text-ink transition-colors duration-150"
