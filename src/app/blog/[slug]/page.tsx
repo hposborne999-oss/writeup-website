@@ -51,7 +51,7 @@ export default async function Article({
               {post.category} · {post.date} · {post.readTime}
             </div>
 
-            <h1 className="font-serif font-normal text-[34px] sm:text-[42px] lg:text-[50px] leading-[1.06] tracking-[-0.02em] text-ink mb-6">
+            <h1 className="font-semibold text-[32px] sm:text-[40px] lg:text-[46px] leading-[1.08] tracking-[-0.025em] text-ink mb-6">
               {post.title}
             </h1>
 

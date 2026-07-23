@@ -26,7 +26,7 @@ export default async function BlogIndex() {
       <main className="flex-1 bg-paper">
         <div className="max-w-[1120px] mx-auto px-8">
           <header className="pt-16 lg:pt-[76px] pb-11">
-            <h1 className="font-serif font-normal text-[46px] sm:text-[56px] lg:text-[68px] leading-[1.02] tracking-[-0.02em] text-ink mb-4">
+            <h1 className="font-semibold text-[42px] sm:text-[52px] lg:text-[60px] leading-[1.04] tracking-[-0.03em] text-ink mb-4">
               The WriteUp Blog
             </h1>
             <p className="text-[17px] lg:text-[18px] leading-[1.6] text-slate-700 max-w-[52ch]">
@@ -50,7 +50,7 @@ export default async function BlogIndex() {
                 <div className="text-[13px] text-white/60 mb-5">
                   {featured.category} · {featured.date}
                 </div>
-                <h2 className="font-serif font-normal text-[30px] sm:text-[36px] lg:text-[42px] leading-[1.1] tracking-[-0.015em] mb-4 max-w-[22ch]">
+                <h2 className="font-semibold text-[28px] sm:text-[34px] lg:text-[38px] leading-[1.12] tracking-[-0.025em] mb-4 max-w-[24ch]">
                   {featured.title}
                 </h2>
                 {featured.excerpt && (
@@ -76,7 +76,7 @@ export default async function BlogIndex() {
                     <div className="text-[12.5px] text-slate-500 mb-4">
                       {p.category} · {p.date}
                     </div>
-                    <h3 className="font-serif font-normal text-[25px] lg:text-[28px] leading-[1.12] tracking-[-0.01em] text-ink mb-3">
+                    <h3 className="font-semibold text-[22px] lg:text-[24px] leading-[1.15] tracking-[-0.02em] text-ink mb-3">
                       {p.title}
                     </h3>
                     {p.excerpt && (
