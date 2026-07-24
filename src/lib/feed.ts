@@ -9,6 +9,12 @@ import sanitizeHtml from "sanitize-html";
 const FEED_URL =
   "https://app.trysoro.com/api/rss/949c8ce4-5af2-491e-a51f-23aa59da0749";
 
+// Posts to keep off the site even if Soro publishes them (weak/off-brand).
+// Match on the generated slug — add a line to hide another.
+const HIDDEN_SLUGS = new Set<string>([
+  "red-book-compliance-checklist-for-valuers",
+]);
+
 const parser: Parser<unknown, { contentEncoded?: string }> = new Parser({
   timeout: 8000,
   customFields: { item: [["content:encoded", "contentEncoded"]] },
@@ -96,11 +102,12 @@ function itemToPost(item: Parser.Item): Post {
 /** All published posts, newest first. */
 export async function getPosts(): Promise<Post[]> {
   const items = await fetchItems();
-  return items.map(itemToPost);
+  return items.map(itemToPost).filter((p) => !HIDDEN_SLUGS.has(p.slug));
 }
 
 /** One post by slug, with its sanitised HTML body. */
 export async function getPost(slug: string): Promise<FullPost | null> {
+  if (HIDDEN_SLUGS.has(slug)) return null;
   const items = await fetchItems();
   const item = items.find((i) => slugify((i.title || "").trim()) === slug) as
     | (Parser.Item & { contentEncoded?: string })
