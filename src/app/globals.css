@@ -221,6 +221,16 @@ summary::marker {
 .audit-card .detail .lab { font-family: var(--font-mono); font-size: 8.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-slate-500); margin-bottom: 7px; }
 .audit-card .detail p { margin: 0; font-size: 11px; font-style: italic; color: var(--color-slate-500); line-height: 1.6; }
 
+/* Mobile only — the card is a fixed-scale desktop mockup. iOS auto-inflates
+ * its text, which pushed the two nowrap figure columns off-screen. Pin the
+ * text to its designed size (no-op on desktop) and stack the figures on
+ * phones so nothing overflows. Desktop layout is untouched. */
+.audit-card { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+@media (max-width: 640px) {
+  .audit-card .cols { grid-template-columns: 1fr; gap: 12px; }
+  .audit-card .sug-box { max-width: 100%; }
+}
+
 /* -----------------------------------------------------------
  * Blog article body — styles the sanitised HTML that comes from
  * the Soro RSS feed (rendered via dangerouslySetInnerHTML), so
