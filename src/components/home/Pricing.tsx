@@ -27,7 +27,7 @@ const tiers: Tier[] = [
   },
   {
     tier: "Team",
-    audience: "For valuation teams and lender-side QA.",
+    audience: "For valuation teams.",
     features:
       "4 users, includes 100 report audits per month, full access to the AI Audit features.",
     amount: "£349",
