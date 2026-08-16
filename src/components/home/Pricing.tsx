@@ -17,7 +17,7 @@ const tiers: Tier[] = [
     audience: "For individual registered valuers.",
     features:
       "One user, includes 25 report audits per month, full access to the AI Audit features.",
-    amount: "£99",
+    amount: "£149",
     amountSuffix: " / mo",
     cta: {
       label: "Book a demo",
