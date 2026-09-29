@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type Variant = "primary" | "secondary";
+type Variant = "primary" | "secondary" | "teal";
 type Size = "default" | "lg";
 
 type ButtonProps = {
@@ -19,6 +19,7 @@ const variants: Record<Variant, string> = {
   primary: "bg-ink text-white hover:bg-petrol",
   secondary:
     "bg-transparent text-ink border border-rule hover:bg-white hover:border-ink",
+  teal: "bg-teal text-white hover:bg-petrol",
 };
 
 const sizes: Record<Size, string> = {
