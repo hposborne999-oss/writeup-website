@@ -21,7 +21,7 @@ export default function ExampleAuditPage() {
   return (
     <>
       <Nav tone="dark" />
-      <main className="flex-1 app-grid">
+      <main className="flex-1 bg-white">
         <div className="max-w-[900px] mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-20 sm:pb-24">
           <header className="mb-8 sm:mb-10">
             <h1 className="font-sans font-semibold text-[30px] sm:text-[40px] leading-[1.1] tracking-[-0.025em] text-ink mb-4">

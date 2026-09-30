@@ -324,16 +324,6 @@ summary::marker {
 }
 .app-render button { cursor: pointer; }
 
-/* The app's faint grid ground (Audit Console, AiAudit.tsx): 1px slate lines
- * at 2.5% every 32px on slate-50. */
-.app-grid {
-  background-color: #f8fafc;
-  background-image:
-    linear-gradient(rgba(15, 23, 42, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.025) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
 /* Phones: stack each finding's Current / Suggested columns (the component
  * lays them side by side with a plain `flex`, ~85px each at 375px), and keep
  * a wrapped section label off the tick icon. */
