@@ -8,7 +8,7 @@ import { AuditVisitBeacon } from "@/components/example-audit/AuditVisitBeacon";
 // Hidden landing page for the outreach email. Not in the nav, no sitemap
 // entry, and noindex/nofollow below — reachable only by the link in the email.
 
-// TODO(Harry): placeholder — supply the button text and link.
+// The page's one call to action (Harry went live with this, 30 Sep 2026).
 const CTA = { label: "Book a demo", href: "/demo" };
 
 export const metadata: Metadata = {
