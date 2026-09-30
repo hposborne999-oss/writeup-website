@@ -14,7 +14,7 @@ const CTA = { label: "Book a demo", href: "/demo" };
 export const metadata: Metadata = {
   title: "An example WriteUp audit",
   description:
-    "A residential valuation report, audited by WriteUp. Names, addresses and client details have been changed.",
+    "A residential valuation report, audited by WriteUp.",
   robots: { index: false, follow: false },
 };
 
@@ -29,9 +29,8 @@ export default function ExampleAuditPage() {
               An example WriteUp audit
             </h1>
             <p className="text-[16px] sm:text-[17px] leading-[1.6] text-slate-700 max-w-[62ch]">
-              A residential valuation report, audited by WriteUp. Names,
-              addresses and client details have been changed. Click any finding
-              to see why it was raised.
+              A residential valuation report, audited by WriteUp. Click any
+              finding to see why it was raised.
             </p>
           </header>
 
