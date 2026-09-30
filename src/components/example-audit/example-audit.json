@@ -1,10 +1,10 @@
 {
   "title": "14 Harcourt Terrace, London",
   "summary": {
-    "total": 16,
+    "total": 15,
     "critical": 8,
     "warning": 3,
-    "suggestion": 5
+    "suggestion": 4
   },
   "issues": [
     {
@@ -145,17 +145,7 @@
       "page": "",
       "original": "The comparable evidence supports a rate of circa £221 psf for the basement flat (£660,000 over 2,987 sq ft).",
       "corrected": "The comparable evidence supports a rate of circa £221 per sq ft for the basement flat (£660,000 over 2,987 sq ft).",
-      "explanation": "Write rates as 'per sq ft' instead of 'psf' or '£/sq ft'."
-    },
-    {
-      "id": "example-16",
-      "severity": "suggestion",
-      "category": "Writing preferences",
-      "section": "10.0 GROUND CONDITIONS AND ENVIRONMENTAL RISKS",
-      "page": "",
-      "original": "Our investigations have led me to conclude that the property does not have an above average risk of flooding from river or sea flooding.",
-      "corrected": "Our investigations have led us to conclude that the property does not have an above average risk of flooding from river or sea flooding.",
-      "explanation": "Use the first-person plural ('we', 'our', 'us') instead of the first-person singular ('I', 'my', 'me')."
+      "explanation": "Write rates as 'per sq ft' instead of 'psf' or '£/sq ft'. This was raised because of your firm's house style, set under Writing preferences."
     },
     {
       "id": "example-17",
@@ -165,7 +155,7 @@
       "page": "",
       "original": "Bedroom 2 - £900 pcm (bills paid in addition to rent)",
       "corrected": "Bedroom 2 - £900 per calendar month (bills paid in addition to rent)",
-      "explanation": "Write rent periods in full as 'per calendar month' or 'per annum' instead of abbreviations."
+      "explanation": "Write rent periods in full as 'per calendar month' or 'per annum' instead of abbreviations. This was raised because of your firm's house style, set under Writing preferences."
     }
   ],
   "compliance": {
