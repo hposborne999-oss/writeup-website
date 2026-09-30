@@ -47,6 +47,11 @@ export async function POST(req: Request) {
     } catch (err) {
       console.error("[audit-visit] save failed:", err);
     }
+  } else {
+    // Never fail silently: without these the visit is dropped.
+    console.error(
+      "[audit-visit] not saved: SUPABASE_URL or SUPABASE_ANON_KEY is missing or blank on this deployment",
+    );
   }
 
   return new Response(null, { status: 204 });
