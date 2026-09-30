@@ -1,10 +1,10 @@
 {
   "title": "14 Harcourt Terrace, London",
   "summary": {
-    "total": 17,
+    "total": 16,
     "critical": 8,
     "warning": 3,
-    "suggestion": 6
+    "suggestion": 5
   },
   "issues": [
     {
@@ -138,24 +138,14 @@
       "explanation": "The possessive pronoun 'its' is incorrectly written with an apostrophe as 'it's'."
     },
     {
-      "id": "example-14",
+      "id": "example-18",
       "severity": "suggestion",
-      "category": "Grammar",
-      "section": "4.0 GENERAL OVERVIEW",
+      "category": "Writing preferences",
+      "section": "13.0 MARKET TRENDS AND VALUATION COMMENTARY",
       "page": "",
-      "original": "provides additional floor space to the grown and basement level.",
-      "corrected": "provides additional floor space to the ground and basement level.",
-      "explanation": "'ground' is misspelled as 'grown'."
-    },
-    {
-      "id": "example-15",
-      "severity": "suggestion",
-      "category": "Grammar",
-      "section": "3.0 LOCATION",
-      "page": "",
-      "original": "North London Universit is located 1 mile to the south west.",
-      "corrected": "North London University is located 1 mile to the south west.",
-      "explanation": "'University' is misspelled as 'Universit'."
+      "original": "The comparable evidence supports a rate of circa £221 psf for the basement flat (£660,000 over 2,987 sq ft).",
+      "corrected": "The comparable evidence supports a rate of circa £221 per sq ft for the basement flat (£660,000 over 2,987 sq ft).",
+      "explanation": "Write rates as 'per sq ft' instead of 'psf' or '£/sq ft'."
     },
     {
       "id": "example-16",
@@ -179,7 +169,7 @@
     }
   ],
   "compliance": {
-    "label": "Red Book report contents",
+    "label": "VPS 6 compliance check",
     "caveat": "Fixed checks against the Red Book's minimum report contents (VPS 6). They assume a full Red Book valuation, so check your terms of engagement: if this report was instructed on a different basis, some items may not apply.",
     "counts": {
       "missing": 1,
