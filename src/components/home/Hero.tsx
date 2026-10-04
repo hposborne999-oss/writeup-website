@@ -7,8 +7,8 @@ export function Hero() {
       <div className="hero-audit-grid">
         {/* Left — copy (aligned to the site container's left edge) */}
         <div className="hero-audit-copy">
-          <h1 className="font-sans font-semibold text-[36px] sm:text-[46px] lg:text-[50px] leading-[1.06] tracking-[-0.035em] text-ink mb-7 max-w-[24ch]">
-            Faster <em className="not-italic text-teal">review</em>, fewer
+          <h1 className="hero-h1 text-[36px] sm:text-[46px] leading-[1.06] text-ink mb-7 max-w-[24ch]">
+            Faster <em className="hero-em text-teal">review</em>, fewer
             <br />
             oversights, and
             <br />

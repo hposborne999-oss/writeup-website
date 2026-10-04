@@ -8,6 +8,7 @@ import { FounderProse } from "@/components/home/FounderProse";
 import { Testimonial } from "@/components/home/Testimonial";
 import { Pricing } from "@/components/home/Pricing";
 import { CtaBand } from "@/components/home/CtaBand";
+import { HeroFontTrial } from "@/components/HeroFontTrial";
 
 export default function Home() {
   return (
@@ -24,6 +25,8 @@ export default function Home() {
         <CtaBand />
       </main>
       <Footer />
+      {/* PREVIEW-ONLY font switcher — do not merge */}
+      <HeroFontTrial />
     </>
   );
 }
