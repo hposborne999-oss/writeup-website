@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -9,13 +9,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  display: "swap",
-});
+// Display font: Sentient (Fontshare, ITF Free Font License), regular + italic,
+// served from Fontshare's CDN. Chosen by Harry 2026-10-05 to replace
+// Instrument Serif. Used via the --font-serif token in globals.css.
+const SENTIENT_CSS = "https://api.fontshare.com/v2/css?f[]=sentient@400,401&display=swap";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -71,8 +68,13 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="" />
+        <link rel="stylesheet" href={SENTIENT_CSS} />
+      </head>
       <body className="min-h-screen flex flex-col">
         {children}
         <Analytics />

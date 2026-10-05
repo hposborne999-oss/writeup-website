@@ -18,7 +18,7 @@ export default function DemoPage() {
         <section className="pt-16 lg:pt-[72px] pb-24 border-b border-rule">
           <Container>
             <div className="max-w-[640px] mb-10">
-              <h1 className="font-serif font-normal text-[40px] sm:text-[48px] lg:text-[56px] leading-[1.04] tracking-[-0.02em] text-ink">
+              <h1 className="font-serif font-normal text-[34px] sm:text-[40px] lg:text-[46px] leading-[1.04] tracking-[-0.02em] text-ink">
                 Book a WriteUp Demo
                 <br />
                 with the Founder.

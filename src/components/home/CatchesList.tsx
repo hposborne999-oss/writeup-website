@@ -212,7 +212,7 @@ export function CatchesList() {
     >
       <Container>
         <div className="mb-12">
-          <h2 className="font-serif text-[36px] lg:text-[44px] font-normal leading-[1.1] tracking-[-0.02em] mb-[18px] max-w-[24ch]">
+          <h2 className="font-serif text-[30px] lg:text-[36px] font-normal leading-[1.1] tracking-[-0.02em] mb-[18px] max-w-[24ch]">
             Catching what a manual review might miss.
           </h2>
           <p className="m-0 text-slate-700 text-[16px] lg:text-[17.5px] leading-[1.6] max-w-[62ch]">
@@ -375,7 +375,7 @@ export function CatchesList() {
           })}
         </div>
 
-        <p className="mt-12 lg:mt-14 font-serif text-[36px] lg:text-[44px] font-normal leading-[1.1] tracking-[-0.02em] text-ink max-w-[24ch]">
+        <p className="mt-12 lg:mt-14 font-serif text-[30px] lg:text-[36px] font-normal leading-[1.1] tracking-[-0.02em] text-ink max-w-[24ch]">
           Accept, reject, or amend —
           <br />
           the report stays yours throughout.
