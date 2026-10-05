@@ -61,7 +61,7 @@ export function Pricing() {
     >
       <Container>
         <div className="mb-12">
-          <h2 className="font-serif text-[36px] lg:text-[44px] font-normal leading-[1.1] tracking-[-0.02em] mb-[18px] max-w-[24ch]">
+          <h2 className="font-serif text-[30px] lg:text-[36px] font-normal leading-[1.1] tracking-[-0.02em] mb-[18px] max-w-[24ch]">
             Priced to earn its place
             <br />
             in your process.

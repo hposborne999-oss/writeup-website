@@ -5,7 +5,7 @@ export function CtaBand() {
   return (
     <section className="py-24 lg:py-[120px] text-center border-b border-rule">
       <Container variant="narrow">
-        <h2 className="font-serif italic font-normal text-[36px] lg:text-[54px] leading-[1.1] tracking-[-0.02em] mb-5 text-ink">
+        <h2 className="font-serif italic font-normal text-[30px] lg:text-[44px] leading-[1.1] tracking-[-0.02em] mb-5 text-ink">
           Try it on your own work.
         </h2>
         <p className="m-0 mx-auto mb-9 text-slate-700 text-[16px] lg:text-[18px] max-w-[54ch]">
