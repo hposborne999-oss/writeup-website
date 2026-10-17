@@ -12,9 +12,14 @@ export function CtaBand() {
           Book a demo with the founder, run your reports through it live, and
           see what it catches.
         </p>
-        <Button href="/demo" size="lg">
-          Book a demo
-        </Button>
+        <div className="flex flex-wrap justify-center gap-[14px]">
+          <Button href="/demo" size="lg">
+            Book a demo
+          </Button>
+          <Button href="/sample-audit" variant="secondary" size="lg">
+            See a sample audit
+          </Button>
+        </div>
       </Container>
     </section>
   );

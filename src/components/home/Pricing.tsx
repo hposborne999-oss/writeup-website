@@ -5,8 +5,10 @@ type Tier = {
   tier: string;
   audience: string;
   features: string;
+  amountPrefix?: string;
   amount: string;
   amountSuffix?: string;
+  annual?: string;
   cta: { label: string; href: string; variant: "primary" | "secondary" };
   featured?: boolean;
 };
@@ -14,11 +16,12 @@ type Tier = {
 const tiers: Tier[] = [
   {
     tier: "Solo",
-    audience: "For individual registered valuers.",
+    audience: "For individual surveyors.",
     features:
-      "One user, includes 25 report audits per month, full access to the AI Audit features.",
-    amount: "£149",
+      "1 seat, includes 20 report audits a month, full access to the AI Audit features.",
+    amount: "£199",
     amountSuffix: " / mo",
+    annual: "or £1,990 a year",
     cta: {
       label: "Book a demo",
       href: "/demo",
@@ -26,18 +29,33 @@ const tiers: Tier[] = [
     },
   },
   {
-    tier: "Team",
+    tier: "Practice",
     audience: "For valuation teams.",
     features:
-      "4 users, includes 100 report audits per month, full access to the AI Audit features.",
-    amount: "£349",
+      "Up to 5 seats, includes 100 report audits a month, full access to the AI Audit features. Extra audits £6 each.",
+    amount: "£599",
     amountSuffix: " / mo",
+    annual: "or £5,990 a year",
     cta: {
       label: "Book a demo",
       href: "/demo",
       variant: "primary",
     },
     featured: true,
+  },
+  {
+    tier: "Firm",
+    audience: "For larger valuation firms.",
+    features:
+      "Up to 15 seats, includes 250 report audits a month, full access to the AI Audit features. Extra audits £6 each.",
+    amountPrefix: "from ",
+    amount: "£1,499",
+    amountSuffix: " / mo",
+    cta: {
+      label: "Talk to us",
+      href: "mailto:Harry@usewriteup.co.uk?subject=WriteUp%20Firm%20enquiry",
+      variant: "secondary",
+    },
   },
   {
     tier: "Enterprise",
@@ -82,12 +100,24 @@ export function Pricing() {
                 <div className="text-ink font-medium">{t.audience}</div>
                 <div className="text-slate-700 mt-0.5">{t.features}</div>
               </div>
-              <div className="text-[22px] font-semibold tabular-nums tracking-[-0.01em]">
-                {t.amount}
-                {t.amountSuffix && (
-                  <small className="text-[13px] text-slate-500 font-medium">
-                    {t.amountSuffix}
-                  </small>
+              <div>
+                <div className="text-[22px] font-semibold tabular-nums tracking-[-0.01em]">
+                  {t.amountPrefix && (
+                    <small className="text-[13px] text-slate-500 font-medium">
+                      {t.amountPrefix}
+                    </small>
+                  )}
+                  {t.amount}
+                  {t.amountSuffix && (
+                    <small className="text-[13px] text-slate-500 font-medium">
+                      {t.amountSuffix}
+                    </small>
+                  )}
+                </div>
+                {t.annual && (
+                  <div className="text-[12.5px] text-slate-500 tabular-nums mt-0.5">
+                    {t.annual}
+                  </div>
                 )}
               </div>
               <div className="md:justify-self-end">
@@ -99,7 +129,8 @@ export function Pricing() {
           ))}
         </div>
         <p className="mt-5 text-slate-500 text-[13px] leading-[1.55]">
-          With a 30-day money-back guarantee.
+          Solo and Practice can be paid annually: twelve months for the price
+          of ten. With a 30-day money-back guarantee.
         </p>
       </Container>
     </section>

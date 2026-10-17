@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { Button } from "../Button";
 import { Container } from "../Container";
 
 type Example = {
@@ -380,6 +381,11 @@ export function CatchesList() {
           <br />
           the report stays yours throughout.
         </p>
+        <div className="mt-8">
+          <Button href="/sample-audit" variant="secondary" size="lg">
+            See a sample audit
+          </Button>
+        </div>
       </Container>
     </section>
   );
