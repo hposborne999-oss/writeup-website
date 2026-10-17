@@ -16,7 +16,7 @@ export function CtaBand() {
           <Button href="/demo" size="lg">
             Book a demo
           </Button>
-          <Button href="/sample-audit" variant="secondary" size="lg">
+          <Button href="/example-audit" variant="secondary" size="lg">
             See a sample audit
           </Button>
         </div>
