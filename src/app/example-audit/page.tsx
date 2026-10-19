@@ -21,8 +21,8 @@ export const metadata: Metadata = {
 export default function ExampleAuditPage() {
   return (
     <>
-      <Nav tone="dark" />
-      <main className="flex-1 bg-slate-100">
+      <Nav />
+      <main className="flex-1">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-8 pt-12 sm:pt-16 pb-20 sm:pb-24">
           <header className="mb-8 sm:mb-10">
             <h1 className="font-sans font-semibold text-[30px] sm:text-[40px] leading-[1.1] tracking-[-0.025em] text-ink mb-4">
