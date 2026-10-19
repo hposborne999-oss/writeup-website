@@ -8,7 +8,6 @@ type Tier = {
   amountPrefix?: string;
   amount: string;
   amountSuffix?: string;
-  annual?: string;
   cta: { label: string; href: string; variant: "primary" | "secondary" };
   featured?: boolean;
 };
@@ -21,7 +20,6 @@ const tiers: Tier[] = [
       "1 seat, includes 20 report audits a month, full access to the AI Audit features.",
     amount: "£199",
     amountSuffix: " / mo",
-    annual: "or £1,990 a year",
     cta: {
       label: "Book a demo",
       href: "/demo",
@@ -35,7 +33,6 @@ const tiers: Tier[] = [
       "Up to 5 seats, includes 100 report audits a month, full access to the AI Audit features. Extra audits £6 each.",
     amount: "£599",
     amountSuffix: " / mo",
-    annual: "or £5,990 a year",
     cta: {
       label: "Book a demo",
       href: "/demo",
@@ -114,11 +111,6 @@ export function Pricing() {
                     </small>
                   )}
                 </div>
-                {t.annual && (
-                  <div className="text-[12.5px] text-slate-500 tabular-nums mt-0.5">
-                    {t.annual}
-                  </div>
-                )}
               </div>
               <div className="md:justify-self-end">
                 <Button href={t.cta.href} variant={t.cta.variant}>
