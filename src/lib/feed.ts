@@ -77,9 +77,17 @@ function clean(html: string): string {
   });
 }
 
+// Download with fetch, then parse the text. Soro started answering
+// rss-parser's own downloader with 403 (Oct 2026) while plain requests still
+// get the feed, which left the blog empty.
 async function fetchItems() {
   try {
-    const feed = await parser.parseURL(FEED_URL);
+    const res = await fetch(FEED_URL, {
+      headers: { Accept: "application/rss+xml, application/xml" },
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!res.ok) throw new Error(`Status code ${res.status}`);
+    const feed = await parser.parseString(await res.text());
     return feed.items ?? [];
   } catch (err) {
     console.error("[feed] parse failed:", err);
