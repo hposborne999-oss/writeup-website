@@ -60,8 +60,15 @@ function readTimeFrom(html: string): string {
     .filter(Boolean).length;
   return `${Math.max(1, Math.round(words / 200))} min read`;
 }
+// RICS retired "RICS Tech Partner" on 22 Oct 2026; the approved term is
+// "RICS Tech Network Solution Provider" and the old one is now a prohibited
+// claim. Soro's older posts still use it, so swap it on the way in.
+function currentRicsWording(text: string): string {
+  return text.replace(/RICS Tech Partner/g, "RICS Tech Network Solution Provider");
+}
+
 function clean(html: string): string {
-  return sanitizeHtml(html, {
+  return sanitizeHtml(currentRicsWording(html), {
     allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img", "h1", "h2"]),
     allowedAttributes: {
       ...sanitizeHtml.defaults.allowedAttributes,
@@ -79,12 +86,16 @@ function clean(html: string): string {
 
 // Download with fetch, then parse the text. Soro started answering
 // rss-parser's own downloader with 403 (Oct 2026) while plain requests still
-// get the feed, which left the blog empty.
+// get the feed, which left the blog empty. Soro also refuses bursts of
+// requests (403, retry after 30s), and every post page needs the feed, so the
+// download is cached for an hour and shared by all pages instead of being
+// fetched once per page.
 async function fetchItems() {
   try {
     const res = await fetch(FEED_URL, {
       headers: { Accept: "application/rss+xml, application/xml" },
       signal: AbortSignal.timeout(8000),
+      next: { revalidate: 3600 },
     });
     if (!res.ok) throw new Error(`Status code ${res.status}`);
     const feed = await parser.parseString(await res.text());
@@ -96,10 +107,14 @@ async function fetchItems() {
 }
 
 function itemToPost(item: Parser.Item): Post {
-  const title = (item.title || "Untitled").trim();
-  const snippet = (item.contentSnippet || "").replace(/\s+/g, " ").trim();
+  const rawTitle = (item.title || "Untitled").trim();
+  const title = currentRicsWording(rawTitle);
+  const snippet = currentRicsWording(
+    (item.contentSnippet || "").replace(/\s+/g, " ").trim(),
+  );
   return {
-    slug: slugify(title),
+    // Slug from the original title so post URLs never change.
+    slug: slugify(rawTitle),
     title,
     excerpt: snippet.length > 200 ? snippet.slice(0, 197).trimEnd() + "…" : snippet,
     category: item.categories?.[0]?.toString().trim() || "Notes",
