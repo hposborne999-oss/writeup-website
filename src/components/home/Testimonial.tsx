@@ -53,7 +53,7 @@ function withHighlight(text: string, highlight: string) {
   return (
     <>
       {text.slice(0, at)}
-      <span className="text-white font-medium">{highlight}</span>
+      <span className="text-white font-semibold">{highlight}</span>
       {text.slice(at + highlight.length)}
     </>
   );
