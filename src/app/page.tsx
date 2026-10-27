@@ -2,7 +2,6 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/home/Hero";
 import { TrustStrip } from "@/components/home/TrustStrip";
-import { ClientProof } from "@/components/home/ClientProof";
 import { VideoCard } from "@/components/home/VideoCard";
 import { CatchesList } from "@/components/home/CatchesList";
 import { FounderProse } from "@/components/home/FounderProse";
@@ -17,11 +16,10 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <TrustStrip />
-        <ClientProof />
+        <Testimonial />
         <VideoCard />
         <CatchesList />
         <FounderProse />
-        <Testimonial />
         <Pricing />
         <CtaBand />
       </main>
