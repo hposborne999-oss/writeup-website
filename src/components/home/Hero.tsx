@@ -27,9 +27,6 @@ export function Hero() {
             <Button href="/example-audit" variant="secondary" size="lg">
               See a sample audit
             </Button>
-            <Button href="#from-the-founder" variant="secondary" size="lg">
-              About WriteUp
-            </Button>
           </div>
         </div>
 
