@@ -23,16 +23,16 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://usewriteup.co.uk"),
   title: {
-    default: "WriteUp — RICS Tech Partner AI auditing for RICS reports",
+    default: "WriteUp — AI auditing for RICS valuation reports",
     template: "%s · WriteUp",
   },
   description:
-    "WriteUp is a RICS Tech Partner AI audit tool for RICS reports. Built by a practising MRICS Chartered Surveyor to support professional judgement — catching mismatched floor areas, inconsistent comparables, Red Book gaps and contradictions in 1–2 minutes.",
+    "WriteUp is an AI audit tool for RICS valuation reports and an RICS Tech Network Solution Provider. Built by a practising MRICS Chartered Surveyor to support professional judgement — catching mismatched floor areas, inconsistent comparables, Red Book gaps and contradictions in 1–2 minutes.",
   applicationName: "WriteUp",
   authors: [{ name: "WriteUp Limited" }],
   keywords: [
     "RICS",
-    "RICS Tech Partner",
+    "RICS Tech Network",
     "valuation report audit",
     "Red Book",
     "MRICS",
@@ -45,12 +45,12 @@ export const metadata: Metadata = {
     siteName: "WriteUp",
     title: "WriteUp — Auditing built to support professional judgement",
     description:
-      "RICS Tech Partner AI audit tool for RICS reports. Built by a practising MRICS Chartered Surveyor.",
+      "AI audit tool for RICS valuation reports. Built by a practising MRICS Chartered Surveyor.",
     url: "https://usewriteup.co.uk",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WriteUp — RICS Tech Partner AI auditing for RICS reports",
+    title: "WriteUp — AI auditing for RICS valuation reports",
     description:
       "AI audit tool for RICS reports. Built by a practising MRICS Chartered Surveyor.",
   },

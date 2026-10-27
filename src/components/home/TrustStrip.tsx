@@ -3,8 +3,8 @@ import { Container } from "../Container";
 const items = [
   {
     num: "01",
-    title: "Approved RICS Tech Partner",
-    body: "Accelerating meaningful technology for RICS members.",
+    title: "RICS Tech Network",
+    body: "WriteUp is an RICS Tech Network Solution Provider.",
   },
   {
     num: "02",
