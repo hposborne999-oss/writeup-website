@@ -63,19 +63,15 @@ export function Testimonial() {
   return (
     <section
       id="in-practice"
-      className="py-20 lg:py-[104px] bg-petrol text-white scroll-mt-20"
+      className="pt-14 pb-20 lg:pt-[72px] lg:pb-[104px] bg-petrol text-white scroll-mt-20"
     >
       <Container>
-        <span className="font-mono text-[11px] font-medium tracking-[0.16em] uppercase text-[#8ee4ba]/80">
-          In practice
-        </span>
-
-        <div className="mt-10 lg:mt-12 grid gap-14 md:grid-cols-2 md:gap-12 lg:gap-20">
+        <div className="grid gap-14 md:grid-cols-2 md:gap-12 lg:gap-20">
           {QUOTES.map((q) => (
             <figure key={q.name} className="m-0 flex flex-col">
               <span
                 aria-hidden
-                className="font-[Georgia,serif] text-[72px] leading-[0.6] text-[#8ee4ba] mb-6"
+                className="font-[Georgia,serif] text-[72px] leading-[0.6] text-[#8ee4ba] mb-1"
               >
                 &ldquo;
               </span>
