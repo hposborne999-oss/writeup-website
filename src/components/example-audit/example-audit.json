@@ -1,173 +1,842 @@
 {
-  "title": "14 Harcourt Terrace, London",
+  "notice": "Hypothetical example audit. The property, people, firms and figures are all invented.",
+  "title": "Kestrel House, Northampton",
   "summary": {
-    "total": 15,
-    "critical": 8,
-    "warning": 3,
-    "suggestion": 4
+    "total": 22,
+    "critical": 9,
+    "warning": 10,
+    "suggestion": 3
   },
   "issues": [
     {
-      "id": "example-1",
+      "id": "lenderdemo-1",
       "severity": "critical",
       "category": "Consistency",
-      "section": "8.0 CONDITION",
+      "section": "10.0 VALUATIONS AND VALUATION METHODOLOGY",
       "page": "",
-      "original": "14a Harcourt Road is currently well managed and is modern throughout.",
-      "corrected": "14a Harcourt Terrace is currently well managed and is modern throughout.",
-      "explanation": "The subject property is located on Harcourt Terrace, not Harcourt Road. Mentioning the wrong street name is a material PI risk."
+      "original": "£1,750,000 (One Million, Seven Hundred and Fifty Thousand Pounds)",
+      "corrected": "£1,850,000 (One Million, Eight Hundred and Fifty Thousand Pounds)",
+      "explanation": "The signed valuation statement in section 10 gives £1,750,000, in figures and in words; the Executive Summary, the yield analysis and the valuation in Appendix 2 all give £1,850,000. The signed figure looks left over from an earlier draft, and it is the one figure the lender relies on. Please confirm which is correct.",
+      "source": "schedule"
     },
     {
-      "id": "example-2",
+      "id": "lenderdemo-2",
       "severity": "critical",
       "category": "Consistency",
-      "section": "13.0 MARKET TRENDS AND VALUATION COMMENTARY",
+      "section": "1.0 EXECUTIVE SUMMARY",
       "page": "",
-      "original": "We estimate gross annual rental income at £7,200 per room, equating to £86,400 per annum.",
-      "corrected": "We estimate gross annual rental income at £10,800 per room, equating to £86,400 per annum.",
-      "explanation": "The per-room rent and the annual total do not reconcile across eight rooms. 8 × £7,200 = £57,600, not £86,400. Either the per-room figure should be £10,800 or the annual total should be £57,600."
+      "original": "We are of the opinion that the Property is not suitable security for secured lending purposes, subject to the comments made within this report.",
+      "corrected": "We are of the opinion that the Property is suitable security for secured lending purposes, subject to the comments made within this report.",
+      "explanation": "The Executive Summary says the Property is not suitable security; section 11 (Suitability as Loan Security) concludes that it is. One of them is wrong, and the lender reads the summary first."
     },
     {
-      "id": "example-3",
+      "id": "lenderdemo-3",
       "severity": "critical",
       "category": "Consistency",
-      "section": "11.0 TENURE AND OCCUPATIONAL LEASES",
+      "section": "9.0 VALUATION COMMENTARY",
       "page": "",
-      "original": "We assume the current passing rent to be in the region of £5,647 pcm.",
-      "corrected": "We assume the current passing rent to be in the region of £7,197 pcm.",
-      "explanation": "The individual passing rents listed do not sum to the stated total. £900 + £750 + £997 + £650 + £900 + £3,000 = £7,197 pcm, not £5,647 pcm. Either the individual rents are incorrect or the total passing rent should be £7,197 pcm."
+      "original": "Our valuation reflects a net initial yield of 8.50%, having regard to the contracted income of £168,000 per annum.",
+      "corrected": "Our valuation reflects a net initial yield of 8.50%, having regard to the contracted income of £168,000 per annum.",
+      "explanation": "The £168,000 includes £24,000 from Unit B. That lease has not been signed, does not start until 1 November 2026 (after the valuation date), and is to Kestrel Kitchen Limited, which shares a director with the Borrower. A lender would normally expect income like this to be left out, or flagged clearly, because it is not yet secure and may not be on arm's-length terms. Without it the income is £144,000, and at the same 8.50% yield the value would be about £1,586,000, some £264,000 lower. Should Unit B be valued as vacant, or should the report tell the lender plainly that the yield depends on this lease?"
     },
     {
-      "id": "example-4",
+      "id": "lenderdemo-4",
       "severity": "critical",
       "category": "Consistency",
-      "section": "14.0 MARKET RENT",
+      "section": "10.0 VALUATIONS AND VALUATION METHODOLOGY",
       "page": "",
-      "original": "£124,800 per annum.",
-      "corrected": "£118,200 per annum.",
-      "explanation": "The Market Rent is stated as £124,800 per annum in Section 14.1, which contradicts the £118,200 per annum stated in the Executive Summary and Section 18.1."
+      "original": "Our opinion of Market Rent for Unit C is based on £625 per room per calendar month across 14 lettable rooms, on the terms of an assured shorthold tenancy for 12 months.",
+      "corrected": "Our opinion of Market Rent for Unit C is based on £625 per room per calendar month across 14 lettable rooms, on the terms of an assured shorthold tenancy for 12 months.",
+      "explanation": "The Market Rent for Unit C is built on 14 lettable rooms, but the HMO licence quoted in section 6 permits 12. At £625 per room per month, 12 rooms gives £90,000 a year, not £105,000: £15,000 a year less, and it is the rent the valuation capitalises when the lease ends in 2029. Which room count is right?"
     },
     {
-      "id": "example-5",
+      "id": "lenderdemo-5",
       "severity": "critical",
-      "category": "Consistency",
-      "section": "13.0 MARKET TRENDS AND VALUATION COMMENTARY",
-      "page": "",
-      "original": "Capitalising this income at a yield of 7.55% results in a valuation of £1,140,000 for the property.",
-      "corrected": "Capitalising this income at a yield of 7.55% results in a valuation of £1,090,000 for the property.",
-      "explanation": "The valuation of the bedsit element is stated as £1,140,000 in Section 13.9, which contradicts the £1,090,000 stated in the valuation breakdown in Section 18.3."
-    },
-    {
-      "id": "example-6",
-      "severity": "critical",
-      "category": "Consistency",
-      "section": "18.0 VALUATION",
-      "page": "",
-      "original": "14a Harcourt Terrace £ 625,000",
-      "corrected": "14a Harcourt Terrace £ 627,000",
-      "explanation": "Applying the stated 5% discount to the flat's market value of £660,000 results in £627,000, which contradicts the £625,000 stated in the valuation breakdown in Section 18.3."
-    },
-    {
-      "id": "example-7",
-      "severity": "critical",
-      "category": "Consistency",
-      "section": "6.0 MEASUREMENT RECORD",
-      "page": "",
-      "original": "Total 177.0 2,987",
-      "corrected": "Total 277.5 2,987",
-      "explanation": "The floor area sq m column does not sum to the stated total. 113.3 + 97.5 + 66.7 = 277.5 sq m, not 177.0 sq m. Either the individual floor areas are incorrect or the total should be 277.5 sq m."
-    },
-    {
-      "id": "example-8",
-      "severity": "critical",
-      "category": "Legal",
-      "section": "17.0 SPECIAL REQUESTS AND OTHER INFORMATION",
-      "page": "",
-      "original": "To confirm the Sui Generis HMO planning permission is in place.",
-      "corrected": "To confirm the Sui Generis HMO planning permission is in place.\n\nTo confirm the terms and status of the tenancies in place since c. 1985, specifically whether they are protected tenancies under the Rent Act 1977.",
-      "explanation": "Tenancies in place since 1985 are highly likely to be regulated tenancies under the Rent Act 1977, which has a material impact on value and vacant possession. This risk must be flagged in the Enquiries for Legal Advisors section."
-    },
-    {
-      "id": "example-9",
-      "severity": "warning",
-      "category": "Legal",
-      "section": "19.0 SECURITY AND RECOMMENDATIONS",
-      "page": "",
-      "original": "Subject to the above comments, the property is considered to provide suitable security for an advance by the mortgage lender on typical market parameters for an asset of this type and age.",
-      "corrected": "Subject to the above comments and confirmation of a valid HMO licence and Sui Generis planning permission, the property is considered to provide suitable security for an advance by the mortgage lender on typical market parameters for an asset of this type and age.",
-      "explanation": "The report notes the lack of HMO licensing and Sui Generis planning permission but fails to condition the security recommendation on these being resolved."
-    },
-    {
-      "id": "example-10",
-      "severity": "warning",
       "category": "Compliance",
-      "section": "8.0 CONDITION",
+      "section": "2.0 TERMS OF INSTRUCTION",
       "page": "",
-      "original": "14 Harcourt Terrace – It appears there is no EPC certificate against this property. There is a certificate under “14 Harcourt Terrace” however this doesn’t correctly correspond to the layout of the house as multiple bedsits and is being disregarded. This incorrect EPC expires on the 24th Nov 2025. Solicitors to check validity of current tenancies.",
-      "corrected": "14 Harcourt Terrace – It appears there is no EPC certificate against this property. There is a certificate under “14 Harcourt Terrace” however this doesn’t correctly correspond to the layout of the house as multiple bedsits and is being disregarded. This incorrect EPC expires on the 24th Nov 2025. Solicitors to check validity of current tenancies. A valid EPC must be commissioned before any marketing of the property takes place.",
-      "explanation": "The report notes that there is no valid EPC for 14 Harcourt Terrace but fails to state the legal requirement that an EPC must be commissioned before marketing."
+      "original": "HMO licence (West Northamptonshire Council) – provided",
+      "corrected": "HMO licence (West Northamptonshire Council) – expired 14 August 2026; renewal application pending",
+      "explanation": "Sources of Information lists the HMO licence as provided, but section 6 says it expired on 14 August 2026 and no licence was in place at the valuation date. The upper floors are 12 rooms let as an HMO, so the lapse affects the operator's lease and 46% of the income. It should be stated in the summary and the Key Issues, with the assumption the valuation makes about renewal."
     },
     {
-      "id": "example-11",
-      "severity": "warning",
+      "id": "lenderdemo-6",
+      "severity": "critical",
       "category": "Clarity",
-      "section": "14.0 MARKET RENT",
+      "section": "1.0 EXECUTIVE SUMMARY",
       "page": "",
-      "original": "Parkside, N7– A small bedsit comprising an en-suite bathroom and a compact kitchenette. The internal specification is superior to that of the subject property. The unit is available for £1,100 per calendar month.\n\nNorthgate, N7– A small bedsit with elevated specification and views over a local park. The internal condition is significantly better than the subject. The property is marketed at £1,300 per calendar month.\n\nNorthside, N7– A compact bedsit featuring an en-suite bathroom and a small kitchenette. The overall specification is much improved in comparison to the subject property. The asking rent is £1,300 per calendar month.",
-      "corrected": "Parkside, N7– A small bedsit comprising an en-suite bathroom and a compact kitchenette. The internal specification is superior to that of the subject property. The unit is available for £1,100 per calendar month.\n\nNorthgate, N7– A small bedsit with elevated specification and views over a local park. The internal condition is significantly better than the subject. The property is marketed at £1,300 per calendar month.\n\nNorthside, N7– A compact bedsit featuring an en-suite bathroom and a small kitchenette. The overall specification is much improved in comparison to the subject property. The asking rent is £1,300 per calendar month.",
-      "explanation": "The bedsit rental comparables do not include letting dates, and appear to be active marketing listings rather than completed lettings."
+      "original": "[AV note: MV at last instruction (March 2025) was £2,100,000 – check movement before issue]",
+      "corrected": "[AV note: MV at last instruction (March 2025) was £2,100,000 – check movement before issue]",
+      "explanation": "An internal drafting note is still in the report, and it gives a previous Market Value of £2,100,000, £250,000 above this valuation. It needs to come out before issue, and the lender may ask about the fall."
     },
     {
-      "id": "example-12",
-      "severity": "suggestion",
+      "id": "lenderdemo-7",
+      "severity": "critical",
       "category": "Compliance",
-      "section": "16.0 BASIS OF VALUATION",
+      "section": "2.0 TERMS OF INSTRUCTION",
       "page": "",
-      "original": "We have formulated our valuation based on comparative and investment methodology.",
-      "corrected": "We have formulated our valuation based on the comparable and investment methods of valuation.",
-      "explanation": "The terms 'comparative and investment methodology' are non-standard. Standard RICS terminology is 'comparable method of valuation' and 'investment method'."
+      "original": "This Report and Valuation has been checked by A. Valuer MRICS, Director, Example Firm LLP, and a member of the RICS Valuer Registration Scheme.",
+      "corrected": "This Report and Valuation has been checked by [name of checking valuer], [position], Example Firm LLP, and a member of the RICS Valuer Registration Scheme.",
+      "explanation": "The report names A. Valuer, the signing valuer, as the person who checked it, and the signature block in section 12 still reads \"[Name of Checking Valuer]\" and \"[Position]\". The checking valuer needs to be named in both places."
     },
     {
-      "id": "example-13",
+      "id": "lenderdemo-8",
+      "severity": "critical",
+      "category": "Consistency",
+      "section": "9.0 VALUATION COMMENTARY",
+      "page": "",
+      "original": "The upper floors are let to Northgate Living Limited on a five-year lease from January 2025 at an annual rent of £75,000, fixed for the term.",
+      "corrected": "The upper floors are let to Northgate Living Limited on a five-year lease from January 2025 at an annual rent of £78,000, fixed for the term.",
+      "explanation": "The valuation commentary gives Unit C's rent as £75,000 a year; the tenancy schedule and the valuation in Appendix 2 both use £78,000. The figure in the commentary is the one to correct, unless the schedule is wrong."
+    },
+    {
+      "id": "lenderdemo-9",
+      "severity": "critical",
+      "category": "Consistency",
+      "section": "Appendix 2, Valuation",
+      "page": "",
+      "original": "Unit A (Ground Floor Retail), Mercer Convenience Stores Ltd: 35,800",
+      "corrected": "Unit A (Ground Floor Retail), Mercer Convenience Stores Ltd: 38,500",
+      "explanation": "The valuation in Appendix 2 capitalises £35,800 for Unit A; the tenancy schedule and the valuation commentary give the rent as £38,500. It appears two digits have been swapped. If £38,500 is right, the income valued is £2,700 a year too low. Please confirm which is correct.",
+      "source": "schedule"
+    },
+    {
+      "id": "lenderdemo-10",
+      "severity": "warning",
+      "category": "Consistency",
+      "section": "4.0 DESCRIPTION",
+      "page": "",
+      "original": "Unit B is currently trading as Kestrel Kitchen, a café with seating for approximately 30 covers.",
+      "corrected": "Unit B is currently trading as Kestrel Kitchen, a café with seating for approximately 30 covers.",
+      "explanation": "Unit B is described three ways: trading as Kestrel Kitchen in section 4, \"vacant, under offer\" beneath the accommodation schedule, and let on a lease not yet completed that starts after the valuation date in section 6. Which was the position at the valuation date? The income and the yield depend on it."
+    },
+    {
+      "id": "lenderdemo-11",
+      "severity": "warning",
+      "category": "Consistency",
+      "section": "Tenancy schedule",
+      "page": "",
+      "original": "31/03/2026",
+      "corrected": "31/03/2026",
+      "explanation": "Unit D's lease expired on 31/03/2026, before the valuation date, and the report does not say whether the tenant is holding over or has a new lease. Which is it? The car park is valued as if let.",
+      "source": "schedule"
+    },
+    {
+      "id": "lenderdemo-12",
+      "severity": "warning",
+      "category": "Consistency",
+      "section": "Lender's summary",
+      "page": "",
+      "original": "Key Issues Requiring Clarification: None identified.",
+      "corrected": "Key Issues Requiring Clarification: None identified.",
+      "explanation": "The Key Issues box says \"None identified\", but the tenancy schedule shows Unit D's car park lease expired on 31/03/2026, six months before the valuation date. Should it be listed there?",
+      "source": "schedule"
+    },
+    {
+      "id": "lenderdemo-13",
+      "severity": "warning",
+      "category": "Compliance",
+      "section": "4.0 DESCRIPTION",
+      "page": "",
+      "original": "The Environment Agency's Long Term Flood Risk service identifies the Property as being within an area at high risk of flooding from surface water.",
+      "corrected": "The Environment Agency's Long Term Flood Risk service identifies the Property as being within an area at high risk of flooding from surface water.",
+      "explanation": "Section 4 records a high risk of surface water flooding, but the Executive Summary and the Key Issues box say nothing about it. A lender would expect it in both, with a comment on insurance."
+    },
+    {
+      "id": "lenderdemo-14",
+      "severity": "warning",
+      "category": "Compliance",
+      "section": "4.0 DESCRIPTION",
+      "page": "",
+      "original": "The Property is Grade II listed, being a former telephone exchange dating from 1934.",
+      "corrected": "The Property is Grade II listed, being a former telephone exchange dating from 1934.",
+      "explanation": "The building is Grade II listed and its upper floors were converted to a 12-room HMO in 2023, but the report does not say whether listed building consent was granted for the conversion. Works without consent to a listed building are a criminal offence and can be enforced against any owner. Has consent been seen, or should it go to the lender's solicitors?"
+    },
+    {
+      "id": "lenderdemo-15",
+      "severity": "warning",
+      "category": "Consistency",
+      "section": "10.0 VALUATIONS AND VALUATION METHODOLOGY",
+      "page": "",
+      "original": "We have adopted a Market Rent of £40,000 per annum for Unit A, equating to £19.93 per sq ft overall.",
+      "corrected": "We have adopted a Market Rent of £40,000 per annum for Unit A, equating to £19.93 per sq ft overall.",
+      "explanation": "The adopted £19.93 per sq ft for Unit A is above every retail letting the report cites, which run from £14.50 to £17.25 per sq ft. What supports the step up?"
+    },
+    {
+      "id": "lenderdemo-16",
+      "severity": "warning",
+      "category": "Consistency",
+      "section": "8.0 MARKET COMMENTARY",
+      "page": "",
+      "original": "14 Derngate, Northampton NN1 1TT | Sold: November 2026 | £1,850,000 | 7.95% NIY",
+      "corrected": "14 Derngate, Northampton NN1 1TT | Sold: November 2026 | £1,850,000 | 7.95% NIY",
+      "explanation": "This sale is dated November 2026, after the valuation date of 30 September 2026 and the report date of 9 October 2026. Evidence that did not exist at the valuation date cannot support it. Is the date wrong, or should the comparable come out?"
+    },
+    {
+      "id": "lenderdemo-17",
+      "severity": "warning",
+      "category": "Consistency",
+      "section": "3.0 LOCATION",
+      "page": "",
+      "original": "Westbury Court benefits from a prominent corner position opposite the main entrance to the retail park, with the A45 within half a mile.",
+      "corrected": "Westbury Court benefits from a prominent corner position opposite the main entrance to the retail park, with the A45 within half a mile.",
+      "explanation": "The location section describes Westbury Court, a retail park and the A45. None of them is the subject property, which is Kestrel House on Mercer Street. The paragraph looks carried over from another report."
+    },
+    {
+      "id": "lenderdemo-18",
+      "severity": "warning",
+      "category": "Consistency",
+      "section": "6.0 TENURE AND TENANCIES",
+      "page": "",
+      "original": "We have made status enquiries of Northgate Living Limited by way of a Creditsafe report, which details a credit score of 41 (moderate risk) as at 14/11/2026.",
+      "corrected": "We have made status enquiries of Northgate Living Limited by way of a Creditsafe report, which details a credit score of 41 (moderate risk) as at 14/11/2026.",
+      "explanation": "The credit report is dated 14/11/2026, after the valuation date (30 September 2026) and the report date (9 October 2026). The date is wrong, or the enquiry was made after the report was signed."
+    },
+    {
+      "id": "lenderdemo-19",
+      "severity": "warning",
+      "category": "Consistency",
+      "section": "Accommodation",
+      "page": "",
+      "original": "Total Net Internal Area: 697.30 7,405",
+      "corrected": "Total Net Internal Area: 697.30 7,405",
+      "explanation": "The accommodation schedule adds up to 7,505 sq ft, not the 7,405 sq ft stated. The stated total is 100 sq ft short. Please confirm which is correct.",
+      "source": "schedule"
+    },
+    {
+      "id": "lenderdemo-20",
       "severity": "suggestion",
       "category": "Grammar",
-      "section": "8.0 CONDITION",
+      "section": "4.0 DESCRIPTION",
       "page": "",
-      "original": "In it’s current state the property will appeal to tenants who may present both management and operational challenges.",
-      "corrected": "In its current state the property will appeal to tenants who may present both management and operational challenges.",
-      "explanation": "The possessive pronoun 'its' is incorrectly written with an apostrophe as 'it's'."
+      "original": "The Property is arranged over basement, ground and two upper floor, with the principle access from Mercer Street.",
+      "corrected": "The Property is arranged over basement, ground and two upper floors, with the principal access from Mercer Street.",
+      "explanation": "\"floor\" should be \"floors\", and \"principle\" should be \"principal\"."
     },
     {
-      "id": "example-18",
+      "id": "lenderdemo-21",
       "severity": "suggestion",
-      "category": "Writing preferences",
-      "section": "13.0 MARKET TRENDS AND VALUATION COMMENTARY",
+      "category": "Grammar",
+      "section": "4.0 DESCRIPTION",
       "page": "",
-      "original": "The comparable evidence supports a rate of circa £221 psf for the basement flat (£660,000 over 2,987 sq ft).",
-      "corrected": "The comparable evidence supports a rate of circa £221 per sq ft for the basement flat (£660,000 over 2,987 sq ft).",
-      "explanation": "Write rates as 'per sq ft' instead of 'psf' or '£/sq ft'. This was raised because of your firm's house style, set under Writing preferences."
+      "original": "Unit A benefits from a return frontage to Kestrel Lane an a rear service door to the yard.",
+      "corrected": "Unit A benefits from a return frontage to Kestrel Lane and a rear service door to the yard.",
+      "explanation": "\"an\" should be \"and\"."
     },
     {
-      "id": "example-17",
+      "id": "lenderdemo-22",
       "severity": "suggestion",
-      "category": "Writing preferences",
-      "section": "11.0 TENURE AND OCCUPATIONAL LEASES",
+      "category": "Grammar",
+      "section": "5.0 PLANNING",
       "page": "",
-      "original": "Bedroom 2 - £900 pcm (bills paid in addition to rent)",
-      "corrected": "Bedroom 2 - £900 per calendar month (bills paid in addition to rent)",
-      "explanation": "Write rent periods in full as 'per calendar month' or 'per annum' instead of abbreviations. This was raised because of your firm's house style, set under Writing preferences."
+      "original": "We have assumed that the units benefit from the necessary planing consents for their current uses.",
+      "corrected": "We have assumed that the units benefit from the necessary planning consents for their current uses.",
+      "explanation": "\"planing\" should be \"planning\"."
     }
   ],
+  "schedule": {
+    "title": "Schedule reconciliation",
+    "header": "5 units · 5 findings",
+    "flagged": 5,
+    "intro": "A tenancy schedule with 5 units was read. Each figure is checked against the other tables and the valuation. Anything flagged here is also in the audit findings below.",
+    "subject": {
+      "address": "Kestrel House, 112-118 Mercer Street, Northampton, NN1 9ZZ",
+      "valuationDate": "30 September 2026",
+      "reportDate": "9 October 2026"
+    },
+    "unitColumn": "Tenancy",
+    "widths": {
+      "first": "34%",
+      "flags": "8%"
+    },
+    "columns": [
+      {
+        "key": "rent",
+        "label": "Passing rent",
+        "width": "16%"
+      },
+      {
+        "key": "expiry",
+        "label": "Expiry",
+        "width": "14%"
+      },
+      {
+        "key": "sqft",
+        "label": "Sq ft",
+        "width": "12%"
+      },
+      {
+        "key": "mr",
+        "label": "Market Rent",
+        "width": "16%"
+      }
+    ],
+    "openUnit": "a",
+    "units": [
+      {
+        "key": "a",
+        "label": "Unit A (Ground Floor Retail)",
+        "tenant": "Mercer Convenience Stores Limited",
+        "tenantBad": false,
+        "cells": {
+          "rent": {
+            "text": "£38,500",
+            "verified": true,
+            "status": "bad"
+          },
+          "expiry": {
+            "text": "23/06/2033",
+            "verified": true
+          },
+          "sqft": {
+            "text": "2,007",
+            "verified": true,
+            "status": "ok"
+          },
+          "mr": {
+            "text": "£40,000 p.a.",
+            "verified": true,
+            "status": "ok"
+          }
+        },
+        "flags": 1,
+        "checks": [
+          {
+            "ok": false,
+            "severity": "critical",
+            "text": "The valuation capitalises £35,800 for Unit A, not the £38,500 rent in the tenancy schedule.\nInconsistency located on Appendix 2, page 3.\nIt appears two digits have been swapped: £38,500 appears twice in the report and £35,800 once. Please confirm which is correct."
+          },
+          {
+            "ok": true,
+            "severity": null,
+            "text": "The reversionary rent is £40,000, the Market Rent."
+          },
+          {
+            "ok": true,
+            "severity": null,
+            "text": "186.50 sq m is 2,007 sq ft."
+          },
+          {
+            "ok": true,
+            "severity": null,
+            "text": "The income on 24/06/2028 is consistent with the break, which the report assumes is exercised."
+          }
+        ],
+        "sources": [
+          {
+            "label": "Tenancy schedule",
+            "text": "Mercer Convenience Stores Limited · £38,500 · from 24/06/2023 · to 23/06/2033 · break 24/06/2028 · reviews 5 yearly"
+          },
+          {
+            "label": "Accommodation",
+            "text": "186.50 sq m · 2,007 sq ft"
+          },
+          {
+            "label": "Market Rent table",
+            "text": "£40,000 p.a."
+          },
+          {
+            "label": "Valuation",
+            "text": "income £35,800 · reversion £40,000 · value £452,000"
+          }
+        ],
+        "detail": [
+          {
+            "label": "Break",
+            "cell": {
+              "text": "24/06/2028",
+              "verified": true,
+              "status": "ok"
+            }
+          },
+          {
+            "label": "Income valued",
+            "cell": {
+              "text": "£35,800",
+              "verified": true,
+              "status": "bad"
+            }
+          },
+          {
+            "label": "Next change in income",
+            "cell": {
+              "text": "24/06/2028",
+              "verified": true,
+              "status": "ok"
+            }
+          }
+        ]
+      },
+      {
+        "key": "b",
+        "label": "Unit B (Ground Floor Café)",
+        "tenant": "Kestrel Kitchen Limited",
+        "tenantBad": false,
+        "cells": {
+          "rent": {
+            "text": "£24,000",
+            "verified": true,
+            "status": "ok"
+          },
+          "expiry": {
+            "text": "31/10/2036",
+            "verified": true
+          },
+          "sqft": {
+            "text": "1,057",
+            "verified": true,
+            "status": "ok"
+          },
+          "mr": {
+            "text": "£26,000 p.a.",
+            "verified": true,
+            "status": "ok"
+          }
+        },
+        "flags": 0,
+        "checks": [
+          {
+            "ok": true,
+            "severity": null,
+            "text": "The valuation capitalises £24,000, the schedule rent."
+          },
+          {
+            "ok": true,
+            "severity": null,
+            "text": "The reversionary rent is £26,000, the Market Rent."
+          },
+          {
+            "ok": true,
+            "severity": null,
+            "text": "98.20 sq m is 1,057 sq ft."
+          },
+          {
+            "ok": true,
+            "severity": null,
+            "text": "The income changes on 01/11/2031, a rent review date."
+          }
+        ],
+        "sources": [
+          {
+            "label": "Tenancy schedule",
+            "text": "Kestrel Kitchen Limited · £24,000 · from 01/11/2026 · to 31/10/2036 · reviews 5 yearly\nUnit B: lease in agreed form, not yet completed. We understand the tenant shares a director with the Borrower."
+          },
+          {
+            "label": "Accommodation",
+            "text": "98.20 sq m · 1,057 sq ft"
+          },
+          {
+            "label": "Market Rent table",
+            "text": "£26,000 p.a."
+          },
+          {
+            "label": "Valuation",
+            "text": "income £24,000 · reversion £26,000 · value £282,000"
+          }
+        ],
+        "detail": [
+          {
+            "label": "Break",
+            "cell": null
+          },
+          {
+            "label": "Income valued",
+            "cell": {
+              "text": "£24,000",
+              "verified": true,
+              "status": "ok"
+            }
+          },
+          {
+            "label": "Next change in income",
+            "cell": {
+              "text": "01/11/2031",
+              "verified": true,
+              "status": "ok"
+            }
+          }
+        ]
+      },
+      {
+        "key": "c",
+        "label": "Unit C (First and Second Floors, 12-room HMO)",
+        "tenant": "Northgate Living Limited",
+        "tenantBad": false,
+        "cells": {
+          "rent": {
+            "text": "£78,000",
+            "verified": true,
+            "status": "ok"
+          },
+          "expiry": {
+            "text": "31/12/2029",
+            "verified": true,
+            "status": "ok"
+          },
+          "sqft": {
+            "text": "4,441",
+            "verified": true,
+            "status": "ok"
+          },
+          "mr": {
+            "text": "£105,000 p.a.",
+            "verified": true,
+            "status": "ok"
+          }
+        },
+        "flags": 0,
+        "checks": [
+          {
+            "ok": true,
+            "severity": null,
+            "text": "The valuation capitalises £78,000, the schedule rent."
+          },
+          {
+            "ok": true,
+            "severity": null,
+            "text": "The reversionary rent is £105,000, the Market Rent."
+          },
+          {
+            "ok": true,
+            "severity": null,
+            "text": "412.60 sq m is 4,441 sq ft."
+          },
+          {
+            "ok": true,
+            "severity": null,
+            "text": "The income on 31/12/2029 is consistent with the lease expiry."
+          }
+        ],
+        "sources": [
+          {
+            "label": "Tenancy schedule",
+            "text": "Northgate Living Limited · £78,000 · from 01/01/2025 · to 31/12/2029 · reviews N/A (fixed)"
+          },
+          {
+            "label": "Accommodation",
+            "text": "412.60 sq m · 4,441 sq ft"
+          },
+          {
+            "label": "Market Rent table",
+            "text": "£105,000 p.a."
+          },
+          {
+            "label": "Valuation",
+            "text": "income £78,000 · reversion £105,000 · value £918,000"
+          }
+        ],
+        "detail": [
+          {
+            "label": "Break",
+            "cell": null
+          },
+          {
+            "label": "Income valued",
+            "cell": {
+              "text": "£78,000",
+              "verified": true,
+              "status": "ok"
+            }
+          },
+          {
+            "label": "Next change in income",
+            "cell": {
+              "text": "31/12/2029",
+              "verified": true,
+              "status": "ok"
+            }
+          }
+        ]
+      },
+      {
+        "key": "d",
+        "label": "Unit D (Rear Yard and Car Park, 22 spaces)",
+        "tenant": "Parkway Lot Management Limited",
+        "tenantBad": false,
+        "cells": {
+          "rent": {
+            "text": "£18,000",
+            "verified": true,
+            "status": "ok"
+          },
+          "expiry": {
+            "text": "31/03/2026",
+            "verified": true,
+            "status": "bad"
+          },
+          "sqft": null,
+          "mr": {
+            "text": "£18,000 p.a.",
+            "verified": true,
+            "status": "ok"
+          }
+        },
+        "flags": 1,
+        "checks": [
+          {
+            "ok": false,
+            "severity": "warning",
+            "text": "Unit D's lease expired on 31/03/2026, before the valuation date, and the report does not say whether the tenant is holding over or has a new lease. Which is it?\nInconsistency located on Tenancy Schedule, Section 6, Page 1."
+          },
+          {
+            "ok": false,
+            "severity": null,
+            "text": "Unit D has no row in the accommodation schedule."
+          },
+          {
+            "ok": true,
+            "severity": null,
+            "text": "The valuation capitalises £18,000, the schedule rent."
+          },
+          {
+            "ok": true,
+            "severity": null,
+            "text": "The reversionary rent is £18,000, the Market Rent."
+          }
+        ],
+        "sources": [
+          {
+            "label": "Tenancy schedule",
+            "text": "Parkway Lot Management Limited · £18,000 · from 01/04/2021 · to 31/03/2026 · reviews N/A"
+          },
+          {
+            "label": "Market Rent table",
+            "text": "£18,000 p.a."
+          },
+          {
+            "label": "Valuation",
+            "text": "income £18,000 · reversion £18,000 · value £212,000"
+          }
+        ],
+        "detail": [
+          {
+            "label": "Break",
+            "cell": null
+          },
+          {
+            "label": "Income valued",
+            "cell": {
+              "text": "£18,000",
+              "verified": true,
+              "status": "ok"
+            }
+          },
+          {
+            "label": "Next change in income",
+            "cell": {
+              "text": "31/03/2031",
+              "verified": true
+            }
+          }
+        ]
+      },
+      {
+        "key": "e",
+        "label": "Unit E (Roof Telecommunications Installation)",
+        "tenant": "Skyline Telecom Infrastructure Limited",
+        "tenantBad": false,
+        "cells": {
+          "rent": {
+            "text": "£9,500",
+            "verified": true,
+            "status": "ok"
+          },
+          "expiry": {
+            "text": "14/09/2029",
+            "verified": true
+          },
+          "sqft": null,
+          "mr": {
+            "text": "£9,500 p.a.",
+            "verified": true,
+            "status": "ok"
+          }
+        },
+        "flags": 0,
+        "checks": [
+          {
+            "ok": false,
+            "severity": null,
+            "text": "Unit E has no row in the accommodation schedule."
+          },
+          {
+            "ok": true,
+            "severity": null,
+            "text": "The valuation capitalises £9,500, the schedule rent."
+          },
+          {
+            "ok": true,
+            "severity": null,
+            "text": "The reversionary rent is £9,500, the Market Rent."
+          }
+        ],
+        "sources": [
+          {
+            "label": "Tenancy schedule",
+            "text": "Skyline Telecom Infrastructure Limited · £9,500 · from 15/09/2019 · to 14/09/2029 · reviews N/A"
+          },
+          {
+            "label": "Market Rent table",
+            "text": "£9,500 p.a."
+          },
+          {
+            "label": "Valuation",
+            "text": "income £9,500 · reversion £9,500 · value £111,800"
+          }
+        ],
+        "detail": [
+          {
+            "label": "Break",
+            "cell": null
+          },
+          {
+            "label": "Income valued",
+            "cell": {
+              "text": "£9,500",
+              "verified": true,
+              "status": "ok"
+            }
+          },
+          {
+            "label": "Next change in income",
+            "cell": {
+              "text": "15/09/2029",
+              "verified": true
+            }
+          }
+        ]
+      }
+    ],
+    "headline": {
+      "label": "Totals, WAULT, yields and values",
+      "total": 16,
+      "flagged": 3,
+      "checks": [
+        {
+          "ok": true,
+          "severity": null,
+          "title": "Passing rent total",
+          "recomputed": "£168,000",
+          "text": "The tenancy schedule adds up to £168,000, as stated in section 1, section 6 and the valuation."
+        },
+        {
+          "ok": true,
+          "severity": null,
+          "title": "Market Rent total",
+          "recomputed": "£198,500",
+          "text": "The Market Rent table adds up to £198,500, as stated in section 1, section 10 and the valuation."
+        },
+        {
+          "ok": true,
+          "severity": null,
+          "title": "Floor area (sq m) total",
+          "recomputed": "697.30 sq m",
+          "text": "The accommodation schedule adds up to 697.30 sq m, as stated in section 4."
+        },
+        {
+          "ok": false,
+          "severity": "warning",
+          "title": "Floor area (sq ft) total",
+          "recomputed": "7,505 sq ft",
+          "text": "The accommodation schedule adds up to 7,505 sq ft, not the 7,405 sq ft stated.\nInconsistency located on Section 4, page 1.\nThe stated total is 100 sq ft short. Please confirm which is correct."
+        },
+        {
+          "ok": true,
+          "severity": null,
+          "title": "Unit values",
+          "recomputed": "£1,975,800",
+          "text": "The unit values in the valuation add up to £1,975,800, its stated total."
+        },
+        {
+          "ok": true,
+          "severity": null,
+          "title": "Total area",
+          "recomputed": null,
+          "text": "The valuation's total area, 7,505 sq ft, matches the report's floor areas."
+        },
+        {
+          "ok": true,
+          "severity": null,
+          "title": "WAULT to expiry",
+          "recomputed": "4 years, 8 months",
+          "text": "Rent-weighted from the valuation date, the WAULT to expiry is 4 years, 8 months; 4 years, 8 months stated."
+        },
+        {
+          "ok": true,
+          "severity": null,
+          "title": "WAULT to break",
+          "recomputed": "3 years, 6 months",
+          "text": "Rent-weighted from the valuation date, the WAULT to break is 3 years, 6 months; 3 years, 6 months stated."
+        },
+        {
+          "ok": true,
+          "severity": null,
+          "title": "Net initial yield",
+          "recomputed": "8.50%",
+          "text": "Passing rent £168,000 ÷ (£1,850,000 plus 6.8% purchaser's costs) = 8.50%; 8.50% stated."
+        },
+        {
+          "ok": true,
+          "severity": null,
+          "title": "Reversionary yield",
+          "recomputed": "10.05%",
+          "text": "Market Rent £198,500 ÷ (£1,850,000 plus 6.8% purchaser's costs) = 10.05%; 10.05% stated."
+        },
+        {
+          "ok": true,
+          "severity": null,
+          "title": "Equivalent yield",
+          "recomputed": "8.50% to 10.05%",
+          "text": "9.20% sits between the initial yield (8.50%) and the reversionary yield (10.05%), as it should for an under-rented property."
+        },
+        {
+          "ok": false,
+          "severity": "critical",
+          "title": "Market Value",
+          "recomputed": null,
+          "text": "The Market Value is £1,850,000 in the summary, but £1,750,000 in the signed valuation statement.\nInconsistency located on Section 10, page 1.\nA £100,000 difference: the signed figure looks left over from an earlier draft. Please confirm which is correct."
+        },
+        {
+          "ok": true,
+          "severity": null,
+          "title": "Market Rent",
+          "recomputed": null,
+          "text": "£198,500, the same in 1 place."
+        },
+        {
+          "ok": false,
+          "severity": "warning",
+          "title": "Issues box",
+          "recomputed": null,
+          "text": "\"Key Issues Requiring Clarification\" says None identified, but Unit D's lease expired on 31/03/2026. Should it be listed there?\nInconsistency located on Section 1, page 1."
+        },
+        {
+          "ok": true,
+          "severity": null,
+          "title": "Market Rent throughout",
+          "recomputed": null,
+          "text": "£198,500 in 3 places."
+        },
+        {
+          "ok": true,
+          "severity": null,
+          "title": "Passing rent throughout",
+          "recomputed": null,
+          "text": "£168,000 in 2 places."
+        }
+      ]
+    }
+  },
   "compliance": {
-    "label": "VPS 6 compliance check",
+    "label": "Red Book report contents",
     "caveat": "Fixed checks against the Red Book's minimum report contents (VPS 6). They assume a full Red Book valuation, so check your terms of engagement: if this report was instructed on a different basis, some items may not apply.",
     "counts": {
       "missing": 1,
-      "present": 23,
+      "present": 22,
       "partial": 0,
       "advisory": 0,
       "unverified": 0,
-      "na": 1
+      "na": 2
     },
     "rows": [
       {
@@ -177,15 +846,8 @@
         "heading": "(a) Identification and status of the responsible valuer",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "J. Mitchell, MRICS",
-            "location": "Section 21.0 SIGNATURE OF VALUER",
-            "found": true
-          }
-        ],
-        "quote": "J. Mitchell, MRICS",
-        "location": "Section 21.0 SIGNATURE OF VALUER",
+        "quote": "A. Valuer MRICS, RICS Registered Valuer",
+        "location": "Section 12 SIGNATURE",
         "standardSays": "The report must include the signature of the individual responsible for the valuation assignment."
       },
       {
@@ -195,15 +857,8 @@
         "heading": "(a) Identification and status of the responsible valuer",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "J. Mitchell, MRICS",
-            "location": "Section 21.0 SIGNATURE OF VALUER",
-            "found": true
-          }
-        ],
-        "quote": "J. Mitchell, MRICS",
-        "location": "Section 21.0 SIGNATURE OF VALUER",
+        "quote": "A. Valuer MRICS, RICS Registered Valuer",
+        "location": "Section 12 SIGNATURE",
         "standardSays": "In all cases the signatory's professional designation (for example MRICS) must be made clear."
       },
       {
@@ -213,20 +868,8 @@
         "heading": "(a) Identification and status of the responsible valuer",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "Our Valuer will act with independence, integrity and objectivity in undertaking the valuation.",
-            "location": "Appendix D Section 1.2",
-            "found": true
-          },
-          {
-            "quote": "We would confirm the surveyor has the required knowledge, skills and understanding to undertake the valuation competently.",
-            "location": "Section 1.6 BASIS OF INSTRUCTIONS",
-            "found": true
-          }
-        ],
-        "quote": "Our Valuer will act with independence, integrity and objectivity in undertaking the valuation.",
-        "location": "Appendix D Section 1.2",
+        "quote": "We confirm that the valuer has acted with objectivity and has the knowledge, skills and understanding to undertake the valuation competently.",
+        "location": "Section 2.4",
         "standardSays": "A statement confirming that the valuer is in a position to provide an objective and unbiased valuation, and is competent to undertake the valuation assignment."
       },
       {
@@ -236,15 +879,8 @@
         "heading": "(a) Identification and status of the responsible valuer",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "We confirm we have no financial or other conflicting interest in this transaction and that we have had no dealings with this property within the last twelve months.",
-            "location": "Section 1.7 BASIS OF INSTRUCTIONS",
-            "found": true
-          }
-        ],
-        "quote": "We confirm we have no financial or other conflicting interest in this transaction and that we have had no dealings with this property within the last twelve months.",
-        "location": "Section 1.7 BASIS OF INSTRUCTIONS",
+        "quote": "Example Firm LLP valued the Property for a previous lender in March 2025. We do not consider that this gives rise to a conflict of interest.",
+        "location": "Section 2.5",
         "standardSays": "Where there has not been any other material involvement, a statement to that effect must be made in the valuation report."
       },
       {
@@ -254,15 +890,8 @@
         "heading": "(a) Identification and status of the responsible valuer",
         "severity": "advisory",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "in respect of the particular type of property, has sufficient current local, national and international (as appropriate) knowledge of the particular market and the skills and understanding necessary to undertake the valuation competently;",
-            "location": "Appendix D Section 1.1(a)",
-            "found": true
-          }
-        ],
-        "quote": "in respect of the particular type of property, has sufficient current local, national and international (as appropriate) knowledge of the particular market and the skills and understanding necessary to undertake the valuation competently;",
-        "location": "Appendix D Section 1.1(a)",
+        "quote": "The valuer has sufficient current local and national knowledge of the particular market to undertake the valuation competently.",
+        "location": "Section 2.4",
         "standardSays": "A statement should be made that the valuer and/or the valuer's firm has sufficient current local, national and international (as appropriate) knowledge of the particular market, and the skills and understanding to undertake the valuation competently."
       },
       {
@@ -272,15 +901,8 @@
         "heading": "(b) Identification of the client and any other intended users",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "UNDERTAKEN ON BEHALF OF:\n\nNorthbank Lending Limited \nLevel 20\nThe Broadgate Tower\nLondon \nEC2A 2EW",
-            "location": "Title Page",
-            "found": true
-          }
-        ],
-        "quote": "UNDERTAKEN ON BEHALF OF:\n\nNorthbank Lending Limited \nLevel 20\nThe Broadgate Tower\nLondon \nEC2A 2EW",
-        "location": "Title Page",
+        "quote": "This report is addressed to Example Lender Limited and may be relied upon by it and its successors in title.",
+        "location": "Section 2.1",
         "standardSays": "The report must be addressed to the client. The source of the instructions and the identity of the client must be stated, if different from the addressee. Other known users of the report are to be named."
       },
       {
@@ -290,15 +912,8 @@
         "heading": "(c) Purpose of the valuation",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "We understand that this valuation is required for the purposes of assisting you in considering the suitability of these properties in respect of a provision of loan, mortgage or other finance, and is thus for secured lending purposes.",
-            "location": "Section 1.3 BASIS OF INSTRUCTIONS",
-            "found": true
-          }
-        ],
-        "quote": "We understand that this valuation is required for the purposes of assisting you in considering the suitability of these properties in respect of a provision of loan, mortgage or other finance, and is thus for secured lending purposes.",
-        "location": "Section 1.3 BASIS OF INSTRUCTIONS",
+        "quote": "The valuation is required for secured lending purposes, in connection with a proposed loan secured on the Property.",
+        "location": "Section 2.2",
         "standardSays": "The purpose of the valuation assignment must be clearly stated."
       },
       {
@@ -308,20 +923,8 @@
         "heading": "(d) Identification of the asset(s) or liability(ies) valued",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "SUBJECT PROPERTY:\n\n14 Harcourt Terrace \nNorth London\nLondon \nN7 8ZZ",
-            "location": "Title Page",
-            "found": true
-          },
-          {
-            "quote": "of the freehold interest in the subject premises, as at the date of inspection in the light of current market conditions.",
-            "location": "Section 1.2 BASIS OF INSTRUCTIONS",
-            "found": true
-          }
-        ],
-        "quote": "SUBJECT PROPERTY:\n\n14 Harcourt Terrace \nNorth London\nLondon \nN7 8ZZ",
-        "location": "Title Page",
+        "quote": "We have valued the freehold interest in the Property, subject to and with the benefit of the occupational leases.",
+        "location": "Section 2.3",
         "standardSays": "The asset or liability must be clearly identified, distinguishing the asset itself from the interest or right of use in it. The legal interest should be stated."
       },
       {
@@ -331,20 +934,8 @@
         "heading": "(e) Basis(es) of value adopted",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "Market Value",
-            "location": "Section 16.1 BASIS OF VALUATION",
-            "found": true
-          },
-          {
-            "quote": "Market Value – the estimated amount for which an asset or liability should exchange on the valuation date between a willing buyer and a willing seller in an arm’s length transaction, after proper marketing and where the parties had each acted knowledgeably, prudently and without compulsion.",
-            "location": "Section 16.1 BASIS OF VALUATION",
-            "found": true
-          }
-        ],
-        "quote": "Market Value",
-        "location": "Section 16.1 BASIS OF VALUATION",
+        "quote": "Market Value: the estimated amount for which an asset or liability should exchange on the valuation date between a willing buyer and a willing seller in an arm's length transaction.",
+        "location": "Section 2.6",
         "standardSays": "The basis of value, together with its definition, must be stated in full in the report."
       },
       {
@@ -354,15 +945,8 @@
         "heading": "(f) Valuation date",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "The valuation date is the inspection date previously stated in this report.",
-            "location": "Section 18.2 VALUATION",
-            "found": true
-          }
-        ],
-        "quote": "The valuation date is the inspection date previously stated in this report.",
-        "location": "Section 18.2 VALUATION",
+        "quote": "Valuation Date: 30th September 2026",
+        "location": "Section 1",
         "standardSays": "The valuation date must be stated."
       },
       {
@@ -372,25 +956,8 @@
         "heading": "(f) Valuation date",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "The valuation date is the inspection date previously stated in this report.",
-            "location": "Section 18.2 VALUATION",
-            "found": true
-          },
-          {
-            "quote": "Inspection Date: 6th November 2025",
-            "location": "Title Page",
-            "found": true
-          },
-          {
-            "quote": "Report Date: 13th November 2025",
-            "location": "Title Page",
-            "found": true
-          }
-        ],
-        "quote": "The valuation date is the inspection date previously stated in this report.",
-        "location": "Section 18.2 VALUATION",
+        "quote": "Date of inspection: 24 September 2026. Valuation date: 30 September 2026. Date of report: 9 October 2026.",
+        "location": "Section 2.7",
         "standardSays": "Where the valuation date, the date of inspection and the date of the report differ, these dates must be clearly distinguished in the report."
       },
       {
@@ -400,25 +967,8 @@
         "heading": "(g) Extent of investigation",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "Our Valuer will undertake a visual inspection of so much of the exterior and interior of the property as is accessible with safety and without undue difficulty as can be seen whilst standing at ground level within the boundaries of the site and adjacent public/communal areas and whilst standing at the various floor levels, which our Valuer considers reasonably necessary to provide the Service, having regard to its purpose.",
-            "location": "Appendix D Section 2.1",
-            "found": true
-          },
-          {
-            "quote": "Inspection Date: 6th November 2025",
-            "location": "Title Page",
-            "found": true
-          },
-          {
-            "quote": "We were unable to gain access to the loft space.",
-            "location": "Section 2.4 DETAILS OF INSPECTION",
-            "found": true
-          }
-        ],
-        "quote": "Our Valuer will undertake a visual inspection of so much of the exterior and interior of the property as is accessible with safety and without undue difficulty as can be seen whilst standing at ground level within the boundaries of the site and adjacent public/communal areas and whilst standing at the various floor levels, which our Valuer considers reasonably necessary to provide the Service, having regard to its purpose.",
-        "location": "Appendix D Section 2.1",
+        "quote": "We inspected the common parts, both ground floor units and four of the 12 rooms on the upper floors. The roof was not accessed.",
+        "location": "Section 2.8",
         "standardSays": "The report must record the date and extent of any inspection, including reference to any part of the property to which access was not possible."
       },
       {
@@ -428,20 +978,8 @@
         "heading": "(h) Nature and source(s) of the information relied upon, including sources of key data and inputs used",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "In preparing this valuation we have relied upon the passing rental information provided by the property owner.",
-            "location": "Section 1.5 BASIS OF INSTRUCTIONS",
-            "found": true
-          },
-          {
-            "quote": "Our Valuer shall, unless otherwise expressly agreed, rely upon information provided by the Lender and/or the Clients legal or other professional advisers relating to tenure, leases and all other relevant matters.",
-            "location": "Appendix D Section 1.19",
-            "found": true
-          }
-        ],
-        "quote": "In preparing this valuation we have relied upon the passing rental information provided by the property owner.",
-        "location": "Section 1.5 BASIS OF INSTRUCTIONS",
+        "quote": "Tenancy schedule – provided",
+        "location": "Section 2 Sources of Information",
         "standardSays": "The nature and source of the information relied on and the extent of any steps taken to verify that information must be disclosed."
       },
       {
@@ -450,16 +988,7 @@
         "ref": "VPS 6 s2.2(h)6",
         "heading": "(h) Nature and source(s) of the information relied upon, including sources of key data and inputs used",
         "severity": "required",
-        "status": "present",
-        "evidence": [
-          {
-            "quote": "The comparable evidence has been sourced from a range of locations across London, due to limited recent sales directly comparable to the subject property. Of the comparables provided, 89 Parkside Road is the most aligned in terms of location, size, and layout. It comprises a similar number of bedsits (7–8 rooms) arranged in a comparable format and provides the most direct insight into market value. This property sold on 20 June 2024, potentially in a slightly stronger market, and accordingly, significant weight has been given to this comparable.",
-            "location": "Section 13.4 MARKET TRENDS AND VALUATION COMMENTARY",
-            "found": true
-          }
-        ],
-        "quote": "The comparable evidence has been sourced from a range of locations across London, due to limited recent sales directly comparable to the subject property. Of the comparables provided, 89 Parkside Road is the most aligned in terms of location, size, and layout. It comprises a similar number of bedsits (7–8 rooms) arranged in a comparable format and provides the most direct insight into market value. This property sold on 20 June 2024, potentially in a slightly stronger market, and accordingly, significant weight has been given to this comparable.",
-        "location": "Section 13.4 MARKET TRENDS AND VALUATION COMMENTARY",
+        "status": "missing",
         "standardSays": "The rationale for the valuer's opinion of the general reliability and quality of the important data, inputs, modifications and assumptions must be documented in the report."
       },
       {
@@ -469,20 +998,8 @@
         "heading": "(i) Assumptions and special assumptions",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "In preparing the report, unless otherwise stated by our Valuer, the following assumptions will be made which our Valuer shall be under no duty to verify:-",
-            "location": "Appendix D Section 1.23",
-            "found": true
-          },
-          {
-            "quote": "We will discuss and agree with you in writing any Special Assumptions prior to commencing the valuation process, other than the marketing constraints defined in your instructions.",
-            "location": "Appendix D Section 9.3",
-            "found": true
-          }
-        ],
-        "quote": "In preparing the report, unless otherwise stated by our Valuer, the following assumptions will be made which our Valuer shall be under no duty to verify:-",
-        "location": "Appendix D Section 1.23",
+        "quote": "Where a lease incorporates a break option, we have assumed that the tenant exercises their option.",
+        "location": "Section 10",
         "standardSays": "All assumptions and any special assumptions must be set out in the report in full, together with any reservations, and a statement that they have been agreed with the client."
       },
       {
@@ -491,31 +1008,8 @@
         "ref": "VPS 6 s2.2(i)",
         "heading": "(i) Assumptions and special assumptions",
         "severity": "required",
-        "status": "present",
-        "evidence": [
-          {
-            "quote": "£1,550,000\n | (One Million Five Hundred and Fifty Thousand Pounds)\n | Market Value with the special assumption of a 180 day marketing period",
-            "location": "Section 18.1 VALUATION",
-            "found": true
-          },
-          {
-            "quote": "£1,400,000\n | (One Million Four Hundred Thousand Pounds)\n | Market Value with the special assumption of a 90 day marketing period",
-            "location": "Section 18.1 VALUATION",
-            "found": true
-          },
-          {
-            "quote": "£1,550,000\n | (One Million Five Hundred and Fifty Thousand Pounds)\n | Market Value subject to, and with the benefit of, any existing leases, given a sale period not exceeding 180 days",
-            "location": "Section 18.1 VALUATION",
-            "found": true
-          },
-          {
-            "quote": "£1,400,000\n | (One Million Four Hundred Thousand Pounds)\n | Market Value subject to, and with the benefit of, any existing leases, given a sale period not exceeding 90 days",
-            "location": "Section 18.1 VALUATION",
-            "found": true
-          }
-        ],
-        "quote": "£1,550,000\n | (One Million Five Hundred and Fifty Thousand Pounds)\n | Market Value with the special assumption of a 180 day marketing period",
-        "location": "Section 18.1 VALUATION",
+        "status": "na",
+        "naReason": "No special assumptions are made in the valuation.",
         "standardSays": "Both the valuation conclusion and the executive summary (if provided) should explicitly set out all special assumptions."
       },
       {
@@ -525,15 +1019,8 @@
         "heading": "(j) Restrictions on use, distribution and publication of the report",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "This valuation is prepared solely for the use of the addressee and no responsibility is accepted to any other party for the whole or any part of its contents.",
-            "location": "Section 20.1 LIMITATION AND PUBLICATION",
-            "found": true
-          }
-        ],
-        "quote": "This valuation is prepared solely for the use of the addressee and no responsibility is accepted to any other party for the whole or any part of its contents.",
-        "location": "Section 20.1 LIMITATION AND PUBLICATION",
+        "quote": "This report is for the use of the addressee only and for the purpose stated. No responsibility is accepted to any third party.",
+        "location": "Section 2.9",
         "standardSays": "The valuer must state the permitted use, distribution and publication of the valuation."
       },
       {
@@ -543,15 +1030,8 @@
         "heading": "(k) Confirmation that the valuation has been undertaken in accordance with IVS and/or RICS Red Book Global Standards",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "Our valuation has been prepared in accordance with the RICS Valuation – Global Standards (Red Book), as amended.",
-            "location": "Appendix D Section 9.4",
-            "found": true
-          }
-        ],
-        "quote": "Our valuation has been prepared in accordance with the RICS Valuation – Global Standards (Red Book), as amended.",
-        "location": "Appendix D Section 9.4",
+        "quote": "The valuation has been undertaken in accordance with the RICS Valuation – Global Standards, effective from 31 January 2025.",
+        "location": "Section 2.10",
         "standardSays": "The valuer should provide confirmation that the valuation has been undertaken in accordance with IVS and/or the RICS Valuation – Global Standards, which incorporate IVS, and (where applicable) the relevant RICS national or jurisdictional supplement. (RICS words this one as 'should', not 'must' — but its absence is a defect on any lender panel, so it is treated as required here.)"
       },
       {
@@ -561,15 +1041,8 @@
         "heading": "(l) Valuation approach and reasoning, including any valuation method(s) and complex or proprietary model(s) used",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "For the purposes of this valuation, we have adopted a hybrid approach, applying both the comparable and investment methods as appropriate. The basement flat (14A Harcourt Terrace) has been valued using the comparable method, with reference to recent sales of similar three-bedroom flats within the locality.",
-            "location": "Section 16.6 BASIS OF VALUATION",
-            "found": true
-          }
-        ],
-        "quote": "For the purposes of this valuation, we have adopted a hybrid approach, applying both the comparable and investment methods as appropriate. The basement flat (14A Harcourt Terrace) has been valued using the comparable method, with reference to recent sales of similar three-bedroom flats within the locality.",
-        "location": "Section 16.6 BASIS OF VALUATION",
+        "quote": "We have adopted the investment method, capitalising the contracted income to the lease events and the Market Rent thereafter.",
+        "location": "Section 10",
         "standardSays": "The report must make reference to the approach(es) adopted, the method(s) and model(s) applied, key inputs used and the principal reasons for the conclusions reached."
       },
       {
@@ -579,45 +1052,8 @@
         "heading": "(m) Amount of the valuation or valuations",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "£1,715,000\n | (One Million Seven Hundred and Fifteen Thousand Pounds)\n | Market Value with Vacant Possession",
-            "location": "Section 18.1 VALUATION",
-            "found": true
-          },
-          {
-            "quote": "£1,550,000\n | (One Million Five Hundred and Fifty Thousand Pounds)\n | Market Value with the special assumption of a 180 day marketing period",
-            "location": "Section 18.1 VALUATION",
-            "found": true
-          },
-          {
-            "quote": "£1,400,000\n | (One Million Four Hundred Thousand Pounds)\n | Market Value with the special assumption of a 90 day marketing period",
-            "location": "Section 18.1 VALUATION",
-            "found": true
-          },
-          {
-            "quote": "£1,715,000\n | (One Million Seven Hundred and Fifteen Thousand Pounds)\n | Market Value subject to, and with the benefit of, any existing leases",
-            "location": "Section 18.1 VALUATION",
-            "found": true
-          },
-          {
-            "quote": "£1,550,000\n | (One Million Five Hundred and Fifty Thousand Pounds)\n | Market Value subject to, and with the benefit of, any existing leases, given a sale period not exceeding 180 days",
-            "location": "Section 18.1 VALUATION",
-            "found": true
-          },
-          {
-            "quote": "£1,400,000\n | (One Million Four Hundred Thousand Pounds)\n | Market Value subject to, and with the benefit of, any existing leases, given a sale period not exceeding 90 days",
-            "location": "Section 18.1 VALUATION",
-            "found": true
-          },
-          {
-            "quote": "£118,200 per annum\n | (One Hundred and Eighteen Thousand Two Hundred Pounds)\n | Market Rent",
-            "location": "Section 18.1 VALUATION",
-            "found": true
-          }
-        ],
-        "quote": "£1,715,000\n | (One Million Seven Hundred and Fifteen Thousand Pounds)\n | Market Value with Vacant Possession",
-        "location": "Section 18.1 VALUATION",
+        "quote": "£1,750,000 (One Million, Seven Hundred and Fifty Thousand Pounds)",
+        "location": "Section 10",
         "standardSays": "In the main body of the report, the opinion of value must be provided in words, as well as in figures."
       },
       {
@@ -627,15 +1063,8 @@
         "heading": "(n) Date of the valuation report",
         "severity": "required",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "Report Date: 13th November 2025",
-            "location": "Title Page",
-            "found": true
-          }
-        ],
-        "quote": "Report Date: 13th November 2025",
-        "location": "Title Page",
+        "quote": "DATE OF REPORT: 9 OCTOBER 2026",
+        "location": "Cover",
         "standardSays": "The date on which the report is issued must be included."
       },
       {
@@ -655,15 +1084,8 @@
         "heading": "(p) A statement setting out any limitations on liability that have been agreed",
         "severity": "advisory",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "This valuation is prepared solely for the use of the addressee and no responsibility is accepted to any other party for the whole or any part of its contents.",
-            "location": "Section 20.1 LIMITATION AND PUBLICATION",
-            "found": true
-          }
-        ],
-        "quote": "This valuation is prepared solely for the use of the addressee and no responsibility is accepted to any other party for the whole or any part of its contents.",
-        "location": "Section 20.1 LIMITATION AND PUBLICATION",
+        "quote": "Our liability is limited as set out in our terms of engagement at Appendix 1.",
+        "location": "Section 2.9",
         "standardSays": "A statement setting out any limitations on liability that have been agreed."
       },
       {
@@ -673,25 +1095,8 @@
         "heading": "(q) Significant environmental, social and governance (ESG) factors used and considered",
         "severity": "advisory",
         "status": "present",
-        "evidence": [
-          {
-            "quote": "14 Harcourt Terrace – It appears there is no EPC certificate against this property. There is a certificate under “14 Harcourt Terrace” however this doesn’t correctly correspond to the layout of the house as multiple bedsits and is being disregarded. This incorrect EPC expires on the 24th Nov 2025. Solicitors to check validity of current tenancies.",
-            "location": "Section 8.6 CONDITION",
-            "found": true
-          },
-          {
-            "quote": "14a Harcourt Terrace – This property has an EPC rating of B expiring 8 Aug 2026.",
-            "location": "Section 8.6 CONDITION",
-            "found": true
-          },
-          {
-            "quote": "Our investigations have led me to conclude that the property does not have an above average risk of flooding from river or sea flooding.",
-            "location": "Section 10.6 GROUND CONDITIONS AND ENVIRONMENTAL RISKS",
-            "found": true
-          }
-        ],
-        "quote": "14 Harcourt Terrace – It appears there is no EPC certificate against this property. There is a certificate under “14 Harcourt Terrace” however this doesn’t correctly correspond to the layout of the house as multiple bedsits and is being disregarded. This incorrect EPC expires on the 24th Nov 2025. Solicitors to check validity of current tenancies.",
-        "location": "Section 8.6 CONDITION",
+        "quote": "The Environment Agency's Long Term Flood Risk service identifies the Property as being within an area at high risk of flooding from surface water.",
+        "location": "Section 4",
         "standardSays": "Valuers must identify, report and document the consideration of significant ESG factors and any impact on the valuation conclusion and/or rationale."
       },
       {
@@ -700,17 +1105,9 @@
         "ref": "VPS 6 s1.8",
         "heading": "Terminology (VPS 6 s1.8)",
         "severity": "required",
-        "status": "missing",
-        "evidence": [
-          {
-            "quote": "Neither the whole nor any part of this valuation certificate nor any reference thereto may be included in any published document, circular or statement nor published in any way without our approval of the form and context in which it may appear.",
-            "location": "Section 20.2 LIMITATION AND PUBLICATION"
-          }
-        ],
-        "quote": "2\n | Neither the whole nor any part of this valuation certificate nor any reference thereto may be included in any published document, circular or statement nor published in any way without our approval of the form and context in which it may appear.",
-        "statusLabel": "Failed",
-        "meaning": "The report uses wording the Red Book bars. This is a required item.",
-        "verificationNote": "The report uses \"valuation certificate\", which VPS 6 s1.8 says should not be used. It often appears in standard publication-restriction wording rather than the body of the report.",
+        "status": "present",
+        "statusLabel": "Passed",
+        "meaning": "None of the wording the Red Book bars was found in the report.",
         "standardSays": "The terms 'certificate of value', 'valuation certificate' and 'statement of value' should not be used."
       }
     ]
