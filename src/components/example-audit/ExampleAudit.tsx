@@ -11,7 +11,10 @@ import React, { useState } from "react";
  *
  * Interactivity kept from the app: severity filter buttons, click a finding to
  * reveal its explanation, click a checklist row to reveal its evidence, the
- * checklist panel opens and closes. Removed: rename, mark-as-fixed, copy,
+ * checklist panel opens and closes. The schedule reconciliation panel (when
+ * the data has one) opens and closes, each unit opens to show its checks and
+ * the figures read for it, and the totals checks fold. Unlike the app, it
+ * starts open with one unit expanded, so a visitor sees the detail at once. Removed: rename, mark-as-fixed, copy,
  * PDF, "Report order" (these need a live report behind them).
  */
 
@@ -45,8 +48,41 @@ export interface ExampleCheckRow {
   standardSays?: string;
 }
 
-export interface ExampleAuditData {
+export interface ExampleCell { text: string; verified: boolean; status?: "ok" | "bad" }
+export interface ExampleScheduleCheck { ok: boolean; severity: Severity | null; text: string; title?: string; recomputed?: string | null }
+
+/** The schedule reconciliation panel, worked out by the app's own code
+ *  (scripts/exportLenderExample.ts in the app repo); this file only draws it. */
+export interface ExampleSchedule {
   title: string;
+  header: string;
+  flagged: number;
+  intro: string;
+  subject: { address?: string; valuationDate?: string; reportDate?: string };
+  unitColumn: string;
+  widths: { first: string; flags: string };
+  columns: { key: string; label: string; width: string }[];
+  openUnit?: string;
+  units: {
+    key: string;
+    label: string;
+    tenant?: string;
+    tenantBad?: boolean;
+    cells: Record<string, ExampleCell | null>;
+    flags: number;
+    checks: ExampleScheduleCheck[];
+    sources: { label: string; text: string }[];
+    detail: { label: string; cell: ExampleCell | null }[];
+  }[];
+  headline: { label: string; total: number; flagged: number; checks: ExampleScheduleCheck[] };
+}
+
+export interface ExampleAuditData {
+  /** A line shown above everything else, e.g. that the audit is
+   *  hypothetical. Always shown when present. */
+  notice?: string;
+  title: string;
+  schedule?: ExampleSchedule;
   summary: { total: number; critical: number; warning: number; suggestion: number };
   issues: ExampleIssue[];
   compliance: {
@@ -194,14 +230,176 @@ const CompliancePanel: React.FC<{ data: ExampleAuditData["compliance"]; defaultO
   );
 };
 
+// ── Schedule reconciliation panel (the app's SchedulePanel, self-contained) ──
+const CellView: React.FC<{ cell: ExampleCell | null | undefined }> = ({ cell }) => {
+  if (!cell) return <span className="text-slate-300">—</span>;
+  const colour = !cell.verified ? "text-amber-700" : cell.status === "bad" ? "text-rose-700" : cell.status === "ok" ? "text-emerald-700" : "text-slate-700";
+  return (
+    <span className={`break-words ${colour}`}>
+      {cell.text}
+      {!cell.verified && <span aria-hidden> ?</span>}
+      {cell.verified && cell.status === "ok" && <span aria-hidden className="text-emerald-600"> ✓</span>}
+      {cell.verified && cell.status === "bad" && <span aria-hidden className="text-rose-600"> ✗</span>}
+    </span>
+  );
+};
+
+const CheckLine: React.FC<{ c: ExampleScheduleCheck }> = ({ c }) => {
+  const cls = c.ok
+    ? "text-emerald-700 bg-emerald-50 border-emerald-100"
+    : c.severity === "critical"
+      ? "text-rose-700 bg-rose-50 border-rose-100"
+      : c.severity
+        ? "text-amber-800 bg-amber-50 border-amber-100"
+        : "text-slate-600 bg-slate-50 border-slate-100";
+  return <p className={`text-xs border rounded-md px-3 py-2 whitespace-pre-line ${cls}`}><span aria-hidden>{c.ok ? "✓ " : c.severity ? "✗ " : ""}</span>{c.text}</p>;
+};
+
+const ScheduleRow: React.FC<{ u: ExampleSchedule["units"][number]; columns: ExampleSchedule["columns"]; open: boolean; onToggle: () => void }> = ({ u, columns, open, onToggle }) => (
+  <>
+    <tr onClick={onToggle} className={`border-t border-slate-100 cursor-pointer hover:bg-slate-50 transition-colors ${open ? "bg-slate-50" : ""}`}>
+      <td className="px-3 py-2.5 align-top">
+        <span className="flex items-start gap-2">
+          <Chevron open={open} />
+          <span className="min-w-0">
+            <span className="block text-sm text-slate-800 break-words">{u.label}</span>
+            {u.tenant && <span className={`block text-[11px] mt-0.5 break-words ${u.tenantBad ? "text-rose-600" : "text-slate-400"}`}>{u.tenant}</span>}
+          </span>
+        </span>
+      </td>
+      {columns.map((c) => <td key={c.key} className="px-2 py-2.5 align-top text-sm"><CellView cell={u.cells[c.key]} /></td>)}
+      <td className="px-2 py-2.5 align-top text-right">
+        {u.flags > 0 && <span className="inline-flex items-center justify-center min-w-[1.25rem] h-5 px-1.5 rounded-full bg-red-500 text-white text-[11px] font-semibold tabular-nums">{u.flags}</span>}
+      </td>
+    </tr>
+    {open && (
+      <tr className="bg-slate-50">
+        <td colSpan={columns.length + 2} className="pb-4 pt-0.5">
+          {/* Pinned to the visible width on a phone, where the table
+              scrolls sideways, so the text wraps where it can be read. */}
+          <div className="space-y-2 pl-9 pr-4 sticky left-0 max-w-[calc(100vw-6.5rem)] sm:max-w-none">
+            {u.checks.map((c, i) => <CheckLine key={i} c={c} />)}
+            {(u.sources.length > 0 || u.detail.length > 0) && (
+              <div className="pt-1">
+                <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-1">From your report</p>
+                <dl className="text-xs text-slate-700 space-y-1">
+                  {u.sources.map((s) => (
+                    <div key={s.label} className="flex gap-2">
+                      <dt className="w-32 shrink-0 text-slate-400">{s.label}</dt>
+                      <dd className="min-w-0 whitespace-pre-line">{s.text}</dd>
+                    </div>
+                  ))}
+                  {u.detail.map((d) => (
+                    <div key={d.label} className="flex gap-2">
+                      <dt className="w-32 shrink-0 text-slate-400">{d.label}</dt>
+                      <dd className="min-w-0"><CellView cell={d.cell} /></dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            )}
+          </div>
+        </td>
+      </tr>
+    )}
+  </>
+);
+
+const SchedulePanel: React.FC<{ data: ExampleSchedule; defaultOpen?: boolean }> = ({ data, defaultOpen = false }) => {
+  const [open, setOpen] = useState(defaultOpen);
+  const [openRow, setOpenRow] = useState<string | null>(data.openUnit ?? null);
+  const [showChecks, setShowChecks] = useState(false);
+  const s = data.subject;
+  return (
+    <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden mb-4">
+      <button onClick={() => setOpen((o) => !o)} className="w-full flex items-center gap-3 px-5 py-4 text-left transition-colors hover:bg-slate-50">
+        <Chevron open={open} />
+        <span className="flex-1 min-w-0">
+          <span className="text-sm font-semibold text-slate-800">{data.title}</span>
+          <span className="block text-[11px] text-slate-400 mt-0.5">{data.header}</span>
+        </span>
+        {data.flagged > 0 ? (
+          <span className="shrink-0 inline-flex items-center justify-center min-w-[1.5rem] h-6 px-2 rounded-full bg-red-500 text-white text-xs font-semibold tabular-nums">{data.flagged}</span>
+        ) : (
+          <span className="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-emerald-200 bg-emerald-50 text-emerald-700 text-[11px] font-medium">✓ No issues</span>
+        )}
+      </button>
+      <Collapsible open={open}>
+        <div className="pb-4">
+          <p className="mx-5 mt-3 text-xs text-slate-600">{data.intro}</p>
+          {(s.address || s.valuationDate) && (
+            <div className="px-5 py-4 border-b border-slate-100 space-y-0.5 text-sm text-slate-700">
+              {s.address && <p><span className="font-semibold text-slate-800">Property:</span> {s.address}</p>}
+              {s.valuationDate && <p><span className="font-semibold text-slate-800">Valuation date:</span> {s.valuationDate}</p>}
+              {s.reportDate && <p><span className="font-semibold text-slate-800">Report date:</span> {s.reportDate}</p>}
+            </div>
+          )}
+          {/* On a phone the table scrolls sideways inside its own box rather
+              than squeezing five columns into 300 px. */}
+          <div className="mx-3 sm:mx-5 mt-3 border border-slate-200 rounded-xl overflow-x-auto">
+            <table className="w-full min-w-[600px] table-fixed">
+              <colgroup>
+                <col style={{ width: data.widths.first }} />
+                {data.columns.map((c) => <col key={c.key} style={{ width: c.width }} />)}
+                <col style={{ width: data.widths.flags }} />
+              </colgroup>
+              <thead>
+                <tr className="text-[10px] uppercase tracking-wider text-slate-400">
+                  <th className="text-left font-medium px-3 py-2">{data.unitColumn}</th>
+                  {data.columns.map((c) => <th key={c.key} className="text-left font-medium px-2 py-2 break-words">{c.label}</th>)}
+                  <th className="text-right font-medium px-2 py-2">Flags</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.units.map((u) => (
+                  <ScheduleRow key={u.key} u={u} columns={data.columns} open={openRow === u.key} onToggle={() => setOpenRow((r) => (r === u.key ? null : u.key))} />
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {data.headline.total > 0 && (
+            <div className="mx-5 mt-3 space-y-3">
+              <button type="button" onClick={() => setShowChecks((v) => !v)} className="w-full flex items-center gap-2 text-left rounded-md -mx-1 px-1 py-0.5 hover:bg-slate-50">
+                <Chevron open={showChecks} />
+                <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">{data.headline.label}</span>
+                <span className="text-[11px] text-slate-400">· {data.headline.total} {data.headline.total === 1 ? "check" : "checks"}{data.headline.flagged ? `, ${data.headline.flagged} flagged` : ", all agree"}</span>
+              </button>
+              {showChecks && (
+                <ul className="space-y-1.5">
+                  {data.headline.checks.map((c, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs">
+                      <span aria-hidden className={`shrink-0 w-4 ${c.ok ? "text-emerald-600" : c.severity === "critical" ? "text-rose-600" : c.severity ? "text-amber-600" : "text-slate-400"}`}>{c.ok ? "✓" : c.severity ? "✗" : "·"}</span>
+                      <span className="min-w-0">
+                        <span className="font-semibold text-slate-700">{c.title}</span>
+                        {c.recomputed && <span className="text-slate-500"> · {c.recomputed}</span>}
+                        <span className={`block ${c.ok ? "text-slate-500" : "text-slate-700"}`}>{c.text}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+        </div>
+      </Collapsible>
+    </div>
+  );
+};
+
 // ── The results view ────────────────────────────────────────────────────────
-export const ExampleAudit: React.FC<{ data: ExampleAuditData; complianceOpen?: boolean }> = ({ data, complianceOpen = false }) => {
+export const ExampleAudit: React.FC<{ data: ExampleAuditData; complianceOpen?: boolean; scheduleOpen?: boolean }> = ({ data, complianceOpen = false, scheduleOpen = true }) => {
   const [filter, setFilter] = useState<"all" | Severity>("all");
   const [selected, setSelected] = useState<string | null>(null);
   const issues = filter === "all" ? data.issues : data.issues.filter((i) => i.severity === filter);
 
   return (
     <div className="flex flex-col bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
+      {data.notice && (
+        <div className="px-4 py-2.5 bg-amber-50 border-b border-amber-200 text-sm text-amber-900">
+          {/* The first sentence in bold: "Hypothetical example audit." */}
+          <span className="font-semibold">{data.notice.split(". ")[0]}.</span>{data.notice.includes(". ") ? ` ${data.notice.slice(data.notice.indexOf(". ") + 2)}` : ""}
+        </div>
+      )}
       {/* Filter bar */}
       <div className="p-4 border-b border-slate-200 bg-white flex items-center flex-wrap gap-3 shrink-0">
         <span className="text-sm text-slate-600 mr-2 inline-flex items-center"><span className="rounded-md px-1.5 py-0.5">Found <span className="font-bold text-slate-900 tabular-nums">{data.summary.total}</span> issues</span></span>
@@ -217,7 +415,8 @@ export const ExampleAudit: React.FC<{ data: ExampleAuditData; complianceOpen?: b
       </div>
 
       {/* Panels + findings */}
-      <div className="p-6">
+      <div className="p-3 sm:p-6">
+        {data.schedule && <SchedulePanel data={data.schedule} defaultOpen={scheduleOpen} />}
         <CompliancePanel data={data.compliance} defaultOpen={complianceOpen} />
         <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
           <div className="divide-y divide-slate-100">
