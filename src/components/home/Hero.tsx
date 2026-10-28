@@ -36,14 +36,16 @@ export function Hero() {
               the badge itself is 322 x 97px (258 x 78px on phones), above
               RICS's 200 x 60 minimum. The top margin sets the gap above the
               badge to 48px, matching the text-to-buttons gap and still more
-              than the lion's head (RICS's clear space, ~45px here). */}
+              than the lion's head (RICS's clear space, ~45px here). The
+              bottom margin halves the space under the badge (Harry, 28 Oct),
+              leaving 67px on desktop and 49px on phones, still clear. */}
           <Image
             src="/rics/rics-tech-network-solution-provider.svg"
             alt="RICS Tech Network Solution Provider"
             width={450}
             height={203}
             priority
-            className="mt-[6px] -ml-[52px] w-[360px] sm:-mt-[5px] sm:-ml-[65px] sm:w-[450px] max-w-none h-auto"
+            className="mt-[6px] -mb-[49px] -ml-[52px] w-[360px] sm:-mt-[5px] sm:-ml-[65px] sm:w-[450px] lg:-mb-[67px] max-w-none h-auto"
           />
         </div>
 
