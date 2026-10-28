@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { Button } from "@/components/Button";
 import { getPost, getPosts } from "@/lib/feed";
 
 export const revalidate = 3600;
@@ -65,6 +66,15 @@ export default async function Article({
               className="blog-content"
               dangerouslySetInnerHTML={{ __html: post.contentHtml }}
             />
+
+            <div className="mt-12 pt-10 border-t border-rule flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <p className="m-0 text-[17px] leading-[1.5] text-ink font-medium max-w-[40ch]">
+                See what WriteUp flags on a full valuation report.
+              </p>
+              <Button href="/example-audit" variant="secondary" size="lg" className="self-start sm:self-auto shrink-0">
+                See a sample audit
+              </Button>
+            </div>
           </article>
 
           <div className="mt-8">

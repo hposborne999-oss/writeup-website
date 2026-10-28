@@ -49,7 +49,7 @@ export function Footer() {
               />
             </Link>
             <p className="mt-[14px] text-[14px] leading-[1.65] text-slate-700 max-w-[42ch]">
-              A RICS Tech Partner AI audit tool for RICS reports. Built by a practising MRICS Chartered Surveyor.
+              AI review for RICS valuation reports. Built by a practising MRICS Chartered Surveyor.
             </p>
           </div>
           <div>
@@ -87,6 +87,18 @@ export function Footer() {
             )}
           </div>
         </div>
+        {/* RICS's approved website wording, word for word (Solution Provider
+            guidance, Oct 2026). */}
+        <p className="m-0 mb-6 max-w-[110ch] text-[12.5px] leading-[1.6] text-slate-500">
+          WriteUp is an RICS Tech Network Solution Provider. The RICS Tech
+          Network brings together organisations and thought leaders committed
+          to using technology to address challenges across the built and
+          natural environment and drive innovation across the sector. All
+          services we provide are independent of RICS. Participation in the
+          RICS Tech Network does not constitute or imply any certification,
+          accreditation, approval, recommendation, endorsement or verification
+          by RICS of our products or services.
+        </p>
         <div className="border-t border-rule pt-6 flex flex-wrap justify-between gap-4 text-[12.5px] text-slate-500 font-mono">
           <div>
             WriteUp Limited · Company No. 17089556 · Registered in England &amp; Wales
