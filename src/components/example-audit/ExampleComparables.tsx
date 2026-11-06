@@ -13,9 +13,10 @@ import React, { useState } from "react";
  * else, distance always black.
  *
  * Website differences, all deliberate:
- *  - No Land Registry links. The example's postcodes are invented, so a live
- *    search would find nothing; the buttons are left out rather than lead
- *    nowhere.
+ *  - The Land Registry button on each sales row is drawn exactly as in the
+ *    app but links nowhere: the example's postcodes are invented, so a live
+ *    search would find nothing (Harry, 6 Nov 2026). The subject's "Search
+ *    this postcode" link is left out.
  *  - An expanded row's text is pinned to the visible width on a phone, the
  *    same as the schedule panel in ExampleAudit.tsx, so it wraps on screen
  *    while the table scrolls sideways.
@@ -245,6 +246,8 @@ const Row: React.FC<{ c: Comparable; block: ComparablesBlock; open: boolean; onT
   const overLimit = c.flags.some((f) => f.id === "age");
   const vdOk = !!block.subject.valuationDate?.verified;
   const unsold = c.unsold || (c.status === "asking" ? "Asking price" : c.status === "under_offer" ? "Under offer" : undefined);
+  // The app links every sales comparable with a postcode to the register.
+  const registerButton = c.kind === "sale" && !!c.postcode;
   const details = c.flags.filter((f) => f.id !== "register");
 
   let dateTone: "ok" | "bad" | "warn" | "plain" = "plain";
@@ -317,6 +320,12 @@ const Row: React.FC<{ c: Comparable; block: ComparablesBlock; open: boolean; onT
                   <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-1">From your report</p>
                   <blockquote className="text-sm text-slate-700 border-l-2 border-slate-200 pl-3 italic">{c.quote}</blockquote>
                 </div>
+              )}
+              {registerButton && (
+                // The app's link, as a plain box: it goes nowhere on the example.
+                <span onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1.5 mt-1 px-3 py-1.5 rounded-md border border-slate-200 bg-white text-xs font-medium text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-colors">
+                  {sale ? "Check this sale on the Land Registry" : "Search this postcode on the Land Registry"} <span aria-hidden>↗</span>
+                </span>
               )}
             </div>
           </td>
