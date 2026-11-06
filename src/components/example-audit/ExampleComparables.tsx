@@ -16,13 +16,13 @@ import React, { useState } from "react";
  *  - No Land Registry links. The example's postcodes are invented, so a live
  *    search would find nothing; the buttons are left out rather than lead
  *    nowhere.
- *  - The app's panel starts closed with both evidence tables closed. Here the
- *    panel starts closed (as in the app) but opens straight onto the sales
- *    table, so one click shows the checks.
  *  - An expanded row's text is pinned to the visible width on a phone, the
  *    same as the schedule panel in ExampleAudit.tsx, so it wraps on screen
  *    while the table scrolls sideways.
  *  - No print layout.
+ *
+ * As in the app, the panel and both evidence tables start closed, so on first
+ * load only the schedule panel is open (Harry, 6 Nov 2026).
  *
  * The data (example-comparables.json) is invented for the Kestrel House
  * example: every address, figure and register record is made up, apart from
@@ -362,7 +362,7 @@ function SubjectBlock({ block }: { block: ComparablesBlock }) {
   );
 }
 
-export function ExampleComparables({ block, defaultOpen = false, defaultGroup = "Sales evidence" }: { block: ComparablesBlock; defaultOpen?: boolean; defaultGroup?: string | null }) {
+export function ExampleComparables({ block, defaultOpen = false, defaultGroup = null }: { block: ComparablesBlock; defaultOpen?: boolean; defaultGroup?: string | null }) {
   const [open, setOpen] = useState(defaultOpen);
   // One evidence group open at a time.
   const [openGroup, setOpenGroup] = useState<string | null>(defaultGroup);
