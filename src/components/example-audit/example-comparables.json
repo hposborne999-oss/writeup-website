@@ -1,0 +1,537 @@
+{
+  "subject": {
+    "address": "Kestrel House, 112-118 Mercer Street, Northampton, NN1 9ZZ",
+    "postcode": "NN1 9ZZ",
+    "verified": true,
+    "valuationDate": {
+      "raw": "30 September 2026",
+      "y": 2026,
+      "m": 9,
+      "d": 30,
+      "verified": true
+    },
+    "register": {
+      "status": "none",
+      "text": "No sale of this address was found in the Land Registry price paid data."
+    }
+  },
+  "comparables": [
+    {
+      "id": "s1",
+      "kind": "sale",
+      "use": "mixed",
+      "address": "14 Derngate, Northampton NN1 1TT",
+      "postcode": "NN1 1TT",
+      "quote": "14 Derngate, Northampton NN1 1TT | Sold: November 2026 | £1,850,000 | 7.95% NIY",
+      "location": "8.0 Market Commentary",
+      "verified": true,
+      "status": "sold",
+      "distanceMiles": 0.3,
+      "distancePrecision": "postcode",
+      "flags": [
+        {
+          "id": "future",
+          "level": "flag",
+          "text": "Dated November 2026, which is after the valuation date of 30 September 2026."
+        }
+      ],
+      "price": {
+        "value": 1850000,
+        "raw": "£1,850,000",
+        "verified": true
+      },
+      "yieldPct": {
+        "value": 7.95,
+        "raw": "7.95%",
+        "verified": true
+      },
+      "date": {
+        "raw": "November 2026",
+        "y": 2026,
+        "m": 11,
+        "verified": true
+      },
+      "register": {
+        "status": "not_found",
+        "commercialNotFound": true,
+        "text": "Commercial sales are only partly recorded on the Land Registry; not found here is not a mark against the evidence."
+      }
+    },
+    {
+      "id": "s2",
+      "kind": "sale",
+      "use": "mixed",
+      "address": "21-23 Halberd Street, Northampton NN1 9QB",
+      "postcode": "NN1 9QB",
+      "quote": "21-23 Halberd Street, Northampton NN1 9QB | Sold: March 2026 | £1,625,000 | 8.75% NIY",
+      "location": "8.0 Market Commentary",
+      "verified": true,
+      "status": "sold",
+      "distanceMiles": 0.4,
+      "distancePrecision": "postcode",
+      "flags": [
+        {
+          "id": "register",
+          "level": "note",
+          "text": "Land Registry confirms £1,625,000 on 20 March 2026.",
+          "parts": [
+            {
+              "text": "Land Registry confirms £1,625,000 on 20 March 2026.",
+              "tone": "ok"
+            }
+          ]
+        }
+      ],
+      "price": {
+        "value": 1625000,
+        "raw": "£1,625,000",
+        "verified": true
+      },
+      "yieldPct": {
+        "value": 8.75,
+        "raw": "8.75%",
+        "verified": true
+      },
+      "date": {
+        "raw": "March 2026",
+        "y": 2026,
+        "m": 3,
+        "verified": true
+      },
+      "register": {
+        "status": "match",
+        "sale": {
+          "date": "2026-03-20",
+          "price": 1625000
+        },
+        "text": "Land Registry confirms £1,625,000 on 20 March 2026.",
+        "parts": [
+          {
+            "text": "Land Registry confirms £1,625,000 on 20 March 2026.",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "kind": "sale",
+      "use": "mixed",
+      "address": "117 Larkspur Road, Northampton NN2 9DE",
+      "postcode": "NN2 9DE",
+      "quote": "117 Larkspur Road, Northampton NN2 9DE | Sold: November 2025 | £1,240,000 | 8.40% NIY",
+      "location": "8.0 Market Commentary",
+      "verified": true,
+      "status": "sold",
+      "distanceMiles": 1.6,
+      "distancePrecision": "postcode",
+      "flags": [
+        {
+          "id": "register",
+          "level": "flag",
+          "text": "Land Registry confirms the sale price of £1,240,000. Land Registry records the transaction date as 27 January 2026, not 1 November 2025.",
+          "parts": [
+            {
+              "text": "Land Registry confirms the sale price of £1,240,000.",
+              "tone": "ok"
+            },
+            {
+              "text": "Land Registry records the transaction date as 27 January 2026, not 1 November 2025.",
+              "tone": "bad"
+            }
+          ]
+        }
+      ],
+      "price": {
+        "value": 1240000,
+        "raw": "£1,240,000",
+        "verified": true
+      },
+      "yieldPct": {
+        "value": 8.4,
+        "raw": "8.40%",
+        "verified": true
+      },
+      "date": {
+        "raw": "November 2025",
+        "y": 2025,
+        "m": 11,
+        "verified": true
+      },
+      "register": {
+        "status": "differs",
+        "sale": {
+          "date": "2026-01-27",
+          "price": 1240000
+        },
+        "text": "Land Registry confirms the sale price of £1,240,000. Land Registry records the transaction date as 27 January 2026, not 1 November 2025.",
+        "parts": [
+          {
+            "text": "Land Registry confirms the sale price of £1,240,000.",
+            "tone": "ok"
+          },
+          {
+            "text": "Land Registry records the transaction date as 27 January 2026, not 1 November 2025.",
+            "tone": "bad"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "kind": "sale",
+      "use": "mixed",
+      "address": "4 Chandler's Walk, Northampton NN1 9HT",
+      "postcode": "NN1 9HT",
+      "quote": "4 Chandler's Walk, Northampton NN1 9HT | Sold: July 2025 | £980,000 | 9.10% NIY",
+      "location": "8.0 Market Commentary",
+      "verified": true,
+      "status": "sold",
+      "distanceMiles": 0.7,
+      "distancePrecision": "postcode",
+      "flags": [
+        {
+          "id": "register",
+          "level": "note",
+          "text": "Land Registry confirms £980,000 on 11 July 2025.",
+          "parts": [
+            {
+              "text": "Land Registry confirms £980,000 on 11 July 2025.",
+              "tone": "ok"
+            }
+          ]
+        }
+      ],
+      "price": {
+        "value": 980000,
+        "raw": "£980,000",
+        "verified": true
+      },
+      "yieldPct": {
+        "value": 9.1,
+        "raw": "9.10%",
+        "verified": true
+      },
+      "date": {
+        "raw": "July 2025",
+        "y": 2025,
+        "m": 7,
+        "verified": true
+      },
+      "register": {
+        "status": "match",
+        "sale": {
+          "date": "2025-07-11",
+          "price": 980000
+        },
+        "text": "Land Registry confirms £980,000 on 11 July 2025.",
+        "parts": [
+          {
+            "text": "Land Registry confirms £980,000 on 11 July 2025.",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s5",
+      "kind": "sale",
+      "use": "mixed",
+      "address": "The Old Exchange, 9 Pelham Parade, Northampton NN1 9RS",
+      "postcode": "NN1 9RS",
+      "quote": "The Old Exchange, 9 Pelham Parade, Northampton NN1 9RS | Sold: May 2026 | £2,150,000 | 7.60% NIY",
+      "location": "8.0 Market Commentary",
+      "verified": true,
+      "status": "sold",
+      "distanceMiles": 0.5,
+      "distancePrecision": "postcode",
+      "flags": [],
+      "price": {
+        "value": 2150000,
+        "raw": "£2,150,000",
+        "verified": true
+      },
+      "yieldPct": {
+        "value": 7.6,
+        "raw": "7.60%",
+        "verified": true
+      },
+      "date": {
+        "raw": "May 2026",
+        "y": 2026,
+        "m": 5,
+        "verified": true
+      },
+      "register": {
+        "status": "not_found",
+        "commercialNotFound": true,
+        "text": "Commercial sales are only partly recorded on the Land Registry; not found here is not a mark against the evidence."
+      }
+    },
+    {
+      "id": "s6",
+      "kind": "sale",
+      "use": "mixed",
+      "address": "52 Ropewalk Terrace, Northampton NN3 9LP",
+      "postcode": "NN3 9LP",
+      "quote": "52 Ropewalk Terrace, Northampton NN3 9LP | Sold: February 2025 | £865,000 | 9.25% NIY",
+      "location": "8.0 Market Commentary",
+      "verified": true,
+      "status": "sold",
+      "distanceMiles": 2.4,
+      "distancePrecision": "postcode",
+      "flags": [
+        {
+          "id": "age",
+          "level": "note",
+          "text": "19 months prior to valuation. Explanation required."
+        },
+        {
+          "id": "register",
+          "level": "note",
+          "text": "Land Registry confirms £865,000 on 14 February 2025.",
+          "parts": [
+            {
+              "text": "Land Registry confirms £865,000 on 14 February 2025.",
+              "tone": "ok"
+            }
+          ]
+        }
+      ],
+      "price": {
+        "value": 865000,
+        "raw": "£865,000",
+        "verified": true
+      },
+      "yieldPct": {
+        "value": 9.25,
+        "raw": "9.25%",
+        "verified": true
+      },
+      "date": {
+        "raw": "February 2025",
+        "y": 2025,
+        "m": 2,
+        "verified": true
+      },
+      "register": {
+        "status": "match",
+        "sale": {
+          "date": "2025-02-14",
+          "price": 865000
+        },
+        "text": "Land Registry confirms £865,000 on 14 February 2025.",
+        "parts": [
+          {
+            "text": "Land Registry confirms £865,000 on 14 February 2025.",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s7",
+      "kind": "sale",
+      "use": "mixed",
+      "address": "Unit 2, Saddler's Yard, Northampton NN1 9EW",
+      "postcode": "NN1 9EW",
+      "quote": "Unit 2, Saddler's Yard, Northampton NN1 9EW | Under offer | £1,100,000 | 8.90% NIY",
+      "location": "8.0 Market Commentary",
+      "verified": true,
+      "status": "under_offer",
+      "distanceMiles": 0.6,
+      "distancePrecision": "postcode",
+      "flags": [
+        {
+          "id": "under_offer",
+          "level": "note",
+          "text": "Under offer, not a completed transaction."
+        }
+      ],
+      "price": {
+        "value": 1100000,
+        "raw": "£1,100,000",
+        "verified": true
+      },
+      "yieldPct": {
+        "value": 8.9,
+        "raw": "8.90%",
+        "verified": true
+      },
+      "unsold": "Under offer"
+    },
+    {
+      "id": "l1",
+      "kind": "letting",
+      "use": "commercial",
+      "address": "Ground floor shop, 14 Halberd Street, Northampton NN1 9QB",
+      "location": "8.0 Market Commentary",
+      "verified": true,
+      "status": "let",
+      "distanceMiles": 0.4,
+      "distancePrecision": "postcode",
+      "flags": [],
+      "date": {
+        "raw": "April 2026",
+        "y": 2026,
+        "m": 4,
+        "verified": true
+      },
+      "rent": {
+        "value": 26825,
+        "raw": "£26,825 pa",
+        "verified": true,
+        "period": "pa"
+      },
+      "area": {
+        "value": 1850,
+        "raw": "1,850 sq ft",
+        "verified": true,
+        "unit": "sqft"
+      },
+      "rate": {
+        "value": 14.5,
+        "raw": "£14.50",
+        "verified": true,
+        "unit": "sqft"
+      },
+      "quote": "Ground floor shop, 14 Halberd Street, Northampton NN1 9QB | Let: April 2026 | £26,825 pa | 1,850 sq ft | £14.50 per sq ft"
+    },
+    {
+      "id": "l2",
+      "kind": "letting",
+      "use": "commercial",
+      "address": "Ground floor shop, 88 Pelham Parade, Northampton NN1 9RT",
+      "location": "8.0 Market Commentary",
+      "verified": true,
+      "status": "let",
+      "distanceMiles": 0.5,
+      "distancePrecision": "postcode",
+      "flags": [
+        {
+          "id": "age",
+          "level": "note",
+          "text": "13 months prior to valuation. Explanation required."
+        }
+      ],
+      "date": {
+        "raw": "August 2025",
+        "y": 2025,
+        "m": 8,
+        "verified": true
+      },
+      "rent": {
+        "value": 33600,
+        "raw": "£33,600 pa",
+        "verified": true,
+        "period": "pa"
+      },
+      "area": {
+        "value": 2100,
+        "raw": "2,100 sq ft",
+        "verified": true,
+        "unit": "sqft"
+      },
+      "rate": {
+        "value": 16.0,
+        "raw": "£16.00",
+        "verified": true,
+        "unit": "sqft"
+      },
+      "quote": "Ground floor shop, 88 Pelham Parade, Northampton NN1 9RT | Let: August 2025 | £33,600 pa | 2,100 sq ft | £16.00 per sq ft"
+    },
+    {
+      "id": "l3",
+      "kind": "letting",
+      "use": "commercial",
+      "address": "Ground floor shop, 3 Chandler's Walk, Northampton NN1 9HT",
+      "location": "8.0 Market Commentary",
+      "verified": true,
+      "status": "let",
+      "distanceMiles": 0.7,
+      "distancePrecision": "postcode",
+      "flags": [],
+      "date": {
+        "raw": "February 2026",
+        "y": 2026,
+        "m": 2,
+        "verified": true
+      },
+      "rent": {
+        "value": 29325,
+        "raw": "£29,325 pa",
+        "verified": true,
+        "period": "pa"
+      },
+      "area": {
+        "value": 1700,
+        "raw": "1,700 sq ft",
+        "verified": true,
+        "unit": "sqft"
+      },
+      "rate": {
+        "value": 17.25,
+        "raw": "£17.25",
+        "verified": true,
+        "unit": "sqft"
+      },
+      "quote": "Ground floor shop, 3 Chandler's Walk, Northampton NN1 9HT | Let: February 2026 | £29,325 pa | 1,700 sq ft | £17.25 per sq ft"
+    },
+    {
+      "id": "l4",
+      "kind": "letting",
+      "use": "residential",
+      "address": "Room 4, 31 Larkspur Road, Northampton NN2 9DF",
+      "location": "8.0 Market Commentary",
+      "verified": true,
+      "status": "let",
+      "distanceMiles": 1.6,
+      "distancePrecision": "postcode",
+      "flags": [],
+      "date": {
+        "raw": "June 2026",
+        "y": 2026,
+        "m": 6,
+        "verified": true
+      },
+      "rent": {
+        "value": 640,
+        "raw": "£640 pcm",
+        "verified": true,
+        "period": "pcm"
+      },
+      "quote": "Room 4, 31 Larkspur Road, Northampton NN2 9DF | Let: June 2026 | £640 pcm"
+    },
+    {
+      "id": "l5",
+      "kind": "letting",
+      "use": "residential",
+      "address": "Room 2, 7 Weavers Yard, Northampton NN1 9JD",
+      "location": "8.0 Market Commentary",
+      "verified": true,
+      "status": "let",
+      "distanceMiles": 0.8,
+      "distancePrecision": "postcode",
+      "flags": [],
+      "date": {
+        "raw": "March 2026",
+        "y": 2026,
+        "m": 3,
+        "verified": true
+      },
+      "rent": {
+        "value": 600,
+        "raw": "£600 pcm",
+        "verified": true,
+        "period": "pcm"
+      },
+      "quote": "Room 2, 7 Weavers Yard, Northampton NN1 9JD | Let: March 2026 | £600 pcm"
+    }
+  ],
+  "counts": {
+    "flags": 2,
+    "notes": 6,
+    "unverified": 0
+  },
+  "notes": []
+}

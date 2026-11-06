@@ -387,7 +387,10 @@ const SchedulePanel: React.FC<{ data: ExampleSchedule; defaultOpen?: boolean }> 
 };
 
 // ── The results view ────────────────────────────────────────────────────────
-export const ExampleAudit: React.FC<{ data: ExampleAuditData; complianceOpen?: boolean; scheduleOpen?: boolean }> = ({ data, complianceOpen = false, scheduleOpen = true }) => {
+// Website addition (6 Nov 2026): `afterChecklist` draws a panel under the Red
+// Book checklist, where the app shows the comparables panel. The rest of this
+// file is the pack's copy, unchanged.
+export const ExampleAudit: React.FC<{ data: ExampleAuditData; complianceOpen?: boolean; scheduleOpen?: boolean; afterChecklist?: React.ReactNode }> = ({ data, complianceOpen = false, scheduleOpen = true, afterChecklist }) => {
   const [filter, setFilter] = useState<"all" | Severity>("all");
   const [selected, setSelected] = useState<string | null>(null);
   const issues = filter === "all" ? data.issues : data.issues.filter((i) => i.severity === filter);
@@ -418,6 +421,7 @@ export const ExampleAudit: React.FC<{ data: ExampleAuditData; complianceOpen?: b
       <div className="p-3 sm:p-6">
         {data.schedule && <SchedulePanel data={data.schedule} defaultOpen={scheduleOpen} />}
         <CompliancePanel data={data.compliance} defaultOpen={complianceOpen} />
+        {afterChecklist}
         <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
           <div className="divide-y divide-slate-100">
             {issues.map((issue) => {
