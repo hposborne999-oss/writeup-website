@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "teal" | "inverse";
+type Variant = "primary" | "secondary" | "teal" | "inverse" | "petrol";
 type Size = "default" | "lg";
 
 type ButtonProps = {
@@ -22,6 +22,8 @@ const variants: Record<Variant, string> = {
   teal: "bg-teal text-white hover:bg-petrol",
   // For dark surfaces (the petrol nav): the primary button, inverted.
   inverse: "bg-white text-petrol hover:bg-slate-100",
+  // The brand's dark green-black, e.g. "Create free account" on /example-audit.
+  petrol: "bg-petrol text-white hover:bg-ink",
 };
 
 const sizes: Record<Size, string> = {

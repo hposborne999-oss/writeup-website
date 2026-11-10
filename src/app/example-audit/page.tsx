@@ -8,9 +8,36 @@ import { AuditVisitBeacon } from "@/components/example-audit/AuditVisitBeacon";
 // Hidden landing page for the outreach email. Not in the nav, no sitemap
 // entry, and noindex/nofollow below — reachable only by the link in the email.
 
-// The page's call to action, at the top and the bottom (Harry went live with
-// this, 30 Sep 2026; top button added 27 Oct 2026).
+// The page's calls to action, at the top and the bottom (Harry went live with
+// "Book a demo", 30 Sep 2026; top button added 27 Oct 2026; free account
+// added 10 Nov 2026). The free account link goes to the app's sign-in page,
+// which has the "Create a free account" button (3 audits a month, no card).
 const CTA = { label: "Book a demo", href: "/demo" };
+const FREE = {
+  label: "Create free account",
+  href: "https://writeup-app.vercel.app/#audit",
+  note: "Want to see what it finds on your own reports? We have a free account with three audits a month.",
+};
+
+function Ctas({ align }: { align: "end" | "center" }) {
+  const row = align === "end" ? "md:justify-end" : "justify-center";
+  const text = align === "end" ? "md:text-right" : "text-center";
+  return (
+    <div className={`flex flex-col gap-3 ${align === "end" ? "md:items-end" : "items-center"}`}>
+      <div className={`flex flex-wrap gap-3 ${row}`}>
+        <Button href={CTA.href} variant="teal" size="lg">
+          {CTA.label}
+        </Button>
+        <Button href={FREE.href} variant="petrol" size="lg">
+          {FREE.label}
+        </Button>
+      </div>
+      <p className={`text-[14px] leading-[1.5] text-slate-600 max-w-[42ch] ${text}`}>
+        {FREE.note}
+      </p>
+    </div>
+  );
+}
 
 export const metadata: Metadata = {
   title: "An example WriteUp audit",
@@ -36,17 +63,15 @@ export default function ExampleAuditPage() {
                 detail.
               </p>
             </div>
-            <Button href={CTA.href} variant="teal" size="lg" className="self-start md:self-auto shrink-0">
-              {CTA.label}
-            </Button>
+            <div className="shrink-0">
+              <Ctas align="end" />
+            </div>
           </header>
 
           <ExampleAuditView />
 
-          <div className="mt-10 sm:mt-12 flex justify-center">
-            <Button href={CTA.href} variant="teal" size="lg">
-              {CTA.label}
-            </Button>
+          <div className="mt-10 sm:mt-12">
+            <Ctas align="center" />
           </div>
         </div>
       </main>
