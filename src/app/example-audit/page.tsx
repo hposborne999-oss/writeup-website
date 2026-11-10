@@ -28,7 +28,7 @@ function Ctas({ align }: { align: "end" | "center" }) {
         <Button href={CTA.href} variant="teal" size="lg">
           {CTA.label}
         </Button>
-        <Button href={FREE.href} variant="secondary" size="lg">
+        <Button href={FREE.href} variant="petrol" size="lg">
           {FREE.label}
         </Button>
       </div>
