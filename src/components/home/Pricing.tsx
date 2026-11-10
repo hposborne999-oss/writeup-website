@@ -17,7 +17,7 @@ const tiers: Tier[] = [
     tier: "Solo",
     audience: "For individual surveyors.",
     features:
-      "1 seat, includes 20 report audits a month, full access to the AI Audit features.",
+      "1 seat, includes 15 report audits a month, full access to the AI Audit features.",
     amount: "£199",
     amountSuffix: " / mo",
     cta: {
@@ -30,7 +30,7 @@ const tiers: Tier[] = [
     tier: "Practice",
     audience: "For valuation teams.",
     features:
-      "Up to 5 seats, includes 100 report audits a month, full access to the AI Audit features. Extra audits £6 each.",
+      "Up to 5 seats, includes 75 report audits a month, full access to the AI Audit features. Extra audits £6 each.",
     amount: "£599",
     amountSuffix: " / mo",
     cta: {
@@ -44,7 +44,7 @@ const tiers: Tier[] = [
     tier: "Firm",
     audience: "For larger valuation firms.",
     features:
-      "Up to 15 seats, includes 250 report audits a month, full access to the AI Audit features. Extra audits £6 each.",
+      "Up to 15 seats, includes 225 report audits a month, full access to the AI Audit features. Extra audits £6 each.",
     amountPrefix: "from ",
     amount: "£1,499",
     amountSuffix: " / mo",
